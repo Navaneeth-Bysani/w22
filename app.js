@@ -1,4 +1,5 @@
 const express = require('express');
+const path = require('path');
 const mysql = require('mysql');
 
 const authRouter = require('./routes/authRoutes');
@@ -6,22 +7,17 @@ const authRouter = require('./routes/authRoutes');
 const conn = mysql.createPool({
     host : 'localhost',
     user : 'root',
-    password : 'wissenaire_22',
+    password : 'Navaneeth1@',
     database : 'wissenaire_22'
 });
 
-// conn.connect((err) => {
-//     if(err) {
-//         throw err;
-//     } else {
-//         console.log('mysql connect successfully!');
-//     }
-// });
 
 const app = express();
-app.use(express.json());
+
+app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
 
+app.use(express.json());
 
 //routes
 app.use('/api/v1/auth', authRouter);
