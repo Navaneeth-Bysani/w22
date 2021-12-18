@@ -20,6 +20,8 @@ const conn = mysql.createPool({
 
 const app = express();
 app.use(express.json());
+app.set('view engine', 'ejs');
+
 
 //routes
 app.use('/api/v1/auth', authRouter);
