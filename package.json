@@ -18,6 +18,8 @@
   "homepage": "https://github.com/Navaneeth-Bysani/w22#readme",
   "dependencies": {
     "express": "^4.17.1",
-    "mysql": "^2.18.1"
+    "mysql": "^2.18.1",
+    "passport": "^0.5.2",
+    "passport-google-oauth20": "^2.0.0"
   }
 }

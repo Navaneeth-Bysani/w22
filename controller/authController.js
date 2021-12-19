@@ -9,9 +9,5 @@ const conn = mysql.createPool({
 
 
 exports.signup = async(req,res) => {
-    let sql = 'SELECT * from user;';
-    conn.query(sql, (err,rows) => {
-        if(err) throw err;
-        console.log(rows);
-    });
+    
 }
