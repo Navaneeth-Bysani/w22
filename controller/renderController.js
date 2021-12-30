@@ -28,6 +28,7 @@ exports.renderHighlights = (req,res) => {
 
 exports.renderTeam = (req,res) => {
     //render Team
+    res.render('team2');
 }
 
 exports.renderSponsors = (req,res) => {

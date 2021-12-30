@@ -23,4 +23,16 @@ router.get('/contact', renderController.renderContact);
 
 //posting a query in contact
 
+
+//single webpages
+//1. about
+//2. profile
+//3. guest lectures
+//4. exhibits
+//5. initiatives
+//6. highlights
+//7. team
+//8. sponsors
+//9. contact
+
 module.exports = router;
