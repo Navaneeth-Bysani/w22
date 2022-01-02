@@ -28,7 +28,7 @@ exports.renderHighlights = (req,res) => {
 
 exports.renderTeam = (req,res) => {
     //render Team
-    res.render('team2');
+    res.render('team');
 }
 
 exports.renderSponsors = (req,res) => {
@@ -37,4 +37,5 @@ exports.renderSponsors = (req,res) => {
 
 exports.renderContact = (req,res) => {
     //render Contact
+    res.render('contact');
 }

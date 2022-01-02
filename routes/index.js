@@ -17,6 +17,7 @@ router.get('/sponsors', renderController.renderSponsors);
 router.get('/contact', renderController.renderContact);
 
 
+router.post('/contact', userController.postContact);
 //individual competition routes
 
 //individual workshop routes
