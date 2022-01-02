@@ -10,7 +10,7 @@
 </head>
 <body>
 <!-- partial:index.partial.html -->
-<form class="form" onsubmit="return false" autocomplete="off">
+<form class="form" onsubmit="return false" autocomplete="off" method="POST" action="/contact">
   <div class="form-inner">
     <h2>Have something to say?</h2>
     <div class="input-wrapper">
@@ -58,11 +58,31 @@
         </div>
       </div>
     <div class="btn-group">
-      <button class="btn btn--primary">Send Message</button>
+      <button class="btn btn--primary" type = "submit">Send Message</button>
     </div>
   </div>
 </form>
 <!-- partial -->
-  
+<!-- <script>
+	$("form").submit(function(e) {
+		e.preventDefault(); 
+		var form = $(this);
+        console.log(form);
+		$.ajax({
+			type: "POST",
+			url: '/contact',
+			data: form.serialize(), 
+			success: function(result)
+			{
+				new swal({
+					title: 'Message sent',
+					text: 'We will soon get in touch with you',
+					icon: 'success'
+				});
+				document.location.reload(true);
+			}
+		});
+	});
+	</script> -->
 </body>
 </html>

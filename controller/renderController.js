@@ -24,6 +24,7 @@ exports.renderInitiatives = (req,res) => {
 
 exports.renderHighlights = (req,res) => {
     //render Highlights
+    res.render('highlights');
 }
 
 exports.renderTeam = (req,res) => {
