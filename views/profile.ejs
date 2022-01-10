@@ -209,9 +209,11 @@
           <a href="#" target="_blank"><i class="fab fa-instagram"></i></a>
           <a href="#" target="_blank"><i class="fab fa-facebook"></i></a>
           <a href="#" target="_blank"><i class="fab fa-twitter"></i></a>
+          <% if(!participant) {%>
           <div style="display: flex">
             <a style="margin: 0" href="">Sign in</a>
           </div>
+          <% }%>
         </div>
         <div class="menuIcon js-menuBtn"></div>
       </div>
@@ -248,11 +250,11 @@
                 <div class="front__bkg-photo"></div>
                 <div class="front__face-photo"></div>
                 <div class="front__text">
-                  <h3 class="front__text-header">Alejandro</h3>
+                  <h3 class="front__text-header"><%=participant.name%></h3>
                   <br />
                   <p class="front__text-para">
                     <i class="far fa-envelope front-icons"></i
-                    >student@college.in
+                    ><%=participant.email%>
                   </p>
                 </div>
               </div>

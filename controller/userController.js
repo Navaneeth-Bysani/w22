@@ -8,14 +8,24 @@ const conn = mysql.createPool({
 });
 
 exports.getProfile = async(req,res) => {
-    let sql = `SELECT * from user WHERE email = '${req.user.emails[0].value}';`;
-    conn.query(sql, (err, rows) => {
-        if(err) throw err;
-        console.log(rows);
-    })
-    res.send('user profile');
+    if(req.user) {
+        let sql = `SELECT * from user WHERE email = '${req.user.emails[0].value}';`;
+        conn.query(sql, (err, rows) => {
+            if(err) throw err;
+            console.log(rows[0]);
+            res.render('profile', {participant : rows[0]});
+        })
+    } else {
+        res.send('profile', {participant : false});
+    }
 }
 
+exports.updateProfile = (req,res) => {
+    const id = `SELECT * FROM 'users' WHERE email = ${req.user.emails[0].value};`;
+    conn.query(id, (err,rows) => {
+        console.log(rows);
+    })
+}
 exports.postContact = async(req,res) => {
     const name = req.body.name;
     const email = req.body.email;

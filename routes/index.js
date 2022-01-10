@@ -5,7 +5,7 @@ const router = express.Router();
 
 //frontend routes
 router.get('/', renderController.renderHome);
-router.get('/profile', renderController.renderProfile);
+router.get('/profile', userController.getProfile);
 router.get('/about', renderController.renderAbout);
 router.get('/competitions', renderController.renderCompetitions);
 router.get('/workshops', renderController.renderWorkshops);

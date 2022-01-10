@@ -57,6 +57,7 @@ passport.use(new GoogleStrategy({
       if(rows && rows.length == 0) {
         //no user so far. Create user
         console.log('no user in db');
+        console.log(profile);
         const newSql = ("INSERT into user (googleid,photo,accesstoken,name,email) VALUES('" + profile.id + "','"+profile.photos[0].value+"', '" + accessToken + "','" + profile.displayName + "','" + profile.emails[0].value + "');");
         conn.query(newSql, (err, result) => {
           if(err) throw err;

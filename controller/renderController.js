@@ -1,3 +1,12 @@
+const mysql = require('mysql');
+
+const conn = mysql.createPool({
+    host : 'localhost',
+    user : 'root',
+    password : 'Navaneeth1@',
+    database : 'wissenaire_22'
+});
+
 exports.renderAbout = (req, res) => {
   //render About
   res.render("about");
@@ -50,9 +59,27 @@ exports.renderContact = (req, res) => {
 };
 
 exports.renderProfile = (req, res) => {
-  res.render("profile");
+  if(req.user) {
+    let sql = `SELECT * from user WHERE email = '${req.user.emails[0].value}';`;
+    conn.query(sql, (err, rows) => {
+        if(err) throw err;
+        console.log(rows);
+    })
+    res.render('profile', {participant : rows[0]});
+  } else {
+      res.send('profile', {participant : false});
+  }
 };
 
 exports.renderHome = (req,res) => {
-  res.render("index");
+  if(req.user) {
+    const qr = ("SELECT * from user where email ='" + req.user.emails[0].value + "';");
+    conn.query(qr, (err, rows) => {
+      if(err) throw err;
+      res.render('index', {participant : rows[0]});
+    })
+  } else {
+    res.render("index", {participant:false});
+  }
+  
 }

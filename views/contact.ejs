@@ -10,7 +10,7 @@
 </head>
 <body>
 <!-- partial:index.partial.html -->
-<form class="form" onsubmit="return false" autocomplete="off" method="POST" action="/contact">
+<form class="form" autocomplete="off">
   <div class="form-inner">
     <h2>Have something to say?</h2>
     <div class="input-wrapper">
@@ -19,7 +19,7 @@
           <svg viewBox="0 0 24 24">
             <path d="M12,4A4,4 0 0,1 16,8A4,4 0 0,1 12,12A4,4 0 0,1 8,8A4,4 0 0,1 12,4M12,14C16.42,14 20,15.79 20,18V20H4V18C4,15.79 7.58,14 12,14Z"></path>
           </svg></span>
-        <input type="text" id="name" data-lpignore="true"/>
+        <input type="text" id="name" data-lpignore="true" name = "name"/>
       </div>
     </div>
     <div class="input-wrapper">
@@ -38,7 +38,7 @@
             </g>
         </svg>
     </span>
-        <input type="email" id="email" data-lpignore="true"/>
+        <input type="email" id="email" data-lpignore="true" name = "email" />
       </div>
     </div>
     <div class="input-wrapper">
@@ -54,7 +54,7 @@
                     </g>
                 </svg>
             </span>
-          <input type="textarea" id="message" data-lpignore="true"/>
+          <input type="textarea" id="message" data-lpignore="true" name = "message"/>
         </div>
       </div>
     <div class="btn-group">
@@ -62,27 +62,30 @@
     </div>
   </div>
 </form>
-<!-- partial -->
-<!-- <script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous"></script>
+	<script src="./javascripts/jquery.min.js"></script>
+<script>
 	$("form").submit(function(e) {
 		e.preventDefault(); 
 		var form = $(this);
-        console.log(form);
+    
 		$.ajax({
 			type: "POST",
 			url: '/contact',
-			data: form.serialize(), 
+			// data: {
+      //   name : "Navaneeth",
+      //   email : "abcd",
+      //   message : "ABCDEFGH"
+      // },
+			data: form.serialize(),
 			success: function(result)
 			{
-				new swal({
-					title: 'Message sent',
-					text: 'We will soon get in touch with you',
-					icon: 'success'
-				});
-				document.location.reload(true);
+				console.log("sent message!");
+        console.log(form.serialize());
+				// document.location.reload(true);
 			}
 		});
 	});
-	</script> -->
+	</script>
 </body>
 </html>
