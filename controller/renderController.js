@@ -9,6 +9,7 @@ const conn = mysql.createPool({
 
 exports.renderAbout = (req, res) => {
   //render About
+  console.log("hi");
   res.render("about");
 };
 

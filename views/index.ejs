@@ -229,6 +229,7 @@
     animation-timing-function: ease-in-out;
 }
 
+
 @keyframes floating {
     from { transform: translate(0,  0px); }
     50%  { transform: translate(0, 15px); }
@@ -286,17 +287,17 @@
       <nav class="global-nav">
         <ul class="global-nav__list">
           <li class="signIn"><a href="./signIn">SIGN IN</a></li>
-          <li><a href="./about">ABOUT</a></li>
+          <li><a href="./about-wissenaire">ABOUT</a></li>
           <li><a href="./competitions">COMPETITIONS</a></li>
           <li><a href="./workshop">WORKSHOPS</a></li>
-          <li><a href="./guestlectures">GUEST LECTURES</a></li>
+          <li><a href="./guest-lectures">GUEST LECTURES</a></li>
           <li><a href="./exhibits">EXHIBITS</a></li>
           <li><a href="./initiatives">INITIATIVES</a></li>
           <li><a href="./highlights">HIGHLIGHTS</a></li>
           <li><a href="./ca">CAMPUS AMBASSADOR</a></li>
-          <li><a href="./team">TEAM</a></li>
+          <li><a href="./teams">TEAM</a></li>
           <li><a href="./sponsors">SPONSORS'21</a></li>
-          <li><a href="./reachus">REACH US</a></li>
+          <li><a href="./contact">REACH US</a></li>
           <li class="global-nav__sns">
             <a href="" target="_blank"><i class="fab fa-instagram"></i></a>
             <a href="" target="_blank"><i class="fab fa-facebook"></i></a>
@@ -327,7 +328,7 @@
     </div>
     <script>
       // Gen random data
-      const N = 50;
+      const N = 30;
       const arcsData = [...Array(N).keys()].map(() => ({
         startLat: (Math.random() - 0.5) * 180,
         startLng: (Math.random() - 0.5) * 360,
@@ -357,9 +358,9 @@
         .arcsData(arcsData)
         .arcColor("color")
         .arcDashLength(() => Math.random() * 2 + 1)
-        .arcDashGap(() => Math.random() * 5)
+        .arcDashGap(() => Math.random() * 4)
         // .arcAltitudeAutoScale(1)
-        .arcDashAnimateTime(() => 4000)(document.getElementById("globeViz"));
+        .arcDashAnimateTime(() => 5000)(document.getElementById("globeViz"));
 
       world.controls().autoRotate = true;
       world.controls().autoRotateSpeed = 0.5;
@@ -394,12 +395,12 @@ document.addEventListener("mousemove", (e) => {
   );
 });
 
-document.addEventListener("click", () => {
-  cursors.classList.add("expand");
-  setTimeout(() => {
-    cursors.classList.remove("expand");
-  }, 500);
-});
+// document.addEventListener("click", () => {
+//   cursors.classList.add("expand");
+//   setTimeout(() => {
+//     cursors.classList.remove("expand");
+//   }, 500);
+// });
     </script>
   </body>
 </html>
