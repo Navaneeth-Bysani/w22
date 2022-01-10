@@ -33,7 +33,7 @@
       }
 
       header{
-        background: rgb(3, 3, 3) !important ;
+        background: rgba(0, 0, 0, 0) !important ;
       }
 
       .logo {
@@ -229,6 +229,7 @@
     animation-timing-function: ease-in-out;
 }
 
+
 @keyframes floating {
     from { transform: translate(0,  0px); }
     50%  { transform: translate(0, 15px); }
@@ -258,8 +259,6 @@
       href="https://fonts.googleapis.com/css?family=Abril+Fatface"
     />
     <link rel="stylesheet" href="./css/hover-min.css">
-    <link rel="stylesheet" href="./stylesheets/navbar.css">
-
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
 
     <script src="https://unpkg.com/globe.gl@2.23.0/dist/globe.gl.min.js"></script>
@@ -268,7 +267,7 @@
   </head>
 
   <body>
-    <!-- <header>
+    <header>
       <a href="./index.html"><img class="wissLogo" src="./logo.png" alt=""></a>
       <div class="wrap">
         <div class="icons">
@@ -286,15 +285,15 @@
           <li class="signIn"><a href="./signIn">SIGN IN</a></li>
           <li><a href="./about">ABOUT</a></li>
           <li><a href="./competitions">COMPETITIONS</a></li>
-          <li><a href="./workshops">WORKSHOPS</a></li>
-          <li><a href="./guestlectures">GUEST LECTURES</a></li>
+          <li><a href="./workshop">WORKSHOPS</a></li>
+          <li><a href="./guest-lectures">GUEST LECTURES</a></li>
           <li><a href="./exhibits">EXHIBITS</a></li>
           <li><a href="./initiatives">INITIATIVES</a></li>
           <li><a href="./highlights">HIGHLIGHTS</a></li>
           <li><a href="./ca">CAMPUS AMBASSADOR</a></li>
-          <li><a href="./team">TEAM</a></li>
+          <li><a href="./teams">TEAM</a></li>
           <li><a href="./sponsors">SPONSORS'21</a></li>
-          <li><a href="./reachus">REACH US</a></li>
+          <li><a href="./contact">REACH US</a></li>
           <li class="global-nav__sns">
             <a href="" target="_blank"><i class="fab fa-instagram"></i></a>
             <a href="" target="_blank"><i class="fab fa-facebook"></i></a>
@@ -304,56 +303,6 @@
       </nav>
       <div class="curtain"></div>
       <div class="loader"></div>
-    </header> -->
-    <header id="header" class="fixed-top d-flex align-items-center">
-      <div
-        class="cont"
-      >
-        <!-- <h1 class="logo me-auto me-lg-0"><a href="index.html">Wissenaire</a></h1> -->
-        <a href="#" class=""
-          ><img
-            id="header-image"
-            style="width: 20rem; height: 4rem; margin: 0rem 5rem"
-            src="./images/logo.png"
-            alt="Wiss logo"
-        /></a>
-
-        <!-- Uncomment below if you prefer to use an image logo -->
-        <!-- <a href="index.html" class="logo me-auto me-lg-0"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
-
-        <nav id="navbar" class="navbar order-last order-lg-0">
-          <ul>
-            <li><a class="nav-link scrollto" href="#">Home</a></li>
-            <li>
-              <a class="nav-link scrollto" href="https://wissenaire.org/about"
-                >About</a
-              >
-            </li>
-            <li><a class="nav-link scrollto" href="#">Workshop</a></li>
-            <li><a class="nav-link scrollto" href="#">Initiatives</a></li>
-            <li><a class="nav-link scrollto" href="#">Campus ambassador</a></li>
-            <li><a class="nav-link scrollto" href="#">Team</a></li>
-            <li><a class="nav-link scrollto" href="#">Sponsors</a></li>
-            <li class="dropdown">
-              <a href="#" class="active"
-                ><span>Events</span> <i class="bi bi-chevron-down"></i
-              ></a>
-              <ul>
-                <li><a href="#">Competition</a></li>
-                <li>
-                  <a href="#" class="active" style="color: #d3af71"
-                    >Guest Lecture</a
-                  >
-                </li>
-                <li><a href="#">Exhibits</a></li>
-              </ul>
-            </li>
-            <li><a class="nav-link scrollto" href="#">Reach us</a></li>
-          </ul>
-          <i class="bi bi-list mobile-nav-toggle"></i>
-        </nav>
-        <!-- .navbar -->
-      </div>
     </header>
 
     <div class="top-layer">
@@ -375,7 +324,7 @@
     </div>
     <script>
       // Gen random data
-      const N = 50;
+      const N = 30;
       const arcsData = [...Array(N).keys()].map(() => ({
         startLat: (Math.random() - 0.5) * 180,
         startLng: (Math.random() - 0.5) * 360,
@@ -405,9 +354,9 @@
         .arcsData(arcsData)
         .arcColor("color")
         .arcDashLength(() => Math.random() * 2 + 1)
-        .arcDashGap(() => Math.random() * 5)
+        .arcDashGap(() => Math.random() * 4)
         // .arcAltitudeAutoScale(1)
-        .arcDashAnimateTime(() => 4000)(document.getElementById("globeViz"));
+        .arcDashAnimateTime(() => 5000)(document.getElementById("globeViz"));
 
       world.controls().autoRotate = true;
       world.controls().autoRotateSpeed = 0.5;
@@ -420,8 +369,6 @@
     <script src="./js/js4.js"></script>
     <script src="./js/js5.js"></script>
     <script src="./js/js6.js"></script>
-    <script src="./../public/js/navbar.js"></script>
-
     <script>
       window.addEventListener("load", () => {
         AOS.init({
@@ -444,12 +391,12 @@ document.addEventListener("mousemove", (e) => {
   );
 });
 
-document.addEventListener("click", () => {
-  cursors.classList.add("expand");
-  setTimeout(() => {
-    cursors.classList.remove("expand");
-  }, 500);
-});
+// document.addEventListener("click", () => {
+//   cursors.classList.add("expand");
+//   setTimeout(() => {
+//     cursors.classList.remove("expand");
+//   }, 500);
+// });
     </script>
   </body>
 </html>
