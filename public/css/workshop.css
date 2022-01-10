@@ -18,7 +18,7 @@ body {
   grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
   align-items: start;
   z-index: 1;
-  margin: 40px 20px;
+  margin: 40px 40px;
 }
 .heading {
   text-align: center;
@@ -28,7 +28,7 @@ body {
 .cards {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 2rem;
+  gap: 4rem;
   margin: 4rem 5vw;
   padding: 0;
   list-style-type: none;

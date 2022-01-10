@@ -1,3 +1,5 @@
+
+
 /*--------------------------------------------------------------
 # General
 --------------------------------------------------------------*/
@@ -23,13 +25,13 @@
     url(../fonts/Futura-Dem.woff) format("woff");
 }
 
-/* body {
+body {
   font-family: "futura_r", "Helvetica Neue", "Helvetica", "Arial", "Avenir",
     "Hiragino Sans", 游ゴシック体, "Yu Gothic", YuGothic, "ヒラギノ角ゴシック",
     "メイリオ", Meiryo, "ＭＳ Ｐゴシック", "MS PGothic", sans-serif;
   background: #0c0b09;
   color: #fff;
-} */
+}
 
 a {
   color: #cda45e;
@@ -41,7 +43,7 @@ a:hover {
   text-decoration: none;
 }
 
-/* h1,
+h1,
 h2,
 h3,
 h4,
@@ -50,7 +52,7 @@ h6 {
   font-family: "futura_r", "Helvetica Neue", "Helvetica", "Arial", "Avenir",
     "Hiragino Sans", 游ゴシック体, "Yu Gothic", YuGothic, "ヒラギノ角ゴシック",
     "メイリオ", Meiryo, "ＭＳ Ｐゴシック", "MS PGothic", sans-serif;
-} */
+}
 
 /*--------------------------------------------------------------
 # Preloader
@@ -184,13 +186,13 @@ h6 {
 # Header
 --------------------------------------------------------------*/
 #header {
-  background: rgba(3, 3, 3, 0.6);
+  background: rgba(12, 11, 9, 0.6);
   border-bottom: 1px solid rgba(12, 11, 9, 0.6);
   transition: all 0.5s;
   z-index: 997;
   padding: 15px 0;
-  height: 10vh;
-  margin: 0.6rem;
+  top: 40px;
+  margin: -2.6rem;
 }
 #header.header-scrolled {
   top: 2.6rem;
@@ -268,7 +270,7 @@ h6 {
   color: #fff;
   white-space: nowrap;
   transition: 0.3s;
-  font-size: 16px;
+  font-size: 14px;
 }
 .navbar a i,
 .navbar a:focus i {
