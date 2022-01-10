@@ -10,7 +10,29 @@
       rel="stylesheet"
       type="text/css"
     />
-
+    <link
+      href="https://fonts.googleapis.com/css?family=Exo+2:600,700,800,900"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/modern-css-reset/dist/reset.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/splitting/dist/splitting.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/splitting/dist/splitting-cells.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Cabin+Condensed:wght@700&amp;display=swap"
+    />
+    <link rel="stylesheet" href="https://use.typekit.net/zlj2zcu.css" />
+    <link rel="stylesheet" href="./stylesheets/highlights.css" />
     <style>
       body {
         margin: 0;
@@ -18,9 +40,9 @@
         cursor: none;
       }
 
-      header{
+      /* header {
         background-color: #121212 !important;
-      }
+      } */
       .globeViz {
         position: absolute;
         display: inline;
@@ -33,7 +55,7 @@
         position: absolute;
         width: 100%;
         z-index: 1;
-        top: 0vh;
+        top: 12vh;
         left: 0;
       }
 
@@ -97,13 +119,13 @@
       }
 
       @media screen and (max-width: 1279px) {
-  .cur {
-    display: none;
-  }
-  body {
-    cursor: default;
-  }
-}
+        .cur {
+          display: none;
+        }
+        body {
+          cursor: default;
+        }
+      }
 
       .main-cur {
         animation: none;
@@ -172,13 +194,13 @@
       }
 
       @media only screen and (max-width: 380px) {
-  .cur {
-    display: none;
-  }
-  body {
-    cursor: default;
-  }
-}
+        .cur {
+          display: none;
+        }
+        body {
+          cursor: default;
+        }
+      }
     </style>
 
     <style></style>
@@ -214,17 +236,18 @@
       </div>
       <nav class="global-nav">
         <ul class="global-nav__list">
-          <li><a href="index.html">ABOUT</a></li>
-          <li><a href="#">COMPETITIONS</a></li>
-          <li><a href="#">WORKSHOPS</a></li>
-          <li><a class="js-contact" href="contact.html">GUEST LECTURES</a></li>
-          <li><a href="#">EXHIBITS</a></li>
-          <li><a href="#">INITIATIVES</a></li>
-          <li><a href="#">HIGHLIGHTS</a></li>
-          <li><a href="#">CAMPUS AMBASSADOR</a></li>
-          <li><a href="./team.html">TEAM</a></li>
-          <li><a href="#">SPONSORS'21</a></li>
-          <li><a href="#">REACH US</a></li>
+          <li class="signIn"><a href="./signIn">SIGN IN</a></li>
+          <li><a href="./about">ABOUT</a></li>
+          <li><a href="./competitions">COMPETITIONS</a></li>
+          <li><a href="./workshop">WORKSHOPS</a></li>
+          <li><a href="./guest-lectures">GUEST LECTURES</a></li>
+          <li><a href="./exhibits">EXHIBITS</a></li>
+          <li><a href="./initiatives">INITIATIVES</a></li>
+          <li><a href="./highlights">HIGHLIGHTS</a></li>
+          <li><a href="./ca">CAMPUS AMBASSADOR</a></li>
+          <li><a href="./teams">TEAM</a></li>
+          <li><a href="./sponsors">SPONSORS'21</a></li>
+          <li><a href="./contact">REACH US</a></li>
           <li class="global-nav__sns">
             <a href="" target="_blank"><i class="fab fa-instagram"></i></a>
             <a href="" target="_blank"><i class="fab fa-facebook"></i></a>
@@ -237,6 +260,13 @@
     </header>
 
     <div class="top-layer">
+      <!-- <div style="margin-top: 100px; text-align: center">
+        <h1>
+          <span class="main" aria-label="boring" data-splittings
+            >COMPETITIONS</span
+          >
+        </h1>
+      </div> -->
       <main id="barba-wrapper">
         <div class="barba-container" data-namespace="top">
           <div class="fullpage" id="js-fullpage">

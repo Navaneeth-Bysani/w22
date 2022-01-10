@@ -53,6 +53,6 @@ exports.renderProfile = (req, res) => {
   res.render("profile");
 };
 
-exports.renderHome = (req,res) => {
+exports.renderHome = (req, res) => {
   res.render("index");
-}
+};
