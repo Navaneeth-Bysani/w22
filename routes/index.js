@@ -4,8 +4,8 @@ const renderController = require("../controller/renderController");
 const router = express.Router();
 
 //frontend routes
-router.get("/", renderController.getMainPage);
-router.get("/profile", userController.getProfile);
+router.get("/", renderController.renderHome);
+router.get("/profile", renderController.renderProfile);
 router.get("/about", renderController.renderAbout);
 router.get("/competitions", renderController.renderCompetitions);
 router.get("/workshops", renderController.renderWorkshops);

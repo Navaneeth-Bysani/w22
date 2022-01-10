@@ -49,10 +49,10 @@ exports.renderContact = (req, res) => {
   res.render("contact");
 };
 
-exports.renderUser = (req, res) => {
-  res.render("profile.ejs");
+exports.renderProfile = (req, res) => {
+  res.render("profile");
 };
 
-exports.getMainPage = (req, res) => {
+exports.renderHome = (req, res) => {
   res.render("index");
 };
