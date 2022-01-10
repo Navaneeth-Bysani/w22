@@ -52,3 +52,7 @@ exports.renderContact = (req, res) => {
 exports.renderUser = (req, res) => {
   res.render("profile.ejs");
 };
+
+exports.getMainPage = (req, res) => {
+  res.render("index");
+};
