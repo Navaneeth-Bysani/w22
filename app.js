@@ -3,7 +3,7 @@ const path = require('path');
 const mysql = require('mysql');
 const passport = require('passport');
 const session = require('cookie-session');
-
+const bodyParser = require('body-parser');
 const GoogleStrategy = require('passport-google-oauth20').Strategy;
 
 const indexRouter = require('./routes/index.js');
@@ -24,7 +24,8 @@ app.use(express.static('public'));
 // app.use(express.static(path.join(__dirname, 'public')));
 
 app.use(express.json());
-
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({limit: '50mb', extended: true}));
 app.use(session({
   secret : "Our little Secret Here",
   resave : true,
