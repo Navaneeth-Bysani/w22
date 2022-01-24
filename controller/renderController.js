@@ -9,66 +9,145 @@ const conn = mysql.createPool({
 
 exports.renderAbout = (req, res) => {
   //render About
-  console.log("hi");
-  res.render("about");
+  if(req.user) {
+    const qr = ("SELECT * from user where email ='" + req.user.emails[0].value + "';");
+    conn.query(qr, (err, rows) => {
+      if(err) throw err;
+      res.render('about', {participant : rows[0]});
+    })
+  } else {
+    res.render("about", {participant:false});
+  }
 };
 
 exports.renderCompetitions = (req, res) => {
   //render Competitions
-  res.render("competitions");
+  if(req.user) {
+    const qr = ("SELECT * from user where email ='" + req.user.emails[0].value + "';");
+    conn.query(qr, (err, rows) => {
+      if(err) throw err;
+      res.render('competitions', {participant : rows[0]});
+    })
+  } else {
+    res.render("competitions", {participant:false});
+  }
 };
 
 exports.renderWorkshops = (req, res) => {
   //render Workshops
-  console.log("req");
-  res.render("workshop");
+  if(req.user) {
+    const qr = ("SELECT * from user where email ='" + req.user.emails[0].value + "';");
+    conn.query(qr, (err, rows) => {
+      if(err) throw err;
+      res.render('workshops', {participant : rows[0]});
+    })
+  } else {
+    res.render("workshops", {participant:false});
+  }
 };
 
 exports.renderGuestLectures = (req, res) => {
   //render Guest Lectures
-  res.render("guestlectures");
+  if(req.user) {
+    const qr = ("SELECT * from user where email ='" + req.user.emails[0].value + "';");
+    conn.query(qr, (err, rows) => {
+      if(err) throw err;
+      res.render('guestlectures', {participant : rows[0]});
+    })
+  } else {
+    res.render("guestlectures", {participant:false});
+  }
 };
 
 exports.renderExhibits = (req, res) => {
   //render Exhibits
-  res.render("initiatives");
+  if(req.user) {
+    const qr = ("SELECT * from user where email ='" + req.user.emails[0].value + "';");
+    conn.query(qr, (err, rows) => {
+      if(err) throw err;
+      res.render('comingsoon', {participant : rows[0]});
+      // res.render('exhibits', {participant : rows[0]});
+    })
+  } else {
+    res.render("comingsoon", {participant:false});
+  }
 };
 
 exports.renderInitiatives = (req, res) => {
   //render Initiatives
-  res.render("initiatives");
+  if(req.user) {
+    const qr = ("SELECT * from user where email ='" + req.user.emails[0].value + "';");
+    conn.query(qr, (err, rows) => {
+      if(err) throw err;
+      res.render('initiatives', {participant : rows[0]});
+    })
+  } else {
+    res.render("initiatives", {participant:false});
+  }
 };
 
 exports.renderHighlights = (req, res) => {
   //render Highlights
-  res.render("highlights");
+  if(req.user) {
+    const qr = ("SELECT * from user where email ='" + req.user.emails[0].value + "';");
+    conn.query(qr, (err, rows) => {
+      if(err) throw err;
+      res.render('highlights', {participant : rows[0]});
+    })
+  } else {
+    res.render("highlights", {participant:false});
+  }
 };
 
 exports.renderTeam = (req, res) => {
   //render Team
-  res.render("team");
+  if(req.user) {
+    const qr = ("SELECT * from user where email ='" + req.user.emails[0].value + "';");
+    conn.query(qr, (err, rows) => {
+      if(err) throw err;
+      res.render('team', {participant : rows[0]});
+    })
+  } else {
+    res.render("team", {participant:false});
+  }
 };
 
 exports.renderSponsors = (req, res) => {
   //render Sponsors
-  res.render("sponsors");
+  if(req.user) {
+    const qr = ("SELECT * from user where email ='" + req.user.emails[0].value + "';");
+    conn.query(qr, (err, rows) => {
+      if(err) throw err;
+      res.render('sponsors', {participant : rows[0]});
+    })
+  } else {
+    res.render("sponsors", {participant:false});
+  }
 };
 
 exports.renderContact = (req, res) => {
   //render Contact
-  res.render("contact");
+  if(req.user) {
+    const qr = ("SELECT * from user where email ='" + req.user.emails[0].value + "';");
+    conn.query(qr, (err, rows) => {
+      if(err) throw err;
+      res.render('contact', {participant : rows[0]});
+    })
+  } else {
+    res.render("contact", {participant:false});
+  }
 };
 
-exports.renderProfile = (req, res) => {
+exports.renderProfile = async (req, res) => {
   if(req.user) {
     let sql = `SELECT * from user WHERE email = '${req.user.emails[0].value}';`;
-    conn.query(sql, (err, rows) => {
+    await conn.query(sql, (err, rows) => {
         if(err) throw err;
-        console.log(rows);
+        res.render('profile', {participant : rows[0]});
+        console.log(rows[0]);
     })
-    res.render('profile', {participant : rows[0]});
   } else {
-      res.send('profile', {participant : false});
+      res.redirect('/auth/google');
   }
 };
 
@@ -81,6 +160,5 @@ exports.renderHome = (req,res) => {
     })
   } else {
     res.render("index", {participant:false});
-  }
-  
+  } 
 }

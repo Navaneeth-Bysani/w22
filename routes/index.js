@@ -8,7 +8,7 @@ router.get("/", renderController.renderHome);
 router.get("/profile", renderController.renderProfile);
 router.get("/about-wissenaire", renderController.renderAbout);
 router.get("/competitions", renderController.renderCompetitions);
-router.get("/workshop", renderController.renderWorkshops);
+router.get("/workshops", renderController.renderWorkshops);
 router.get("/guest-lectures", renderController.renderGuestLectures);
 router.get("/exhibits", renderController.renderExhibits);
 router.get("/initiatives", renderController.renderInitiatives);
@@ -18,6 +18,7 @@ router.get("/sponsors", renderController.renderSponsors);
 router.get("/contact", renderController.renderContact);
 router.get("/temp", (req, res) => res.render("tempM"));
 router.post("/contact", userController.postContact);
+router.post("/updateProfile", userController.updateProfile);
 
 //individual competition routes
 

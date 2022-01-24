@@ -10,6 +10,14 @@
       rel="stylesheet"
       type="text/css"
     />
+
+    <!-- alerts -->
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/boxicons@2.0.7/dist/boxicons.min.js"></script>
+    <!-- ajax -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script>
+    
     <style>
       body {
         margin: 0;
@@ -248,7 +256,11 @@
             <div class="inner-div">
               <div class="front">
                 <div class="front__bkg-photo"></div>
-                <div class="front__face-photo"></div>
+                <div class="front__face-photo"
+                style="background-image : url(https://apgonzalez.com/img/me.eabd99f3.jpg) no-repeat"
+                >
+
+                </div>
                 <div class="front__text">
                   <h3 class="front__text-header"><%=participant.name%></h3>
                   <br />
@@ -261,57 +273,148 @@
             </div>
           </div>
         </div>
-        <div class="cardWrapper">
-          <div class="formContainer">
-            <div class="title">Update Profile</div>
-            <div class="content">
-              <form action="#">
-                <div class="user-details">
-                  <div class="input-box">
-                    <span class="details">Phone Number</span>
-                    <input
-                      type="text"
-                      placeholder="Enter your phone number"
-                      required
-                    />
-                  </div>
-                  <div class="input-box">
-                    <span class="details">Institute</span>
-                    <input
-                      type="text"
-                      placeholder="Eg: IIT Bhubaneswar"
-                      required
-                    />
-                  </div>
-                  <div class="input-box">
-                    <span class="details">Branch</span>
-                    <input
-                      type="text"
-                      placeholder="Eg: Computer Science"
-                      required
-                    />
-                  </div>
-                  <div class="input-box">
-                    <span class="details">Year</span>
-                    <input type="text" placeholder="Eg: 3rd year" required />
-                  </div>
-                  <div class="input-box">
-                    <span class="details">City</span>
-                    <input type="text" placeholder="Eg: Bhubaneswar" required />
-                  </div>
-                  <div class="input-box">
-                    <span class="details">Reference ID of CA (if any)</span>
-                    <input type="text" placeholder="Eg: W22001" required />
-                  </div>
-                </div>
-
-                <div class="button">
-                  <input type="submit" value="Submit" />
-                </div>
-              </form>
+        <%if(participant.phoneNumber){%>
+          <div class="cardWrapper">
+            <div class="formContainer">
+              <div class="title">User Profile</div>
+              <div class="content">
+                  <form action="#">
+                    <div class="user-details">
+                      <div class="input-box">
+                        <span class="details">Phone Number</span>
+                        <input
+                          type="text"
+                          placeholder=<%=participant.phoneNumber%>
+                          disabled
+                          name = "phoneNumber"
+                        />
+                      </div>
+                      <div class="input-box">
+                        <span class="details">Institute</span>
+                        <input
+                          type="text"
+                          placeholder=<%=participant.institute%>
+                          disabled
+                          name = "institute"
+                        />
+                      </div>
+                      <div class="input-box">
+                        <span class="details">Branch</span>
+                        <input
+                          type="text"
+                          placeholder=<%=participant.branch%>
+                          disabled
+                          name = "branch"
+                        />
+                      </div>
+                      <div class="input-box">
+                        <span class="details">Year</span>
+                        <input type="text" placeholder= <%=participant.year%> name = "year" disabled />
+                      </div>
+                      <div class="input-box">
+                        <span class="details">City</span>
+                        <input type="text" placeholder= <%=participant.city%> name = "city" disabled />
+                      </div>
+                      <%if(participant.caref) {%>
+                      <div class="input-box">
+                        <span class="details">Reference ID of CA (if any)</span>
+                        <input type="text" placeholder=<%=participant.caref%> name="caref" disabled />
+                      </div>
+                      <%}%>
+                    </div>
+                  </form>
+              </div>
             </div>
           </div>
+        <%} else {%>
+          <div class="cardWrapper">
+            <div class="formContainer">
+              <div class="title">Update Profile</div>
+              <div class="content">
+                  <form action="#">
+                    <div class="user-details">
+                      <div class="input-box">
+                        <span class="details">Phone Number</span>
+                        <input
+                          type="text"
+                          placeholder="Enter your phone number"
+                          required
+                          name = "phoneNumber"
+                        />
+                      </div>
+                      <div class="input-box">
+                        <span class="details">Institute</span>
+                        <input
+                          type="text"
+                          placeholder="Eg: IIT Bhubaneswar"
+                          required
+                          name = "institute"
+                        />
+                      </div>
+                      <div class="input-box">
+                        <span class="details">Branch</span>
+                        <input
+                          type="text"
+                          placeholder="Eg: Computer Science"
+                          required
+                          name = "branch"
+                        />
+                      </div>
+                      <div class="input-box">
+                        <span class="details">Year</span>
+                        <input type="text" placeholder="Eg: 3rd year" name = "year" required />
+                      </div>
+                      <div class="input-box">
+                        <span class="details">City</span>
+                        <input type="text" placeholder="Eg: Bhubaneswar" name = "city" required />
+                      </div>
+                      <div class="input-box">
+                        <span class="details">Reference ID of CA (if any)</span>
+                        <input type="text" placeholder="Eg: W22001" name="caref" />
+                      </div>
+                    </div>
+
+                    <div class="button">
+                      <input type="submit" value="Submit" />
+                    </div>
+                  </form>
+              </div>
+            </div>
         </div>
+        <%}%>
+        <script>
+          $("form").submit(function(e) {
+            e.preventDefault(); 
+            var form = $(this);
+            console.log('ok');
+            $.ajax({
+                type: "POST",
+                url: '/updateProfile',
+                data: form.serialize(), 
+                success: function(result)
+                {
+                    if(result){
+                            new swal({
+                                title: 'Success',
+                                text: 'Welcome to Wissenaire family !',
+                                icon: 'success'
+                            }).then(flag => {
+                              if(flag) {
+                                window.location.href='/profile';
+                              }
+                            });
+                        }
+                        else{
+                            new swal({
+                                title: 'Error',
+                                text: 'Please try again',
+                                icon: 'error'
+                            });
+                      }
+                }
+                });
+            });
+      </script>
       </div>
     </div>
 
@@ -355,5 +458,6 @@
         });
       });
     </script>
+    <script src="./javascripts/jquery.min.js"></script>
   </body>
 </html>
