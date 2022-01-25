@@ -139,16 +139,18 @@ exports.renderContact = (req, res) => {
 };
 
 exports.renderProfile = async (req, res) => {
-  if(req.user) {
-    let sql = `SELECT * from user WHERE email = '${req.user.emails[0].value}';`;
-    await conn.query(sql, (err, rows) => {
-        if(err) throw err;
-        res.render('profile', {participant : rows[0]});
-        console.log(rows[0]);
-    })
-  } else {
-      res.redirect('/auth/google');
-  }
+    if(req.user) {
+      let sql = `SELECT * from user WHERE email = '${req.user.emails[0].value}';`;
+      
+      // const rows = await conn.query(sql);
+      conn.query(sql, (err, rows) => {
+          if(err) throw err;
+          res.render('profile', {participant : rows[0]});
+      });
+      
+    } else {
+        res.redirect('/auth/google');
+    }
 };
 
 exports.renderHome = (req,res) => {
