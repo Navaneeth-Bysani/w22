@@ -3,9 +3,17 @@ const userController = require("../controller/userController");
 const renderController = require("../controller/renderController");
 const router = express.Router();
 
+function ensureAuthenticated(req, res, next) {
+    if (req.user) { 
+      console.log('loggedin')
+      return next();
+    }
+    res.redirect('/auth/google')
+}
+
 //frontend routes
 router.get("/", renderController.renderHome);
-router.get("/profile", renderController.renderProfile);
+router.get("/profile", ensureAuthenticated, renderController.renderProfile);
 router.get("/about-wissenaire", renderController.renderAbout);
 router.get("/competitions", renderController.renderCompetitions);
 router.get("/workshops", renderController.renderWorkshops);

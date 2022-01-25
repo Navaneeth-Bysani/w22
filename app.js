@@ -63,13 +63,15 @@ passport.use(new GoogleStrategy({
         conn.query(newSql, (err, result) => {
           if(err) throw err;
           console.log('created new user', result);
-        })
+        });
+        return done(null, profile);
       } else {
         console.log('user already exists');
+        return done(null, profile);
       }
     })
   })
-  return done(null, profile);
+  
 })
 );
 
