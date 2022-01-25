@@ -266,7 +266,7 @@
   </head>
 
   <body>
-    <header>
+    <!-- <header>
       <a href="./index.html"><img class="wissLogo" src="./logo.png" alt=""></a>
       <div class="wrap">
         <div class="icons">
@@ -285,7 +285,11 @@
       </div>
       <nav class="global-nav">
         <ul class="global-nav__list">
-          <li class="signIn"><a href="./signIn">SIGN IN</a></li>
+          <%if(!participant) {%>
+            <li class="signIn"><a href="./auth/google">SIGN IN</a></li>
+          <%} else {%>
+            <li class="signIn"><a href="./profile">SIGN IN</a></li>
+          <%}%>
           <li><a href="./about">ABOUT</a></li>
           <li><a href="./competitions">COMPETITIONS</a></li>
           <li><a href="./workshop">WORKSHOPS</a></li>
@@ -306,8 +310,8 @@
       </nav>
       <div class="curtain"></div>
       <div class="loader"></div>
-    </header>
-
+    </header> -->
+    <%- include('partials/navbar')%>
     <div class="top-layer">
       <div class="logo">
         <a href="#">Nexus &nbsp; Terra</a>

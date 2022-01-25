@@ -285,7 +285,11 @@
       </div>
       <nav class="global-nav">
         <ul class="global-nav__list">
-          <li class="signIn"><a href="./signIn">SIGN IN</a></li>
+          <%if(!participant) {%>
+            <li class="signIn"><a href="./auth/google">SIGN IN</a></li>
+          <%} else {%>
+            <li class="signIn"><a href="./profile">PROFILE</a></li>
+          <%}%>
           <li><a href="./about">ABOUT</a></li>
           <li><a href="./competitions">COMPETITIONS</a></li>
           <li><a href="./workshop">WORKSHOPS</a></li>
@@ -307,99 +311,5 @@
       <div class="curtain"></div>
       <div class="loader"></div>
     </header>
-
-    <div class="top-layer">
-      <div class="logo">
-        <a href="#">Nexus &nbsp; Terra</a>
-      </div>
-    </div>
-    <div class="images-layer">
-  
-      <a href=""><div class="img1 floating" ><img src="./images/satellite1.png" alt="" class="hvr-grow" ><p class="subHead">Workshops</p></div></a>
-   
-      <a href=""><div class="img2 floating"><img src="./images/satellite2.png" alt="" class="hvr-grow"><p class="subHead">Contact</p></div></a>
-      <a href=""><div class="img3 floating"><img src="./images/satellite3.png" alt="" class="hvr-grow"><p class="subHead">Competitions</p></div>
-      <a href=""><div class="img4 floating"><img src="./images/satellite4.png" alt="" class="hvr-grow"><p class="subHead">Initiatives</p></div></a>
-    </div>
-    <div id="globeViz"></div>
-    <div class="cur" id="circle">
-      <div class="main-cur"></div><img class="satelite" src="./Satellite.svg" alt="">
-    </div>
-    <script>
-      // Gen random data
-      const N = 50;
-      const arcsData = [...Array(N).keys()].map(() => ({
-        startLat: (Math.random() - 0.5) * 180,
-        startLng: (Math.random() - 0.5) * 360,
-        endLat: (Math.random() - 0.5) * 180,
-        endLng: (Math.random() - 0.5) * 360,
-        color: [
-          ["red", "white", "blue", "green"][Math.round(Math.random() * 3)],
-          ["red", "white", "blue", "green"][Math.round(Math.random() * 3)],
-        ],
-      }));
-
-      const earthDay =
-        "https://unpkg.com/three-globe@2.18.3/example/img/earth-day.jpg";
-      const earthNight =
-        "https://unpkg.com/three-globe@2.21.3/example/img/earth-night.jpg";
-      const earthBlue =
-        "https://unpkg.com/three-globe@2.21.3/example/img/earth-blue-marble.jpg";
-      const background =
-        "https://unpkg.com/three-globe@2.21.3/example/img/night-sky.png";
-      // const background = "https://raw.githubusercontent.com/nasa/NASA-3D-Resources/master/Images%20and%20Textures/Tycho%20Star%20Map/tycho8.jpg"
-      const bumpImage =
-        "https://unpkg.com/three-globe@2.21.3/example/img/earth-topology.png";
-      const world = Globe()
-        .globeImageUrl(earthNight)
-        .bumpImageUrl(bumpImage)
-        .backgroundImageUrl(background)
-        .arcsData(arcsData)
-        .arcColor("color")
-        .arcDashLength(() => Math.random() * 2 + 1)
-        .arcDashGap(() => Math.random() * 5)
-        // .arcAltitudeAutoScale(1)
-        .arcDashAnimateTime(() => 4000)(document.getElementById("globeViz"));
-
-      world.controls().autoRotate = true;
-      world.controls().autoRotateSpeed = 0.5;
-      world.controls().enableZoom = false;
-      world.controls().minDistance = 600;
-    </script>
-    <script src="./js/js1.js"></script>
-    <script src="./js/js2.js"></script>
-    <script src="./js/js3.js"></script>
-    <script src="./js/js4.js"></script>
-    <script src="./js/js5.js"></script>
-    <script src="./js/js6.js"></script>
-    <script>
-      window.addEventListener("load", () => {
-        AOS.init({
-          duration: 1000,
-          easing: "ease-in-out",
-          once: true,
-          mirror: false,
-        });
-      });
-    </script>
-    <script>
-      let links = document.querySelector(".main-content a");
-const cursors = document.querySelector(".cur");
-document.addEventListener("mousemove", (e) => {
-  let x = e.pageX;
-  let y = e.pageY;
-  cursors.setAttribute(
-    "style",
-    "top: " + (e.pageY - 10) + "px; left: " + (e.pageX - 10) + "px;"
-  );
-});
-
-document.addEventListener("click", () => {
-  cursors.classList.add("expand");
-  setTimeout(() => {
-    cursors.classList.remove("expand");
-  }, 500);
-});
-    </script>
   </body>
 </html>
