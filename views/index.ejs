@@ -274,27 +274,31 @@
     </div>
     <div class="images-layer">
   
-      <a href=""><div class="img1 floating" ><img src="./images/satellite1.png" alt="" class="hvr-grow" ><p class="subHead">Workshops</p></div></a>
+      <a href="/workshops"><div class="img1 floating" ><img src="./images/satellite1.png" alt="" class="hvr-grow" ><p class="subHead">Workshops</p></div></a>
    
-      <a href=""><div class="img2 floating"><img src="./images/satellite2.png" alt="" class="hvr-grow"><p class="subHead">Contact</p></div></a>
-      <a href=""><div class="img3 floating"><img src="./images/satellite3.png" alt="" class="hvr-grow"><p class="subHead">Competitions</p></div>
-      <a href=""><div class="img4 floating"><img src="./images/satellite4.png" alt="" class="hvr-grow"><p class="subHead">Initiatives</p></div></a>
+      <a href="/contact"><div class="img2 floating"><img src="./images/satellite2.png" alt="" class="hvr-grow"><p class="subHead">Contact</p></div></a>
+      <a href="/competitions"><div class="img3 floating"><img src="./images/satellite3.png" alt="" class="hvr-grow"><p class="subHead">Competitions</p></div>
+      <a href="/initiatives"><div class="img4 floating"><img src="./images/satellite4.png" alt="" class="hvr-grow"><p class="subHead">Initiatives</p></div></a>
     </div>
     <div id="globeViz"></div>
     <div class="cur" id="circle">
       <div class="main-cur"></div><img class="satelite" src="./Satellite.svg" alt="">
     </div>
+    
     <script>
       // Gen random data
-      const N = 50;
+      // const N = 50;
+      const N = 15;
       const arcsData = [...Array(N).keys()].map(() => ({
         startLat: (Math.random() - 0.5) * 180,
         startLng: (Math.random() - 0.5) * 360,
         endLat: (Math.random() - 0.5) * 180,
         endLng: (Math.random() - 0.5) * 360,
         color: [
-          ["red", "white", "blue", "green"][Math.round(Math.random() * 3)],
-          ["red", "white", "blue", "green"][Math.round(Math.random() * 3)],
+          // ["red", "white", "blue", "green"][Math.round(Math.random() * 3)],
+          // ["red", "white", "blue", "green"][Math.round(Math.random() * 3)],
+          ["white"][0],
+          ["white"][0],
         ],
       }));
 

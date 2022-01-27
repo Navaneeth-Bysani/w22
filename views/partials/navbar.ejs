@@ -273,11 +273,11 @@
           <a href="#" target="_blank"><i class="fab fa-facebook"></i></a>
           <a href="#" target="_blank"><i class="fab fa-twitter"></i></a>
           <div style="display: flex">
-            <%if(!participant){%>
-              <a style="margin: 0" href="/auth/google">Sign in</a>
-            <%} else {%>
-              <a style="margin: 0" href="/profile">Profile</a>
-            <%}%>
+              <% if(!participant) {%>
+                <a style="margin: 0" href="/auth/google">Sign in</a>
+              <%} else {%>
+                <a style="margin: 0" href="/profile">Profile</a>
+              <%}%>
           </div>
         </div>
         <div class="menuIcon js-menuBtn"></div>

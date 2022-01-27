@@ -27,7 +27,7 @@ router.get("/contact", renderController.renderContact);
 router.get("/temp", (req, res) => res.render("tempM"));
 router.post("/contact", userController.postContact);
 router.post("/updateProfile", userController.updateProfile);
-
+router.get("/profile2", (req, res) => res.render("profile2.ejs"));
 //individual competition routes
 
 //individual workshop routes
