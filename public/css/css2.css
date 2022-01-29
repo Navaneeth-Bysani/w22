@@ -917,14 +917,14 @@ header .menuIcon {
 }
 @media screen and (max-width: 420px) {
   header .menuIcon {
-    width: 25px;
-    height: 15px;
+    width: 40px;
+    height: 18px;
   }
 }
-header .menuIcon:after,
+/* header .menuIcon:after,
 header .menuIcon:before {
   content: "";
-  width: 100%;
+  width: 80%;
   height: 3px;
   background: #fff;
   position: absolute;
@@ -933,22 +933,61 @@ header .menuIcon:before {
   -o-transition: 0.4s cubic-bezier(0.785, 0.135, 0.15, 0.86);
   transition: 0.4s cubic-bezier(0.785, 0.135, 0.15, 0.86);
 }
+
 header .menuIcon:after {
   top: 0;
 }
 header .menuIcon:before {
   bottom: 0;
+} */
+
+header .menuIcon > .line1,
+header .menuIcon > .line2,
+header .menuIcon > .line3 {
+  content: "";
+  width: 80%;
+  height: 3px;
+  background: #fff;
+  position: absolute;
+  right: 0;
+  -webkit-transition: 0.4s cubic-bezier(0.785, 0.135, 0.15, 0.86);
+  -o-transition: 0.4s cubic-bezier(0.785, 0.135, 0.15, 0.86);
+  transition: 0.4s cubic-bezier(0.785, 0.135, 0.15, 0.86);
 }
-header .menuIcon.js-menuOpen:after {
+
+header .menuIcon > .line1{
+  top: 0;
+}
+
+header .menuIcon > .line2{
+  top: 45%;
+}
+
+header .menuIcon > .line3{
+  bottom: 0;
+}
+
+
+
+header .menuIcon.js-menuOpen > .line1 {
   top: 50%;
   -webkit-transform: rotate(45deg) translate3d(0, -50%, 0);
   transform: rotate(45deg) translate3d(0, -50%, 0);
 }
-header .menuIcon.js-menuOpen:before {
+
+header .menuIcon.js-menuOpen > .line2 {
+  opacity: 0;
+  -webkit-transform: translateX(-100%);
+  transform: translateX(-100%);
+}
+
+header .menuIcon.js-menuOpen > .line3 {
   bottom: 50%;
   -webkit-transform: rotate(-45deg) translate3d(0, 50%, 0);
   transform: rotate(-45deg) translate3d(0, 50%, 0);
 }
+
+
 header .global-nav {
   background-image: -webkit-gradient(
     linear,
