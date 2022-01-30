@@ -331,7 +331,11 @@
         <a href="#">Nexus &nbsp; Terra</a>
       </div>
       <div class="signInButton">
-        <a href="#" class="button">Sign Up</a>
+        <%if(!participant) {%>
+          <a href="/auth/google" class="button">SIGN IN</a>
+        <%} else {%>
+          <a href="/profile" class="button">PROFILE</a>
+        <%}%>
       </div>
     </div>
     <div class="images-layer">
