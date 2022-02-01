@@ -470,8 +470,9 @@ button {
   position: relative;
   height: 150px;
   width: 300px;
-  background: url("https://images.unsplash.com/photo-1511207538754-e8555f2bc187?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=88672068827eaeeab540f584b883cc66&auto=format&fit=crop&w=1164&q=80")
-    no-repeat;
+  /* background: url("https://images.unsplash.com/photo-1511207538754-e8555f2bc187?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=88672068827eaeeab540f584b883cc66&auto=format&fit=crop&w=1164&q=80")
+    no-repeat; */
+  background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS3Kmz4yRQmpBkbqCpdKHwZrR4OvdgCrS54Gg&usqp=CAU");
   background-size: cover;
   -webkit-backface-visibility: hidden;
   backface-visibility: hidden;
@@ -496,7 +497,7 @@ button {
   margin: 0 auto;
   border-radius: 50%;
   border: 5px solid #fff;
-  background: url("https://apgonzalez.com/img/me.eabd99f3.jpg") no-repeat;
+  /* background: url("https://apgonzalez.com/img/me.eabd99f3.jpg") no-repeat; */
   background-size: cover;
   overflow: hidden;
 }

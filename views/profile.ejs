@@ -218,9 +218,12 @@
               <div class="front">
                 <div class="front__bkg-photo"></div>
                 <div class="front__face-photo"
-                style="background-image : url(https://apgonzalez.com/img/me.eabd99f3.jpg) no-repeat"
                 >
-
+                
+                <script>
+                    let photo = '<%=participant.photo%>';
+                    document.querySelector('.front__face-photo').style.backgroundImage = `url(${photo})`;
+                </script>
                 </div>
                 <div class="front__text">
                   <h3 class="front__text-header"><%=participant.name%></h3>
