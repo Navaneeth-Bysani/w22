@@ -14,7 +14,7 @@ function ensureAuthenticated(req, res, next) {
 //frontend routes
 router.get("/", renderController.renderHome);
 router.get("/profile", ensureAuthenticated, renderController.renderProfile);
-router.get("/about-wissenaire", renderController.renderAbout);
+router.get("/about", renderController.renderAbout);
 router.get("/competitions", renderController.renderCompetitions);
 router.get("/workshops", renderController.renderWorkshops);
 router.get("/guest-lectures", renderController.renderGuestLectures);
@@ -24,10 +24,8 @@ router.get("/highlights", renderController.renderHighlights);
 router.get("/teams", renderController.renderTeam);
 router.get("/sponsors", renderController.renderSponsors);
 router.get("/contact", renderController.renderContact);
-router.get("/temp", (req, res) => res.render("tempM"));
 router.post("/contact", userController.postContact);
 router.post("/updateProfile", userController.updateProfile);
-router.get("/profile2", (req, res) => res.render("profile2.ejs"));
 //individual competition routes
 
 //individual workshop routes

@@ -1041,3 +1041,20 @@ form .button input:hover {
     margin-left: 15px;
   }
 }
+
+.buttons {
+  width: 75%;
+  margin: auto;
+  height: 30px;
+}
+
+.buttons a {
+  font-size: 15px;
+  margin: 10px;
+  color: #071011;
+  text-decoration: none;
+}
+
+.buttons a:hover {
+  font-size: 20px;
+}
