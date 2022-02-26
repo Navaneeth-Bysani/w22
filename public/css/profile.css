@@ -1042,19 +1042,19 @@ form .button input:hover {
   }
 }
 
-.buttons {
+.profile_buttons {
   width: 75%;
   margin: auto;
   height: 30px;
 }
 
-.buttons a {
+.profile_buttons a {
   font-size: 15px;
   margin: 10px;
   color: #071011;
   text-decoration: none;
 }
 
-.buttons a:hover {
+/* .profile_buttons a:hover {
   font-size: 20px;
-}
+} */

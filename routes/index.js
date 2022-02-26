@@ -23,7 +23,7 @@ router.get("/initiatives", renderController.renderInitiatives);
 router.get("/highlights", renderController.renderHighlights);
 router.get("/teams", renderController.renderTeam);
 router.get("/sponsors", renderController.renderSponsors);
-router.get("/contact", renderController.renderContact);
+router.get("/reachUs", renderController.renderContact);
 router.post("/contact", userController.postContact);
 router.post("/updateProfile", userController.updateProfile);
 //individual competition routes
