@@ -325,7 +325,62 @@
   </head>
 
   <body>
-    <%- include('partials/navbar')%>
+    <!-- <%- include('partials/navbar')%> -->
+    <header>
+      <a href="./"><img class="wissLogo" src="./assets/img/Wissenairelogo.png" alt="" /></a>
+      <div class="wrap">
+        <div class="icons">
+          <a href="https://www.instagram.com/wissenaire.iitbbs/" target="_blank"><i class="fab fa-instagram"></i></a>
+          <a href="https://www.facebook.com/wissenaireiitbbs" target="_blank"><i class="fab fa-facebook"></i></a>
+          <a href="https://twitter.com/wissenaire22" target="_blank"><i class="fab fa-twitter"></i></a>
+          <a href="https://www.linkedin.com/company/wissenaireiitbbs/" target="_blank"><i class="fab fa-linkedin"></i></a>
+          <!-- <div style="display: flex">
+            <% if(!participant) {%>
+            <a style="margin: 0" href="/auth/google">Sign in</a>
+            <%} else {%>
+            <a style="margin: 0" href="/profile">Profile</a>
+            <%}%>
+          </div> -->
+        </div>
+        <div class="menuIcon js-menuBtn">
+          <div class="line1"></div>
+          <div class="line2"></div>
+          <div class="line3"></div>
+        </div>
+      </div>
+      <nav class="global-nav">
+        <ul class="global-nav__list">
+          <%if(!participant) {%>
+          <li><a href="./auth/google">SIGN IN</a></li>
+          <%} else {%>
+          <li><a href="./profile">PROFILE</a></li>
+          <%}%> 
+          <!-- <%if(participant) {%>
+          <li class="signIn"><a href="./profile">PROFILE</a></li>
+          <%}%> -->
+          <li><a href="./about">ABOUT</a></li>
+          <li><a href="./competitions">COMPETITIONS</a></li>
+          <li><a href="./workshops">WORKSHOPS</a></li>
+          <li><a href="./guestlectures">GUEST LECTURES</a></li>
+          <li><a href="./exhibits">EXHIBITS</a></li>
+          <li><a href="./initiatives">INITIATIVES</a></li>
+          <li><a href="./highlights">HIGHLIGHTS</a></li>
+          <li><a href="./ca">CAMPUS AMBASSADOR</a></li>
+          <li><a href="./team">TEAM</a></li>
+          <li><a href="./sponsors">SPONSORS'21</a></li>
+          <li><a href="./reachus">REACH US</a></li>
+          <li class="global-nav__sns">
+            <a href="https://www.instagram.com/wissenaire.iitbbs/" target="_blank"><i class="fab fa-instagram"></i></a>
+            <a href="https://www.facebook.com/wissenaireiitbbs" target="_blank"><i class="fab fa-facebook"></i></a>
+            <a href="https://twitter.com/wissenaire22" target="_blank"><i class="fab fa-twitter"></i></a>
+            <a href="https://www.linkedin.com/company/wissenaireiitbbs/" target="_blank"><i class="fab fa-linkedin"></i></a>
+          </li>
+        </ul>
+      </nav>
+      <div class="curtain"></div>
+      <div class="loader"></div>
+    </header>
+    
     <div class="top-layer">
       <div class="logo">
         <a href="#">Nexus &nbsp; Terra</a>
