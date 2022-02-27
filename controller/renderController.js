@@ -1,138 +1,105 @@
-const mysql = require('mysql');
+const User = require('./../model/userModel');
 
-const conn = mysql.createPool({
-    host : 'localhost',
-    user : 'root',
-    password : 'Navaneeth1@',
-    database : 'wissenaire_22'
-});
+const findUser = async (email) => {
+    const user = await User.findOne({email : email});
+    return user;
+}
 
-exports.renderAbout = (req, res) => {
+exports.renderAbout = async (req, res) => {
   //render About
   if(req.user) {
-    const qr = ("SELECT * from user where email ='" + req.user.emails[0].value + "';");
-    conn.query(qr, (err, rows) => {
-      if(err) throw err;
-      res.render('about', {participant : rows[0]});
-    })
+    const user = await findUser(req.user.emails[0].value);
+    res.render("about", {participant:user});
   } else {
     res.render("about", {participant:false});
   }
 };
 
-exports.renderCompetitions = (req, res) => {
+exports.renderCompetitions = async (req, res) => {
   //render Competitions
   if(req.user) {
-    const qr = ("SELECT * from user where email ='" + req.user.emails[0].value + "';");
-    conn.query(qr, (err, rows) => {
-      if(err) throw err;
-      res.render('competitions', {participant : rows[0]});
-    })
+    const user = await findUser(req.user.emails[0].value);
+    res.render("competitions", {participant:user});
   } else {
     res.render("competitions", {participant:false});
   }
 };
 
-exports.renderWorkshops = (req, res) => {
+exports.renderWorkshops = async (req, res) => {
   //render Workshops
   if(req.user) {
-    const qr = ("SELECT * from user where email ='" + req.user.emails[0].value + "';");
-    conn.query(qr, (err, rows) => {
-      if(err) throw err;
-      res.render('workshops', {participant : rows[0]});
-    })
+    const user = await findUser(req.user.emails[0].value);
+    res.render("workshops", {participant:user});
   } else {
     res.render("workshops", {participant:false});
   }
 };
 
-exports.renderGuestLectures = (req, res) => {
+exports.renderGuestLectures = async (req, res) => {
   //render Guest Lectures
   if(req.user) {
-    const qr = ("SELECT * from user where email ='" + req.user.emails[0].value + "';");
-    conn.query(qr, (err, rows) => {
-      if(err) throw err;
-      res.render('guestlectures', {participant : rows[0]});
-    })
+    const user = await findUser(req.user.emails[0].value);
+    res.render("guestlectures", {participant:user});
   } else {
     res.render("guestlectures", {participant:false});
   }
 };
 
-exports.renderExhibits = (req, res) => {
+exports.renderExhibits = async (req, res) => {
   //render Exhibits
   if(req.user) {
-    const qr = ("SELECT * from user where email ='" + req.user.emails[0].value + "';");
-    conn.query(qr, (err, rows) => {
-      if(err) throw err;
-      res.render('comingsoon', {participant : rows[0]});
-      // res.render('exhibits', {participant : rows[0]});
-    })
+    const user = await findUser(req.user.emails[0].value);
+    res.render("comingsoon", {participant:user});
   } else {
     res.render("comingsoon", {participant:false});
   }
 };
 
-exports.renderInitiatives = (req, res) => {
+exports.renderInitiatives = async (req, res) => {
   //render Initiatives
   if(req.user) {
-    const qr = ("SELECT * from user where email ='" + req.user.emails[0].value + "';");
-    conn.query(qr, (err, rows) => {
-      if(err) throw err;
-      res.render('initiatives', {participant : rows[0]});
-    })
+    const user = await findUser(req.user.emails[0].value);
+    res.render("initiatives", {participant:user});
   } else {
     res.render("initiatives", {participant:false});
   }
 };
 
-exports.renderHighlights = (req, res) => {
+exports.renderHighlights = async (req, res) => {
   //render Highlights
   if(req.user) {
-    const qr = ("SELECT * from user where email ='" + req.user.emails[0].value + "';");
-    conn.query(qr, (err, rows) => {
-      if(err) throw err;
-      res.render('highlights', {participant : rows[0]});
-    })
+    const user = await findUser(req.user.emails[0].value);
+    res.render("highlights", {participant:user});
   } else {
     res.render("highlights", {participant:false});
   }
 };
 
-exports.renderTeam = (req, res) => {
+exports.renderTeam = async (req, res) => {
   //render Team
   if(req.user) {
-    const qr = ("SELECT * from user where email ='" + req.user.emails[0].value + "';");
-    conn.query(qr, (err, rows) => {
-      if(err) throw err;
-      res.render('team', {participant : rows[0]});
-    })
+    const user = await findUser(req.user.emails[0].value);
+    res.render("team", {participant:user});
   } else {
     res.render("team", {participant:false});
   }
 };
 
-exports.renderSponsors = (req, res) => {
+exports.renderSponsors = async (req, res) => {
   //render Sponsors
   if(req.user) {
-    const qr = ("SELECT * from user where email ='" + req.user.emails[0].value + "';");
-    conn.query(qr, (err, rows) => {
-      if(err) throw err;
-      res.render('sponsors', {participant : rows[0]});
-    })
+    const user = await findUser(req.user.emails[0].value);
+    res.render("sponsors", {participant:user});
   } else {
     res.render("sponsors", {participant:false});
   }
 };
 
-exports.renderContact = (req, res) => {
+exports.renderContact = async (req, res) => {
   //render Contact
   if(req.user) {
-    const qr = ("SELECT * from user where email ='" + req.user.emails[0].value + "';");
-    conn.query(qr, (err, rows) => {
-      if(err) throw err;
-      res.render('contact', {participant : rows[0]});
-    })
+    const user = await findUser(req.user.emails[0].value);
+    res.render("contact", {participant:user});
   } else {
     res.render("contact", {participant:false});
   }
@@ -140,26 +107,17 @@ exports.renderContact = (req, res) => {
 
 exports.renderProfile = async (req, res) => {
     if(req.user) {
-      let sql = `SELECT * from user WHERE email = '${req.user.emails[0].value}';`;
-      
-      // const rows = await conn.query(sql);
-      conn.query(sql, (err, rows) => {
-          if(err) throw err;
-          res.render('profile', {participant : rows[0]});
-      });
-      
+        const user = await findUser(req.user.emails[0].value);
+        res.render("profile", {participant:user}); 
     } else {
         res.redirect('/auth/google');
     }
 };
 
-exports.renderHome = (req,res) => {
+exports.renderHome = async (req,res) => {
   if(req.user) {
-    const qr = ("SELECT * from user where email ='" + req.user.emails[0].value + "';");
-    conn.query(qr, (err, rows) => {
-      if(err) throw err;
-      res.render('index', {participant : rows[0]});
-    })
+    const user = await findUser(req.user.emails[0].value);
+    res.render("index", {participant:user});
   } else {
     res.render("index", {participant:false});
   } 

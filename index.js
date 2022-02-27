@@ -1,8 +1,28 @@
 const app = require('./app.js');
 const dotenv = require('dotenv');
+const mongoose = require('mongoose');
+
 dotenv.config();
 
 const PORT = process.env.PORT || 3000;
-app.listen(PORT, () => {
-    console.log(`listening to PORT - ${PORT}`);
-})
+const MONGODB_URI = process.env.MONGODB_URI;
+
+mongoose
+  .connect(MONGODB_URI, {
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+    // useCreateIndex: true,
+    // useFindAndModify: false,
+  })
+  .then(() => {
+    console.log("Connected to MongoDB!");
+    console.log("Starting webserver..");
+    app.listen(PORT, () => {
+      console.log(`Server is running on port ${PORT}`);
+    });
+  })
+  .catch((err) => {
+    console.log(err);
+    console.log("Could not connect to MongoDB server! Shutting down...");
+    process.exit(1);
+  });

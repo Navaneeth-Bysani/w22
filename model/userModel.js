@@ -1,6 +1,8 @@
 const mongoose = require('mongoose');
 const validator = require('validator');
 
+const Counter = require('./counterModel');
+
 const userSchema = new mongoose.Schema({
     email : {
         type : String,
@@ -32,5 +34,24 @@ const userSchema = new mongoose.Schema({
     },
     caref : {
         type : String
+    },
+    id : {
+        type : Number,
+        unique : true
+    },
+    wissId : {
+        type : String,
+        unique : true
+    },
+    googleid : {
+        type : String
+    },
+    accesstoken : {
+        type : String
     }
-})
+});
+
+
+const User = mongoose.model("User", userSchema);
+
+module.exports = User;

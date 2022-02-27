@@ -1,8 +1,6 @@
 const express = require('express');
 const path = require('path');
-const User = require('./model/userModel');
-const Counter = require('./model/counterModel');
-
+const mysql = require('mysql');
 const passport = require('passport');
 const session = require('cookie-session');
 const bodyParser = require('body-parser');
@@ -10,7 +8,13 @@ const GoogleStrategy = require('passport-google-oauth20').Strategy;
 
 const indexRouter = require('./routes/index.js');
 
-require('dotenv').config();
+const conn = mysql.createPool({
+    host : 'localhost',
+    user : 'root',
+    password : 'Navaneeth1@',
+    database : 'wissenaire_22'
+});
+
 
 const app = express();
 
@@ -27,7 +31,7 @@ app.use(session({
   resave : true,
   saveUninitialized : false,
 }));
-//routes
+// //routes
 // app.use('/api/v1/auth', authRouter);
 
 //oAuth
@@ -42,46 +46,33 @@ passport.deserializeUser(async function(user, done) {
     await done(null, user);
 });
 
-const getIdValue = async () => {
-    let counter = await Counter.findOne({name : "user count"});
-    if(!counter) {
-        counter = await Counter.create({});
-    }
-    let updatedCounter = await Counter.findOneAndUpdate({name : "user count"}, {$inc : {
-        number : 1
-    }}, {new : true});
-    console.log(updatedCounter);
-    return updatedCounter.number;
-}
-
 passport.use(new GoogleStrategy({
     clientID : '933857543160-t1095dkq9adhgh4idis72ma9b7u7l2ee.apps.googleusercontent.com',
     clientSecret : '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',
-    callbackURL : `${process.env.HOST}/auth/google/callback/`,
+    callbackURL : 'http://localhost:3000/auth/google/callback/',
     userProfileURL  : 'https://www.googleapis.com/oauth2/v3/userinfo'
 }, function(accessToken, refreshToken, profile, done) {
-  process.nextTick(async () => {
-    const user = await User.findOne({email : profile.emails[0].value});
-    if(!user) {
+  process.nextTick(() => {
+    const sql = `SELECT * from user where email ='${profile.emails[0].value}';`;
+    conn.query(sql, (err, rows) => {
+      if(err) throw err;
+      if(rows && rows.length == 0) {
+        //no user so far. Create user
         console.log('no user in db');
         console.log(profile);
-        const newId = await getIdValue();
-        const userDetails = {
-            googleid : profile.id,
-            photo : profile.photos[0].value,
-            accesstoken : accessToken,
-            name : profile.displayName,
-            email : profile.emails[0].value,
-            id : newId
-        }
-        const newUser = await User.create(userDetails);
-        console.log('created new user', newUser);
-        return done(null, profile);
-    } else {
+        const newSql = ("INSERT into user (googleid,photo,accesstoken,name,email) VALUES('" + profile.id + "','"+profile.photos[0].value+"', '" + accessToken + "','" + profile.displayName + "','" + profile.emails[0].value + "');");
+        conn.query(newSql, (err, result) => {
+          if(err) throw err;
+          console.log('created new user', result);
+          return done(null, profile);
+        });
+      } else {
         console.log('user already exists');
         return done(null, profile);
-    }
+      }
+    })
   })
+  
 })
 );
 
