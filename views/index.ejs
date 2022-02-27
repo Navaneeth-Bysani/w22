@@ -86,7 +86,7 @@
         z-index: 2;
       }
       
-      .images-layer div{
+      .images-layer > div > a > div{
         width: 200px;
         text-align: center;
       }
@@ -96,13 +96,19 @@
         letter-spacing: 0.1em;
       }
 
-      @media screen and (max-width: 600px) {
+      @media screen and (max-width: 750px) {
         .images-layer{
           display: none;
         }
       }
 
-      .img1{
+      @media screen and (max-width: 1000px) {
+        .images-layer > div > a > div{
+          width: 150px;
+        }
+      }
+
+      /* .img1{
         position: absolute;
         top: 20vh;
         left: 10vw;
@@ -111,7 +117,7 @@
       .img2{
         position: absolute;
         top: 20vh;
-        left: 80vw
+        left: 80vw;
       }
 
       .img3{
@@ -121,15 +127,39 @@
       }
 
       .img4{
-        position: relative;
+        position: absolute;
         top: 70vh;
         left: 80vw;
+      } */
+
+      .images-row{
+        display: flex;
+        width: 100vw;
+        flex-direction: row;
+        justify-content: space-between;
       }
+
+      .images-row > a{
+        margin: 0 6vw;
+      }
+
+      .row1{
+        position: absolute;
+        top: 20vh;
+      }
+
+      .row2{
+        position: absolute;
+        top: 70vh;
+      }
+
+
 
       .subHead{
         color: #fff;
         margin-top: 10px;
         width: fit-content;
+        margin: auto;
       }
 
 
@@ -394,11 +424,14 @@
       </div>
     </div>
     <div class="images-layer">
-  
-      <a href="/workshops"><div class="img1 floating" ><img src="./images/satellite1.png" alt="" class="hvr-grow" ><p class="subHead">WORKSHOPS</p></div></a>
-      <a href="/contact"><div class="img2 floating"><img src="./images/satellite2.png" alt="" class="hvr-grow"><p class="subHead">CONTACT</p></div></a>
-      <a href="/competitions"><div class="img3 floating"><img src="./images/satellite3.png" alt="" class="hvr-grow"><p class="subHead">COMPETITIONS</p></div>
-      <a href="/initiatives"><div class="img4 floating"><img src="./images/satellite4.png" alt="" class="hvr-grow"><p class="subHead">INITIATIVES</p></div></a>
+      <div class="images-row row1">
+        <a href="/workshops"><div class="img1 floating" ><img src="./images/satellite1.png" alt="" class="hvr-grow" ><p class="subHead">WORKSHOPS</p></div></a>
+        <a href="/contact"><div class="img2 floating"><img src="./images/satellite2.png" alt="" class="hvr-grow"><p class="subHead">CONTACT</p></div></a>
+      </div>
+      <div class="images-row row2">
+        <a href="/competitions"><div class="img3 floating"><img src="./images/satellite3.png" alt="" class="hvr-grow"><p class="subHead">COMPETITIONS</p></div>
+        <a href="/initiatives"><div class="img4 floating"><img src="./images/satellite4.png" alt="" class="hvr-grow"><p class="subHead">INITIATIVES</p></div></a>
+      </div>
     </div>
     <div id="globeViz"></div>
     <div class="cur" id="circle">
