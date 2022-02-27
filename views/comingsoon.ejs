@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>Wissenaire'22 | Coming Soon</title>
+  <link rel='stylesheet' href='https://unpkg.com/modern-css-reset/dist/reset.min.css'>
+  <link rel='stylesheet' href='https://unpkg.com/splitting/dist/splitting.css'>
+  <link rel='stylesheet' href='https://unpkg.com/splitting/dist/splitting-cells.css'>
+  <link rel='stylesheet' href='https://fonts.googleapis.com/css2?family=Cabin+Condensed:wght@700&amp;display=swap'>
+  <link rel='stylesheet' href='https://use.typekit.net/zlj2zcu.css'>
+  <link rel="stylesheet" href="./stylesheets/heading.css">
+
+  <link
+  href="https://fonts.googleapis.com/css?family=Exo+2:600,700,800,900"
+  rel="stylesheet"
+  type="text/css"
+/>
+<style>
+    body {
+      margin: 0;
+      background-color:  #121212;
+    }
+    
+
+    .top-layer {
+      position: absolute;
+      width: 100%;
+      z-index: 1;
+      top: 0vh;
+      left: 0;
+    }
+    
+
+    .link-grow {
+      transform: scale(2);
+      background: #1a28cf;
+    }
+  
+  
+
+  span {
+      color:#000;
+      display: inline-block;
+      vertical-align: middle;
+      line-height: normal;
+  }   
+
+
+  .cur {
+        height: 31px;
+        width: 31px;
+        z-index: 99999999;
+        pointer-events: none;
+        /* background: grey;*/
+        border-radius: 50%;
+        position: absolute;
+        /*animation: cursorAnim .5s infinite alternate;*/
+        animation: rotate 4s infinite linear;
+        transition: all 0.3s ease;
+        transition-property: background, transform;
+        transform-origin: 100%, 100%;
+      }
+
+      /* @media screen and (max-width: 1279px) {
+  .cur {
+    display: none;
+  }
+  body {
+    cursor: default;
+  }
+} */
+
+      .main-cur {
+        animation: none;
+        margin: 0px;
+        content: "";
+        width: 0.1px;
+        height: 0.1px;
+        border: 10.5px solid#1A28CF;
+        position: absolute;
+        border-radius: 50%;
+        /* opacity: .5; */
+        top: 4.5px;
+        left: 4.5px;
+        /* transform: translate(-50%, -50%); */
+        animation: cursorAnim 0.5s infinite alternate;
+      }
+
+      .satelite {
+        height: 30px;
+        margin: 30px;
+        transform: rotate(-1deg);
+        /* transition-duration: 200ms;
+    transition-timing-function: ease-out;
+    */
+      }
+
+      @keyframes rotate {
+        from {
+          transform: rotate(0deg);
+        }
+        to {
+          transform: rotate(359deg);
+        }
+      }
+
+      @keyframes cursorAnim {
+        from {
+          transform: scale(1);
+        }
+        to {
+          transform: scale(0.7);
+        }
+      }
+
+      @keyframes cursorClick {
+        0% {
+          transform: scale(1);
+        }
+        50% {
+          transform: scale(2);
+        }
+        100% {
+          transform: scale(1);
+          opacity: 0;
+        }
+      }
+
+      .expand {
+        animation: cursorClick 0.5s forwards;
+        border: 1px solid blue;
+      }
+
+      .link-grow {
+        transform: scale(2);
+        background: #1a28cf;
+      }
+
+      @media only screen and (max-width: 380px) {
+  .cur {
+    display: none;
+  }
+  body {
+    cursor: default;
+  }
+}
+
+  </style>
+  <link rel="stylesheet" href="./css/hover-min.css" />
+  <link rel="stylesheet" href="./css/css2.css" />
+</head>
+<body>
+    <%- include('partials/navbar')%>
+
+    <div class="cur" id="circle">
+        <div class="main-cur"></div>
+        <img class="satelite" src="./Satellite.svg" alt="" />
+    </div>
+
+    <script>
+        let links = document.querySelector(".main-content a");
+        const cursors = document.querySelector(".cur");
+        document.addEventListener("mousemove", (e) => {
+          let x = e.pageX;
+          let y = e.pageY;
+          cursors.setAttribute(
+            "style",
+            "top: " + (e.pageY - 10) + "px; left: " + (e.pageX - 10) + "px;"
+          );
+        });
+  
+        document.addEventListener("click", () => {
+          cursors.classList.add("expand");
+          setTimeout(() => {
+            cursors.classList.remove("expand");
+          }, 500);
+        });
+      </script>
+<h1>
+  <span class="main" aria-label="boring" data-splitting>COMING <t/> SOON</span>
+  <!-- <span class="main" aria-label="boring" data-splitting>SOON</span> -->
+</h1>
+<!-- partial -->
+  <script src='https://unpkg.com/splitting/dist/splitting.min.js'></script>
+  <script  src="./js/heading.js"></script>
+
+  <script src="./js/js1.js"></script>
+    <script src="./js/js2.js"></script>
+    <script src="./js/js3.js"></script>
+    <script src="./js/js4.js"></script>
+    <script src="./js/js5.js"></script>
+    <script src="./js/js6.js"></script>
+
+</body>
+</html>
