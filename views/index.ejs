@@ -32,6 +32,15 @@
         left: 0;
       }
 
+      .top-layer-2{
+        position: absolute;
+        width: 100%;
+        z-index: 1;
+        top: 80vh;
+        left: 0;
+        z-index: 4;
+      }
+
       header{
         background: rgba(0, 0, 0, 0) !important ;
       }
@@ -279,11 +288,6 @@
 .signInButton{
   display: flex;
   justify-content: center;
-  margin-top: 60vh;
-}
-
-.signInButton > a{
-  z-index: 4 !important;
 }
 
 @-webkit-keyframes sheen {
@@ -419,6 +423,15 @@
       <div class="logo">
         <a href="#">Nexus &nbsp; Terra</a>
       </div>
+      <!-- <div class="signInButton">
+        <%if(!participant) {%>
+          <a href="/auth/google" class="button">SIGN IN</a>
+        <%} else {%>
+          <a href="/profile" class="button">PROFILE</a>
+        <%}%>
+      </div> -->
+    </div>
+    <div class="top-layer-2">
       <div class="signInButton">
         <%if(!participant) {%>
           <a href="/auth/google" class="button">SIGN IN</a>
