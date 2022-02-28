@@ -108,6 +108,7 @@ exports.renderContact = async (req, res) => {
 exports.renderProfile = async (req, res) => {
     if(req.user) {
         const user = await findUser(req.user.emails[0].value);
+        console.log(user);
         res.render("profile", {participant:user}); 
     } else {
         res.redirect('/auth/google');

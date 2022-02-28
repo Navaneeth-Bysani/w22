@@ -1006,7 +1006,7 @@ form .button input {
   letter-spacing: 1px;
   cursor: pointer;
   transition: all 0.3s ease;
-  background: linear-gradient(135deg, #71b7e6, #055291);
+  background: linear-gradient(135deg, #5e5858, #140303);
   padding: 10px;
 }
 form .button input:hover {
