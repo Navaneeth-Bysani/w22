@@ -1,6 +1,7 @@
 const express = require("express");
 const userController = require("../controller/userController");
 const renderController = require("../controller/renderController");
+const wsController = require("../controller/wsController");
 const router = express.Router();
 
 function ensureAuthenticated(req, res, next) {
@@ -29,7 +30,7 @@ router.post("/updateProfile", userController.updateProfile);
 //individual competition routes
 
 //individual workshop routes
-
+router.get("/workshop-blockchain", wsController.blockchain);
 //posting a query in contact
 
 //single webpages
