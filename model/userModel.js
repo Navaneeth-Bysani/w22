@@ -41,7 +41,6 @@ const userSchema = new mongoose.Schema({
     },
     wissId : {
         type : String,
-        unique : true
     },
     googleid : {
         type : String

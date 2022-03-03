@@ -6,7 +6,6 @@ const router = express.Router();
 
 function ensureAuthenticated(req, res, next) {
     if (req.user) { 
-      console.log('loggedin')
       return next();
     }
     res.redirect('/auth/google')

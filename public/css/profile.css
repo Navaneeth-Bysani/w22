@@ -907,6 +907,7 @@ button {
   /* margin-left: 10px; */
   margin-bottom: 2px;
   text-align: center;
+  margin: auto;
 }
 /* .formContainer .title::before {
   content: "";
@@ -946,7 +947,7 @@ form .input-box span.details {
   background-color: transparent;
   border-bottom-width: 2px;
   transition: all 0.3s ease;
-  color: #fff;
+  color: black;
   box-shadow: 1px 1px 1px rgba(204, 204, 204, 0.356);
 }
 ::placeholder {
