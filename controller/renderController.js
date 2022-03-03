@@ -1,4 +1,5 @@
 const User = require('./../model/userModel');
+const NODE_ENV = require('./../utils/config').NODE_ENV;
 
 const findUser = async (email) => {
     const user = await User.findOne({email : email});
@@ -19,9 +20,17 @@ exports.renderCompetitions = async (req, res) => {
   //render Competitions
   if(req.user) {
     const user = await findUser(req.user.emails[0].value);
-    res.render("competitions", {participant:user});
+    if(NODE_ENV === 'development') {
+      res.render("competitions", {participant:user});
+    } else {
+      res.render("comingsoon", {participant:user});
+    }
   } else {
-    res.render("competitions", {participant:false});
+    if(NODE_ENV === 'development') {
+      res.render("competitions", {participant:false});
+    } else {
+      res.render("comingsoon", {participant:false});
+    }
   }
 };
 
@@ -29,9 +38,17 @@ exports.renderWorkshops = async (req, res) => {
   //render Workshops
   if(req.user) {
     const user = await findUser(req.user.emails[0].value);
-    res.render("workshops", {participant:user});
+    if(NODE_ENV === 'development') {
+      res.render("workshops", {participant:user});
+    } else {
+      res.render("comingsoon", {participant:user});
+    }
   } else {
-    res.render("workshops", {participant:false});
+    if(NODE_ENV === 'development') {
+      res.render("workshops", {participant:false});
+    } else {
+      res.render("comingsoon", {participant:false});
+    }
   }
 };
 
@@ -39,9 +56,17 @@ exports.renderGuestLectures = async (req, res) => {
   //render Guest Lectures
   if(req.user) {
     const user = await findUser(req.user.emails[0].value);
-    res.render("guestlectures", {participant:user});
+    if(NODE_ENV === 'development') {
+      res.render("guestlectures", {participant:user});
+    } else {
+      res.render("comingsoon", {participant:user});
+    }
   } else {
-    res.render("guestlectures", {participant:false});
+    if(NODE_ENV === 'development') {
+      res.render("guestlectures", {participant:false});
+    } else {
+      res.render("comingsoon", {participant:false});
+    }
   }
 };
 
@@ -49,9 +74,17 @@ exports.renderExhibits = async (req, res) => {
   //render Exhibits
   if(req.user) {
     const user = await findUser(req.user.emails[0].value);
-    res.render("comingsoon", {participant:user});
+    if(NODE_ENV === 'development') {
+      res.render("exhibits", {participant:user});
+    } else {
+      res.render("comingsoon", {participant:user});
+    }
   } else {
-    res.render("comingsoon", {participant:false});
+    if(NODE_ENV === 'development') {
+      res.render("exhibits", {participant:false});
+    } else {
+      res.render("comingsoon", {participant:false});
+    }
   }
 };
 
@@ -69,9 +102,17 @@ exports.renderHighlights = async (req, res) => {
   //render Highlights
   if(req.user) {
     const user = await findUser(req.user.emails[0].value);
-    res.render("highlights", {participant:user});
+    if(NODE_ENV === 'development') {
+      res.render("highlights", {participant:user});
+    } else {
+      res.render("comingsoon", {participant:user});
+    }
   } else {
-    res.render("highlights", {participant:false});
+    if(NODE_ENV === 'development') {
+      res.render("highlights", {participant:false});
+    } else {
+      res.render("comingsoon", {participant:false});
+    }
   }
 };
 
@@ -80,8 +121,17 @@ exports.renderTeam = async (req, res) => {
   if(req.user) {
     const user = await findUser(req.user.emails[0].value);
     res.render("team", {participant:user});
+    if(NODE_ENV === 'development') {
+      res.render("team", {participant:user});
+    } else {
+      res.render("comingsoon", {participant:user});
+    }
   } else {
-    res.render("team", {participant:false});
+    if(NODE_ENV === 'development') {
+      res.render("team", {participant:false});
+    } else {
+      res.render("comingsoon", {participant:false});
+    }
   }
 };
 
@@ -108,7 +158,7 @@ exports.renderContact = async (req, res) => {
 exports.renderProfile = async (req, res) => {
     if(req.user) {
         const user = await findUser(req.user.emails[0].value);
-        console.log(user);
+        // console.log(user);
         res.render("profile", {participant:user}); 
     } else {
         res.redirect('/auth/google');
