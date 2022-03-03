@@ -8,6 +8,10 @@ const session = require('cookie-session');
 const bodyParser = require('body-parser');
 const GoogleStrategy = require('passport-google-oauth20').Strategy;
 
+const mongoSanitize = require('express-mongo-sanitize');
+const xss = require('xss-clean');
+const hpp = require('hpp');
+
 const indexRouter = require('./routes/index.js');
 
 require('dotenv').config();
@@ -18,6 +22,10 @@ app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, 'views'));
 app.use(express.static('public'));
 // app.use(express.static(path.join(__dirname, 'public')));
+
+app.use(mongoSanitize());
+app.use(xss());
+app.use(hpp());
 
 app.use(express.json());
 app.use(bodyParser.json());
