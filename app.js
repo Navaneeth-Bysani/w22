@@ -15,6 +15,7 @@ const hpp = require('hpp');
 const indexRouter = require('./routes/index.js');
 
 require('dotenv').config();
+const config = require('./utils/config');
 
 const app = express();
 
@@ -63,9 +64,9 @@ const getIdValue = async () => {
 }
 
 passport.use(new GoogleStrategy({
-    clientID : '933857543160-t1095dkq9adhgh4idis72ma9b7u7l2ee.apps.googleusercontent.com',
-    clientSecret : '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',
-    callbackURL : `${process.env.HOST}/auth/google/callback/`,
+    clientID : config.OAUTH_CLIENT_ID,
+    clientSecret : config.OAUTH_CLIENT_SECRET,
+    callbackURL : `${config.HOST}/auth/google/callback/`,
     userProfileURL  : 'https://www.googleapis.com/oauth2/v3/userinfo'
 }, function(accessToken, refreshToken, profile, done) {
   process.nextTick(async () => {
@@ -108,4 +109,10 @@ app.get('/logout', (req, res) => {
   // req.session.destroy();
   res.redirect('/')
 })
+
+
+app.all('*', (req,res,next) => {
+  res.redirect('/');
+});
+
 module.exports = app;

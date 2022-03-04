@@ -1,3 +1,4 @@
+const catchAsync = require('../utils/catchAsync');
 const User = require('./../model/userModel');
 const NODE_ENV = require('./../utils/config').NODE_ENV;
 
@@ -120,7 +121,6 @@ exports.renderTeam = async (req, res) => {
   //render Team
   if(req.user) {
     const user = await findUser(req.user.emails[0].value);
-    res.render("team", {participant:user});
     if(NODE_ENV === 'development') {
       res.render("team", {participant:user});
     } else {
@@ -149,9 +149,18 @@ exports.renderContact = async (req, res) => {
   //render Contact
   if(req.user) {
     const user = await findUser(req.user.emails[0].value);
-    res.render("contact", {participant:user});
+
+    if(NODE_ENV === 'development') {
+      res.render("contact", {participant:user});
+    } else {
+      res.render("comingsoon", {participant:user});
+    }
   } else {
-    res.render("contact", {participant:false});
+    if(NODE_ENV === 'development') {
+      res.render("contact", {participant:false});
+    } else {
+      res.render("comingsoon", {participant:false});
+    }
   }
 };
 

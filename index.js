@@ -3,9 +3,10 @@ const dotenv = require('dotenv');
 const mongoose = require('mongoose');
 
 dotenv.config();
+const config = require('./utils/config');
 
 const PORT = process.env.PORT || 3000;
-const MONGODB_URI = process.env.MONGODB_URI;
+const MONGODB_URI = config.MONGODB_URI;
 
 mongoose
   .connect(MONGODB_URI, {

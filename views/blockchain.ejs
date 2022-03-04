@@ -12,7 +12,10 @@
       type="text/css"
     />
     <link rel="stylesheet" href="./stylesheets/heading.css" />
-
+    <!--ajax-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script>
+    
     <style>
       body {
         margin: 0;
@@ -127,6 +130,9 @@
 
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 
+
+    <!-- razorpay -->
+    <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
   </head>
 
   <body style = "background-color: #121212; color: white;">
@@ -195,14 +201,43 @@
 									icon: "success",
 									button: "Continue to booking",
 									dangerMode: true,
-								})
-								.then((button) => {
-									if (button) {
-										// window.location.href= "/auth/google"
-									} else {
-									}
-								});
-							}
+								}).then((button) => {
+                  if(button) {
+                    $.ajax({
+                      type : 'POST',
+                      url : '/payment',
+                      data : {
+                        amount : 600*100
+                      },
+                      success : function(result) {
+                        console.log(result);
+                        var options = {
+                        "key": result.key, // Enter the Key ID generated from the Dashboard
+                        "name": "Wissenaire",
+                        "description": "Blockchain Workshop Payment",
+                        "image": "https://example.com/your_logo",
+                        "order_id": result.order.id, //This is a sample Order ID. Pass the `id` obtained in the response of Step 1
+                        "callback_url": "http://localhost:3000/workshop-blockchain",
+                        "prefill": {
+                            "name": result.user.name,
+                            "email": result.user.email,
+                            "contact": result.user.phoneNumber
+                        },
+                        "notes": {
+                            "address": "Wissenaire, workshop regestration"
+                        },
+                        "theme": {
+                            "color": "#3399cc"
+                        }
+                    };
+                    var rzp1 = new Razorpay(options);
+                    rzp1.open();
+                  
+                    }
+                  })
+                  }
+                })
+              }
 						</script>
             <button type="button" class="btn btn-primary" id = "download-pdf" style="width: 40%; margin: auto;">
               Download

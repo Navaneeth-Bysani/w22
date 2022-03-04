@@ -1,7 +1,9 @@
 const express = require("express");
 const userController = require("../controller/userController");
 const renderController = require("../controller/renderController");
+const paymentController = require("../controller/paymentController");
 const wsController = require("../controller/wsController");
+const app = require("../app");
 const router = express.Router();
 
 function ensureAuthenticated(req, res, next) {
@@ -32,6 +34,9 @@ router.post("/updateProfile", userController.updateProfile);
 router.get("/workshop-blockchain", wsController.blockchain);
 //posting a query in contact
 
+
+//payment route
+router.post('/payment', paymentController.initiatePayment);
 //single webpages
 //1. about
 //2. profile

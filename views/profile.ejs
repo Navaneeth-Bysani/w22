@@ -208,8 +208,8 @@
                         <span class="details">Phone Number</span>
                         <input
                           type="text"
-                          placeholder=<%=participant.phoneNumber%>
-                          disabled
+                          value="<%=participant.phoneNumber%>"
+                          readonly
                           name = "phoneNumber"
                         />
                       </div>
@@ -217,8 +217,8 @@
                         <span class="details">Institute</span>
                         <input
                           type="text"
-                          placeholder=<%=participant.institute%>
-                          disabled
+                          value="<%=participant.institute%>"
+                          readonly
                           name = "institute"
                         />
                       </div>
@@ -226,23 +226,23 @@
                         <span class="details">Branch</span>
                         <input
                           type="text"
-                          placeholder=<%=participant.branch%>
-                          disabled
+                          value="<%=participant.branch%>"
+                          readonly
                           name = "branch"
                         />
                       </div>
                       <div class="input-box">
                         <span class="details">Year</span>
-                        <input type="text" placeholder= <%=participant.year%> name = "year" disabled />
+                        <input type="text" value = "<%=participant.year%>" name = "year" readonly />
                       </div>
                       <div class="input-box">
                         <span class="details">City</span>
-                        <input type="text" placeholder= <%=participant.city%> name = "city" disabled />
+                        <input type="text" value = "<%=participant.city%>" name = "city" readonly />
                       </div>
                       <%if(participant.caref) {%>
                       <div class="input-box">
                         <span class="details">Reference ID of CA (if any)</span>
-                        <input type="text" placeholder=<%=participant.caref%> name="caref" disabled />
+                        <input type="text" value = "<%=participant.caref%>" name="caref" readonly />
                       </div>
                       <%}%>
                     </div>
