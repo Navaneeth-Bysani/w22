@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Blockchain-Workshop | Wissenaire'22</title>
+    <title>Android-Workshop | Wissenaire'22</title>
     <link rel="icon" type="image/x-icon" href="./assets/img/blue_favicon.ico">
     <link
       href="https://fonts.googleapis.com/css?family=Exo+2:600,700,800,900"
@@ -138,7 +138,7 @@
   <body style = "background-color: #121212; color: white;">
     <%- include('partials/navbar')%>
     <div class = "container" id = "intro">
-      <p style="font-weight: 800; font-size: 40px;text-align: center;">BLOCKCHAIN WORKSHOP</p>
+      <p style="font-weight: 800; font-size: 40px;text-align: center;">ANDROID WORKSHOP</p>
       <div class="row" style="margin-top: 5vh;">
         <div class="col-12 col-md-6" style="height: 0px;"></div>
         <div class="col-12 col-md-6" style="margin-bottom: 2.5%;">
@@ -197,14 +197,14 @@
               function continueToBooking(){
 								swal({
 									title: "Ready to book your slot",
-                  text: `Enter the same email address (${"<%=participant.email%>"}) while filling the payment form. Click continue to continue your booking.`,
+									text: `Enter the same email address (${"<%=participant.email%>"}) while filling the payment form. Click continue to continue your booking.`,
 									icon: "success",
 									button: "Continue to booking",
 									dangerMode: true,
 								}).then((button) => {
-                    if(button) {
-                      window.location.href = `https://rzp.io/i/aB3HpIib`;
-                    }
+                                if(button) {
+                                    window.location.href = `https://rzp.io/i/aB3HpIib`;
+                                }
                 })
               }
 						</script>
@@ -217,9 +217,9 @@
         </div>
         <div class="col-12 col-md-6">
           <p style="font-weight: 650; font-size: 28px;">Description</p>
-          <p>Blockchain is a system of recording information in a way that makes it difficult or impossible to 
-            change, hack, or cheat the system. Blockchain is the future of the world.
-          </p>
+          <p>You will be provided with a real-life problem. You are required to design and simulate a circuit
+            with Arduino as a part of it in Tinkercad to solve the problem statement and submit it in the least
+            time. </p>
           <br>
           <p style="font-weight: 650; font-size: 28px;"> What you will learn? </p>
           <p>You will gain the ability to develop decentralized applications for Ethereum. First, you will
@@ -297,7 +297,7 @@ develop your applications for both public and private networks.
           </p>
           <p>For more information and complete syllabus, please download the pdf from above</p>
           <br>
-          <!-- <p style="font-weight: 650; font-size: 28px;">Highlights</p> -->
+          <p style="font-weight: 650; font-size: 28px;">Highlights</p>
           <p style="line-height: 2;">
           
           </p>
@@ -305,24 +305,10 @@ develop your applications for both public and private networks.
   
         <div class="col-12 col-md-6">
           <p style="font-weight: 650; font-size: 28px;"> Contact</p>
-          <p style="line-height: 2;"><i class="fa fa-user"></i>&ensp;Bhavika<br>
-            <i class="fa fa-envelope"></i>&ensp;bk21@iitbbs.ac.in<br>
-            <i class="fa fa-phone"></i>&ensp;+91 87907 12827
+          <p style="line-height: 2;"><i class="fa fa-user"></i>&ensp;Vishwa Teja<br>
+            <i class="fa fa-envelope"></i>&ensp;20cs01042@iitbbs.ac.in<br>
+            <i class="fa fa-phone"></i>&ensp;9441170666
           </p>
-          <br/>
-          <p style="line-height: 2;"><i class="fa fa-user"></i>&ensp;Divyesh Cirikonda<br>
-            <i class="fa fa-envelope"></i>&ensp;cd11@iitbbs.ac.in<br>
-            <i class="fa fa-phone"></i>&ensp;+91 83176 52305
-            <br/>
-          </p>
-
-          <br/>
-          <p style="line-height: 2;"><i class="fa fa-user"></i>&ensp;Akarsh<br>
-            <i class="fa fa-envelope"></i>&ensp;kvs11@iitbbs.ac.in<br>
-            <i class="fa fa-phone"></i>&ensp;+91 83175 55341
-            <br/>
-          </p>
-
         </div>
         <div class="col-12 col-md-6">
           <p style="font-weight: 650; font-size: 28px;"> Organising Partner</p>
@@ -343,11 +329,11 @@ develop your applications for both public and private networks.
             </button>
             <script>
 							function prevWorkshop() {
-                const prevWorkshopURL = "/workshop-ml";
+                const prevWorkshopURL = "/workshop-blockchain";
                 window.location.href = prevWorkshopURL;
               }
               function nextWorkshop() {
-                const nextWorkshopURL = "/workshop-android";
+                const nextWorkshopURL = "/workshop-blockchain";
                 window.location.href = nextWorkshopURL;
               }
 						</script>

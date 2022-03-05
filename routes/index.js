@@ -32,11 +32,16 @@ router.post("/updateProfile", userController.updateProfile);
 
 //individual workshop routes
 router.get("/workshop-blockchain", wsController.blockchain);
+router.get("/workshop-android", wsController.android);
+router.get("/workshop-fullstack", wsController.fullstack);
+router.get("/workshop-ml", wsController.ml);
+router.get("/workshop-ethicalhacking", wsController.ethicalHacking);
+router.get("/workshop-automobile", wsController.automobile);
 //posting a query in contact
 
 
 //payment route
-router.post('/payment', paymentController.initiatePayment);
+// router.post('/payment', paymentController.initiatePayment);
 //single webpages
 //1. about
 //2. profile
