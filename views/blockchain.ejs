@@ -211,27 +211,31 @@
                       },
                       success : function(result) {
                         console.log(result);
+                        const workshop_code = "blockchain";
                         var options = {
-                        "key": result.key, // Enter the Key ID generated from the Dashboard
-                        "name": "Wissenaire",
-                        "description": "Blockchain Workshop Payment",
-                        "image": "https://example.com/your_logo",
-                        "order_id": result.order.id, //This is a sample Order ID. Pass the `id` obtained in the response of Step 1
-                        "callback_url": "http://localhost:3000/workshop-blockchain",
-                        "prefill": {
-                            "name": result.user.name,
-                            "email": result.user.email,
-                            "contact": result.user.phoneNumber
-                        },
-                        "notes": {
-                            "address": "Wissenaire, workshop regestration"
-                        },
-                        "theme": {
-                            "color": "#3399cc"
-                        }
-                    };
-                    var rzp1 = new Razorpay(options);
-                    rzp1.open();
+                          "key": result.key, // Enter the Key ID generated from the Dashboard
+                          "name": "Wissenaire",
+                          "description": "Blockchain Workshop Payment",
+                          "image": "data:image/png;base64,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",
+                          "order_id": result.order.id, //This is a sample Order ID. Pass the `id` obtained in the response of Step 1
+                          "callback_url": `http://localhost:3000/payments/callback/${result.user.email}/${workshop_code}`,
+                          "prefill": {
+                              "name": result.user.name,
+                              "email": result.user.email,
+                              "contact": result.user.phoneNumber
+                          },
+                          "notes": {
+                              "address": "Wissenaire, workshop regestration"
+                          },
+                          "theme": {
+                              "color": "#3399cc"
+                          },
+                          "readonly" : {
+                              "email": true
+                          },
+                        };
+                        var rzp1 = new Razorpay(options);
+                        rzp1.open();
                   
                     }
                   })

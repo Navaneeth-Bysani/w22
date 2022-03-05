@@ -37,6 +37,7 @@ router.get("/workshop-blockchain", wsController.blockchain);
 
 //payment route
 router.post('/payment', paymentController.initiatePayment);
+router.post('/payments/callback/:email/:workshop_code', paymentController.paymentCallback);
 //single webpages
 //1. about
 //2. profile

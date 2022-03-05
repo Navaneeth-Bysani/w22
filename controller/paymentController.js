@@ -42,3 +42,22 @@ exports.initiatePayment = catchAsync(async (req,res,next) => {
         });
     })
 });
+
+exports.paymentCallback = catchAsync(async (req,res,next) => {
+    console.log(req.body.razorpay_payment_id);
+    console.log(req.body.razorpay_order_id);
+    console.log(req.body.razorpay_signature);
+    console.log(req.params);
+    const user = await User.findOne({email : req.params.email});
+    if(!user) {
+        res.redirect('/');
+    }
+    razorpay_instance.payments.fetch(req.body.razorpay_payment_id).then((paymentDocument) => {
+        if(paymentDocument.status === "captured") {
+            const workshop = req.params.workshop_code;
+            res.redirect('/');
+        } else {
+            res.send('looks like there has been a problem. Please wait for sometime and try again!');
+        }
+    })
+})

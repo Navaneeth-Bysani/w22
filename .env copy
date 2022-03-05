@@ -1,0 +1,12 @@
+PORT  = 3000
+NODE_ENV = development
+MONGODB_URI_TEST = mongodb+srv://iit_bbs_elections:iit_bbs_elections@cluster0.5hjck.mongodb.net/hostel_elections?retryWrites=true&w=majority
+MONGODB_URI_PROD = mongodb+srv://wissenaire_22:wissenaire_mongo_22@cluster0.ghrlf.mongodb.net/wissenaire22?retryWrites=true&w=majority
+HOST = http://localhost:3000
+EMAIL_PASSWORD = wissenaire22@!
+EMAIL = wissenaire2022@gmail.com
+SENDGRID_API_KEY = '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'
+RAZORPAY_KEY = rzp_test_qePI3Jvyv5wlHe
+RAZORPAY_SECRET = JCinHnohvYVQKPLnM1pfdQDi
+OAUTH_CLIENT_ID = 933857543160-55ncdnbm7mo8r7qaabu7g859d2rb2jl8.apps.googleusercontent.com
+OAUTH_CLIENT_SECRET = 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

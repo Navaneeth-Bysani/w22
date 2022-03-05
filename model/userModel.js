@@ -47,7 +47,11 @@ const userSchema = new mongoose.Schema({
     },
     accesstoken : {
         type : String
-    }
+    },
+    workshops : [{
+        type : String,
+        enum : ["android", "auto", "blockchain", "ehcs", "fullstack", "ml"],
+    }]
 });
 
 
