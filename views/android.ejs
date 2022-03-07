@@ -4,8 +4,8 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Android-Workshop | Wissenaire'22</title>
-    <link rel="icon" type="image/x-icon" href="./assets/img/blue_favicon.ico">
+    <title>Android - Workshop | Wissenaire'22</title>
+    <link rel="icon" type="image/x-icon" href="./assets/img/blue_favicon.ico" />
     <link
       href="https://fonts.googleapis.com/css?family=Exo+2:600,700,800,900"
       rel="stylesheet"
@@ -14,14 +14,20 @@
     <link rel="stylesheet" href="./stylesheets/heading.css" />
     <!--ajax-->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script>
-    
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"
+      integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg=="
+      crossorigin="anonymous"
+    ></script>
+    <!-- preloader -->
+    <link href="assets/css/style.css" rel="stylesheet" />
     <style>
       body {
         margin: 0;
         background-color: #121212;
         cursor: none !important;
       }
+
       .top-layer {
         position: absolute;
         width: 100%;
@@ -73,6 +79,7 @@
         from {
           transform: rotate(0deg);
         }
+
         to {
           transform: rotate(359deg);
         }
@@ -82,6 +89,7 @@
         from {
           transform: scale(1);
         }
+
         to {
           transform: scale(0.7);
         }
@@ -91,9 +99,11 @@
         0% {
           transform: scale(1);
         }
+
         50% {
           transform: scale(2);
         }
+
         100% {
           transform: scale(1);
           opacity: 0;
@@ -124,118 +134,167 @@
     <link rel="stylesheet" href="./css/hover-min.css" />
     <!-- <link rel="stylesheet" href="./css/workshop.css" /> -->
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-    <script src="https://kit.fontawesome.com/a48cc7111e.js" crossorigin="anonymous"></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+      integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+      integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://kit.fontawesome.com/a48cc7111e.js"
+      crossorigin="anonymous"
+    ></script>
 
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+      integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+      crossorigin="anonymous"
+    />
 
     <!-- razorpay -->
     <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
   </head>
 
-  <body style = "background-color: #121212; color: white;">
+  <body style="background-color: #121212; color: white">
     <%- include('partials/navbar')%>
-    <div class = "container" id = "intro">
-      <p style="font-weight: 800; font-size: 40px;text-align: center;">ANDROID WORKSHOP</p>
-      <div class="row" style="margin-top: 5vh;">
-        <div class="col-12 col-md-6" style="height: 0px;"></div>
-        <div class="col-12 col-md-6" style="margin-bottom: 2.5%;">
+    <div class="container" id="intro">
+      <p style="font-weight: 800; font-size: 40px; text-align: center">
+        ANDROID APP WORKSHOP
+      </p>
+      <div class="row" style="margin-top: 5vh">
+        <div class="col-12 col-md-6" style="height: 0px"></div>
+        <div class="col-12 col-md-6" style="margin-bottom: 2.5%">
           <div class="row">
             <%if(!participant) {%>
-            <button type="button" class="btn btn-success" style="width: 40%; margin: auto;" onclick="redirectToLogin()">
+            <button
+              type="button"
+              class="btn btn-success"
+              style="width: 40%; margin: auto"
+              onclick="redirectToLogin()"
+            >
               Register
-              <i class="fa fa-long-arrow-alt-right" id="sl" style="margin-left: 10px;"></i>
+              <i
+                class="fa fa-long-arrow-alt-right"
+                id="sl"
+                style="margin-left: 10px"
+              ></i>
             </button>
             <%} else if(!participant.phoneNumber){%>
-              <button type="button" class="btn btn-success" style="width: 40%; margin: auto;" onclick="redirectToProfile()">
-                Register
-                <i class="fa fa-long-arrow-alt-right" id="sl" style="margin-left: 10px;"></i>
-              </button>
+            <button
+              type="button"
+              class="btn btn-success"
+              style="width: 40%; margin: auto"
+              onclick="redirectToProfile()"
+            >
+              Register
+              <i
+                class="fa fa-long-arrow-alt-right"
+                id="sl"
+                style="margin-left: 10px"
+              ></i>
+            </button>
             <%} else {%>
-              <button type="button" class="btn btn-success" style="width: 40%; margin: auto;" onclick="continueToBooking()">
-                Register
-                <i class="fa fa-long-arrow-alt-right" id="sl" style="margin-left: 10px;"></i>
-              </button>
+            <button
+              type="button"
+              class="btn btn-success"
+              style="width: 40%; margin: auto"
+              onclick="continueToBooking()"
+            >
+              Register
+              <i
+                class="fa fa-long-arrow-alt-right"
+                id="sl"
+                style="margin-left: 10px"
+              ></i>
+            </button>
             <%}%>
 
             <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
-						<script>
-							function redirectToLogin(){
-								swal({
-									title: "Authentication Required",
-									text: "You haven't logged into your profile. Kindly login and fill your profile before registration",
-									icon: "warning",
-									button: "Continue to Login",
-									dangerMode: true,
-								})
-								.then((button) => {
-									if (button) {
-										window.location.href= "/auth/google"
-									} else {
-									}
-								});
-							}
-
-              function redirectToProfile(){
-								swal({
-									title: "Profile details required",
-									text: "Kindly fill your profile details before registration",
-									icon: "warning",
-									button: "Continue to Profile",
-									dangerMode: true,
-								})
-								.then((button) => {
-									if (button) {
-										window.location.href= "/profile"
-									} else {
-									}
-								});
-							}
-
-              function continueToBooking(){
-								swal({
-									title: "Ready to book your slot",
-									text: `Enter the same email address (${"<%=participant.email%>"}) while filling the payment form. Click continue to continue your booking.`,
-									icon: "success",
-									button: "Continue to booking",
-									dangerMode: true,
-								}).then((button) => {
-                                if(button) {
-                                    window.location.href = `https://rzp.io/i/aB3HpIib`;
-                                }
-                })
+            <script>
+              function redirectToLogin() {
+                swal({
+                  title: "Authentication Required",
+                  text: "You haven't logged into your profile. Kindly login and fill your profile before registration",
+                  icon: "warning",
+                  button: "Continue to Login",
+                  dangerMode: true,
+                }).then((button) => {
+                  if (button) {
+                    window.location.href = "/auth/google";
+                  } else {
+                  }
+                });
               }
-						</script>
-            <button type="button" class="btn btn-primary" id = "download-pdf" style="width: 40%; margin: auto;">
+
+              function redirectToProfile() {
+                swal({
+                  title: "Profile details required",
+                  text: "Kindly fill your profile details before registration",
+                  icon: "warning",
+                  button: "Continue to Profile",
+                  dangerMode: true,
+                }).then((button) => {
+                  if (button) {
+                    window.location.href = "/profile";
+                  } else {
+                  }
+                });
+              }
+
+              function continueToBooking() {
+                swal({
+                  title: "Ready to book your slot",
+                  text: `Enter the same email address (${"<%=participant.email%>"}) while filling the payment form. Click continue to continue your booking.`,
+                  icon: "success",
+                  button: "Continue to booking",
+                  dangerMode: true,
+                }).then((button) => {
+                  if (button) {
+                    window.location.href = `https://rzp.io/i/aB3HpIib`;
+                  }
+                });
+              }
+            </script>
+            <button
+              type="button"
+              class="btn btn-primary"
+              id="download-pdf"
+              style="width: 40%; margin: auto"
+            >
               Download
-              <i class="fa fa-long-arrow-alt-right" id="sl" style="margin-left: 10px;"></i>
+              <i
+                class="fa fa-long-arrow-alt-right"
+                id="sl"
+                style="margin-left: 10px"
+              ></i>
             </button>
-  
           </div>
         </div>
         <div class="col-12 col-md-6">
-          <p style="font-weight: 650; font-size: 28px;">Description</p>
-          <p>You will be provided with a real-life problem. You are required to design and simulate a circuit
-            with Arduino as a part of it in Tinkercad to solve the problem statement and submit it in the least
-            time. </p>
-          <br>
-          <p style="font-weight: 650; font-size: 28px;"> What you will learn? </p>
-          <p>You will gain the ability to develop decentralized applications for Ethereum. First, you will
-learn the basics of blockchain and the Ethereum platform. Next, you will discover how to
-develop smart contracts using Solidity, how to interact with smart contracts, and how to create
-an efficient development environment for Ethereum projects. Finally, you will explore how to
-develop web applications that interact with an Ethereum blockchain. When you're finished
-with this course, you will have the skills and knowledge of the Ethereum platform needed to
-develop your applications for both public and private networks.
+          <p style="font-weight: 650; font-size: 28px">Description</p>
+          <p>
+            Android software development is the process by which applications are created for devices 
+            running the Android operating system.
+          </p>
+          <br />
+          <p style="font-weight: 650; font-size: 28px">What you will learn?</p>
+          <p>
+            You will gain the ability to develop android applications. First, you will learn how to install and 
+            setup various tools used for android application development. Next, you will discover the basics of 
+            android application development. Finally, you will also explore the process of publishing your app.
           </p>
         </div>
         <div class="col-12 col-md-6">
-          <p style="font-weight: 650; font-size: 28px;">Syllabus of all Sections</p>
+          <p style="font-weight: 650; font-size: 28px">
+            Syllabus of all Sections
+          </p>
           <p>
-            Module-01: 
-            Blockchain Fundamentals 
+            Session-01: Introduction to Android technology
             <!-- Introduction,
             Blockchain Concept,
             Introduction to Ethereum and DAPPS,
@@ -244,8 +303,7 @@ develop your applications for both public and private networks.
             Sample Application FoodSafe -->
           </p>
           <p>
-            Module-02:
-            The state of Blockchain
+            Session-02: Working with Activities
             <!-- Trust in the Digital Era,
             Exploring Bitcoin,
             Defining Blockchain,
@@ -253,95 +311,100 @@ develop your applications for both public and private networks.
             Do you Actually need a Blockchain? -->
           </p>
           <p>
-            Module-03:
-            Developing Application on Ethereum Blockchain
-            <!-- Ethereum Protocol,
-            Getting Started With Smart Contracts,
-            Solidity Programming Language,
-            Ethereum API,
-            Truffle Framework,
-            Developing Advanced Smart Contracts,
-            Web Application With Ethereum -->
+            Session-03: Intents
+            <!-- Create Intent Filters
+ Launching Activities
+ Introspection with action
+ Handling Rotation -->
           </p>
           <p>
-            Module-04:
-            Deploying Ethereum with AWS Blockchain Templates
+            Session-04: Deploying Ethereum with AWS Blockchain Templates
             <!-- Introducing Ethereum,
             Using Aws Blockchain Templates For Ethereum,
             Deploying a simple smart Contracts App to the networks -->
           </p>
+          <p>Session-05: Content Provider and services</p>
+          <p>Session-06: Telephony and SMS</p>
           <p>
-            Module-05:
-            Deploying Ethereum with AWS Blockchain Templates,
-            <!-- Introducing Ethereum,
-            Using Aws Blockchain Templates For Ethereum,
-            Deploying a simple smart Contracts App to the networks -->
+            For more information and complete syllabus, please download the pdf
+            from above
           </p>
-          <p>
-            Module-06: Deploying Hyperledger Fabric with AWS Blockchain Templates
-          </p>
-          <p>
-            Module-07: Surveying Blockchain Technologies for Enterprise
-          </p>
-          <p>
-            Module-08: Blockchain Principal & Practice
-          </p>
-          <p>
-            Module-09: Building an Enterprise Private Blockchain in Salesforce
-          </p>
-          <p>
-            Module-10: Introduction to Bitcoin & Decentralized Technology
-          </p>
-          <p>
-            Module-11: IOTA Fundamentals
-          </p>
-          <p>For more information and complete syllabus, please download the pdf from above</p>
-          <br>
-          <p style="font-weight: 650; font-size: 28px;">Highlights</p>
-          <p style="line-height: 2;">
-          
-          </p>
-        </div>
-  
-        <div class="col-12 col-md-6">
-          <p style="font-weight: 650; font-size: 28px;"> Contact</p>
-          <p style="line-height: 2;"><i class="fa fa-user"></i>&ensp;Vishwa Teja<br>
-            <i class="fa fa-envelope"></i>&ensp;20cs01042@iitbbs.ac.in<br>
-            <i class="fa fa-phone"></i>&ensp;9441170666
-          </p>
-        </div>
-        <div class="col-12 col-md-6">
-          <p style="font-weight: 650; font-size: 28px;"> Organising Partner</p>
-          <a href="https://www.tesla.com/" target="blank_"><img src="./assets/img/workshops/partners/ditto.jpg" style="width: 30%;"></a>
-        </div>
-        <div class="col-12 col-md-6">
         </div>
 
-        <div class="col-12 col-md-6" style="margin-bottom: 2.5%;">
-          <div class="row" style="margin-top: 20px;">
-            <button type="button" class="btn" style="width: 40%; margin: auto;" onclick="prevWorkshop()">
-              <i class="fa fa-long-arrow-alt-left" id="previous" style="margin-right: 10px;"></i>
+        <div class="col-12 col-md-6">
+          <p style="font-weight: 650; font-size: 28px;"> Contact</p>
+          <p style="line-height: 2;"><i class="fa fa-user"></i>&ensp;Bhavika<br>
+            <i class="fa fa-envelope"></i>&ensp;bk21@iitbbs.ac.in<br>
+            <i class="fa fa-phone"></i>&ensp;+91 87907 12827
+          </p>
+          <br/>
+          <p style="line-height: 2;"><i class="fa fa-user"></i>&ensp;Divyesh Cirikonda<br>
+            <i class="fa fa-envelope"></i>&ensp;cd11@iitbbs.ac.in<br>
+            <i class="fa fa-phone"></i>&ensp;+91 83176 52305
+            <br/>
+          </p>
+
+          <br/>
+          <p style="line-height: 2;"><i class="fa fa-user"></i>&ensp;Akarsh<br>
+            <i class="fa fa-envelope"></i>&ensp;kvs11@iitbbs.ac.in<br>
+            <i class="fa fa-phone"></i>&ensp;+91 83175 55341
+            <br/>
+          </p>
+
+        </div>
+        <div class="col-12 col-md-6">
+          <p style="font-weight: 650; font-size: 28px">Organising Partner</p>
+          <a href="http://www.eisystems.in/" target="blank_"
+            ><img
+              src="./assets/img/workshops/partners/eisystems.jfif"
+              style="width: 30%"
+          /></a>
+        </div>
+        <div class="col-12 col-md-6"></div>
+
+        <div class="col-12 col-md-6" style="margin-bottom: 2.5%">
+          <div class="row" style="margin-top: 20px">
+            <button
+              type="button"
+              class="btn"
+              style="width: 40%; margin: auto"
+              onclick="prevWorkshop()"
+            >
+              <i
+                class="fa fa-long-arrow-alt-left"
+                id="previous"
+                style="margin-right: 10px"
+              ></i>
               Previous
             </button>
-            <button type="button" class="btn"  style="width: 40%; margin: auto;" onclick="nextWorkshop()">
+            <button
+              type="button"
+              class="btn"
+              style="width: 40%; margin: auto"
+              onclick="nextWorkshop()"
+            >
               Next
-              <i class="fa fa-long-arrow-alt-right" id="next" style="margin-left: 10px;"></i>
+              <i
+                class="fa fa-long-arrow-alt-right"
+                id="next"
+                style="margin-left: 10px"
+              ></i>
             </button>
             <script>
-							function prevWorkshop() {
+              function prevWorkshop() {
                 const prevWorkshopURL = "/workshop-blockchain";
                 window.location.href = prevWorkshopURL;
               }
               function nextWorkshop() {
-                const nextWorkshopURL = "/workshop-blockchain";
+                const nextWorkshopURL = "/workshop-fullstack";
                 window.location.href = nextWorkshopURL;
               }
-						</script>
+            </script>
           </div>
         </div>
       </div>
     </div>
-    
+
     <div class="cur" id="circle">
       <div class="main-cur"></div>
       <img class="satelite" src="./Satellite.svg" alt="" />
@@ -373,32 +436,33 @@ develop your applications for both public and private networks.
       });
     </script>
 
-<script>
-  const downloadPdf = document.querySelector("#download-pdf");
+    <script>
+      const downloadPdf = document.querySelector("#download-pdf");
 
-  downloadPdf.addEventListener("click", () => {
+      downloadPdf.addEventListener("click", () => {
+        // Creating the element anchor that
+        // will download pdf
+        let element = document.createElement("a");
+        element.href = "./assets/workshop-pdfs/android.pdf";
+        element.download = "workshop-android.pdf";
 
-      // Creating the element anchor that
-      // will download pdf
-      let element = document.createElement("a");
-      element.href = "./assets/workshop-pdfs/blockchain.pdf";
-      element.download = "workshop-blockchain.pdf";
+        // Adding the element to body
+        document.documentElement.appendChild(element);
 
-      // Adding the element to body
-      document.documentElement.appendChild(element);
+        // Above code is equivalent to
+        // <a href="path of file" download="file name">
 
-      // Above code is equivalent to
-      // <a href="path of file" download="file name"> 
+        // onClick property, to trigger download
+        element.click();
 
-      // onClick property, to trigger download
-      element.click();
+        // Removing the element from body
+        document.documentElement.removeChild(element);
 
-      // Removing the element from body
-      document.documentElement.removeChild(element);
-
-       // onClick property, to trigger submit form
-      submitForm.click();
-  });
-</script>
+        // onClick property, to trigger submit form
+        submitForm.click();
+      });
+    </script>
+    <div id="preloader"></div>
+    <script src="assets/js/main.js"></script>
   </body>
 </html>

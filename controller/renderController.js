@@ -39,17 +39,9 @@ exports.renderWorkshops = async (req, res) => {
   //render Workshops
   if(req.user) {
     const user = await findUser(req.user.emails[0].value);
-    if(NODE_ENV === 'development') {
       res.render("workshops", {participant:user});
-    } else {
-      res.render("comingsoon", {participant:user});
-    }
   } else {
-    if(NODE_ENV === 'development') {
       res.render("workshops", {participant:false});
-    } else {
-      res.render("comingsoon", {participant:false});
-    }
   }
 };
 
