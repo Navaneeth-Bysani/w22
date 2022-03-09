@@ -3,6 +3,7 @@ const config = require('./config');
 
 const sendEmail = async (options) => {
     //create transport function
+    console.log(config.EMAIL, config.EMAIL_PASSWORD);
     let transporter = nodemailer.createTransport({
         service : 'gmail',
         auth : {
