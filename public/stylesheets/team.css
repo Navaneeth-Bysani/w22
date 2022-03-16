@@ -15,7 +15,7 @@ body{
     align-items: center;
 
 }
-.container{
+.container-team{
     margin-top: 5rem;
     /* margin left for adding logo and menu */
     width: 98vw;
@@ -25,7 +25,7 @@ body{
     align-items: center;
     flex-direction: column;
 }
-.container .wrapper{
+.container-team .wrapper{
     display: flex;
     justify-content: center;
     align-items: center;
@@ -35,14 +35,14 @@ body{
     padding: 1.9rem 3rem;
     margin: 3rem 0;
 }
-.container .wrapper .heading{
+.container-team .wrapper .heading{
     font-family: 'Raleway', sans-serif;
     font-size: 1.3em;
     color: white;
     text-shadow: 0px 0px 6px rgba(255,255,255,0.7);
     margin: 1.3rem 0;
 }
-.container .wrapper .card-section{
+.container-team .wrapper .card-section{
     display: flex;
     justify-content: space-evenly;
     align-items: center;
@@ -50,7 +50,7 @@ body{
     flex-wrap: wrap;
     padding: .5rem;
 }
-.container .wrapper .card-section .box{
+.container-team .wrapper .card-section .box{
   margin: 0;
     width: 260px;
     height: 280px;
@@ -58,7 +58,7 @@ body{
      position: relative;
 }
 
-.container .wrapper .card-section .big-box{
+.container-team .wrapper .card-section .big-box{
     margin: 2rem 2.2rem;
     padding: 0px;
     width: max-content;
@@ -68,7 +68,7 @@ body{
     align-items: center;
     position: relative;
 }
-.container .wrapper .card-section .big-box::before{
+.container-team .wrapper .card-section .big-box::before{
     content: "";
     position:absolute;
     top: -1.3px;
@@ -124,7 +124,7 @@ body{
 
 
 
- .container .wrapper .card-section .box .img{
+ .container-team .wrapper .card-section .box .img{
     position: relative;
     width: 100%;
     height: 100%;
@@ -362,14 +362,14 @@ body{
 }
 
 
-.container .wrapper .card-section .box:hover .img{
+.container-team .wrapper .card-section .box:hover .img{
     background-position: right !important;
 }
-.container .wrapper .card-section .box:hover{
+.container-team .wrapper .card-section .box:hover{
     cursor: pointer;
 }
 
-.container .wrapper .card-section .box .overlay{
+.container-team .wrapper .card-section .box .overlay{
     position: absolute;
     top: 0;
     left: -150%;
@@ -379,10 +379,10 @@ body{
     transform: skewX(-30deg);
     transition: 0.5s;
 }
-.container .wrapper .card-section .box:hover .overlay{
+.container-team .wrapper .card-section .box:hover .overlay{
     left: -3%;
 }
-.container .wrapper .card-section .box .text{
+.container-team .wrapper .card-section .box .text{
     position: absolute;
     top: 50%;
     left: 50%;
@@ -395,7 +395,7 @@ body{
     z-index: 1000;
     text-shadow: 5px 5px 10px black;
 }
-.container .wrapper .card-section .box .text span:nth-child(1){
+.container-team .wrapper .card-section .box .text span:nth-child(1){
     position: absolute;
     top: 2px;
     left: -9%;
@@ -406,7 +406,7 @@ body{
     transition: .7s ease-in-out;
     transition-delay: .7s;
 }
-.container .wrapper .card-section .box .text span:nth-child(2){
+.container-team .wrapper .card-section .box .text span:nth-child(2){
     position: absolute;
     top: -7%;
     left: 2px;
@@ -417,7 +417,7 @@ body{
     transition: .7s ease-in-out;
     transition-delay: .1.1s;
 }
-.container .wrapper .card-section .box .text span:nth-child(3){
+.container-team .wrapper .card-section .box .text span:nth-child(3){
     position: absolute;
     bottom: 2px;
     right: -7%;
@@ -428,7 +428,7 @@ body{
     transition: .7s ease-in-out;
     transition-delay: .9s;
 }
-.container .wrapper .card-section .box .text span:nth-child(4){
+.container-team .wrapper .card-section .box .text span:nth-child(4){
     position: absolute;
     bottom: -7%;
     right: 2px;
@@ -439,15 +439,15 @@ body{
     transition: .7s ease-in-out;
     transition-delay: .1.3s;
 }
-.container .wrapper .card-section .box:hover .text span:nth-child(1),
-.container .wrapper .card-section .box:hover .text span:nth-child(3){
+.container-team .wrapper .card-section .box:hover .text span:nth-child(1),
+.container-team .wrapper .card-section .box:hover .text span:nth-child(3){
     width: 116%;
 }
-.container .wrapper .card-section .box:hover .text span:nth-child(2),
-.container .wrapper .card-section .box:hover .text span:nth-child(4){
+.container-team .wrapper .card-section .box:hover .text span:nth-child(2),
+.container-team .wrapper .card-section .box:hover .text span:nth-child(4){
     height: 114%;
 }
-.container .wrapper .card-section .box .text h2{
+.container-team .wrapper .card-section .box .text h2{
     position: relative;
     font-size: 1.5rem;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -461,12 +461,12 @@ body{
     transform: translateY(-10px);
     
 }
-.container .wrapper .card-section .box:hover .text h2{
+.container-team .wrapper .card-section .box:hover .text h2{
     transform: translateY(0);
     opacity: 1;
     transition-delay: 1.6s;
 }
-.container .wrapper .card-section .box .text p{
+.container-team .wrapper .card-section .box .text p{
     opacity: 0;
     transform: translateY(10px);
     font-family: 'Lato';
@@ -476,7 +476,7 @@ body{
     transition:.5s;
     transition-timing-function: linear;
 }
-.container .wrapper .card-section .box:hover .text p{
+.container-team .wrapper .card-section .box:hover .text p{
     transform: translateY(0);
     opacity: 1;
     transition-delay: 1.7s;

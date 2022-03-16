@@ -23,14 +23,6 @@
     url(../fonts/Futura-Dem.woff) format("woff");
 }
 
-/* body {
-  font-family: "futura_r", "Helvetica Neue", "Helvetica", "Arial", "Avenir",
-    "Hiragino Sans", 游ゴシック体, "Yu Gothic", YuGothic, "ヒラギノ角ゴシック",
-    "メイリオ", Meiryo, "ＭＳ Ｐゴシック", "MS PGothic", sans-serif;
-  background: #0c0b09;
-  color: #fff;
-} */
-
 a {
   color: #cda45e;
   text-decoration: none;

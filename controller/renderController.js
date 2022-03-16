@@ -141,18 +141,9 @@ exports.renderContact = async (req, res) => {
   //render Contact
   if(req.user) {
     const user = await findUser(req.user.emails[0].value);
-
-    if(NODE_ENV === 'development') {
-      res.render("contact", {participant:user});
-    } else {
-      res.render("comingsoon", {participant:user});
-    }
+    res.render("contact", {participant:user});
   } else {
-    if(NODE_ENV === 'development') {
       res.render("contact", {participant:false});
-    } else {
-      res.render("comingsoon", {participant:false});
-    }
   }
 };
 
