@@ -2,7 +2,7 @@ function fullPage() {
   $("#js-fullpage").fullpage({
     easingcss3: "cubic-bezier(0.645, 0.045, 0.355, 1)",
     scrollingSpeed: 1e3,
-    anchors: ["top", "about", "projects", "contact"],
+    anchors: ["matriks", "colloquia", "grand-arcanum", "quizzaire", "lan-wars", "school-champ", "on-net", "yanthrix", "executive-suite"],
     navigation: !0,
     navigationPosition: "left",
     animateAnchor: !1,

@@ -1,4 +1,5 @@
 const User = require('./../model/userModel');
+const Competition = require('./../model/competitionModel');
 const Contact = require('./../model/contactModel');
 const catchAsync = require('./../utils/catchAsync');
 
@@ -47,3 +48,20 @@ exports.postContact = catchAsync(async(req,res, next) => {
     })
 }
 );
+
+exports.registerCompetition = catchAsync(async(req,res,next) => {
+    const user = await User.findOne({email : req.user.emails[0].value});
+    const registration = {
+        name : user.name,
+        email : user.email,
+        phoneNumber : user.phoneNumber,
+        institute : user.institute,
+        competition : req.body.competition
+    }
+
+    let registeredCompetition = await Competition.create(registration);
+
+    res.status(201).json({
+        status : "success"
+    })
+})

@@ -11,103 +11,112 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css" integrity="sha512-doJrC/ocU8VGVRx3O9981+2aYUn3fuWVWvqLi1U+tA2MWVzsw+NVKq1PrENF03M+TYBP92PnYUlXFH1ZW0FpLw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel = "stylesheet" href = "https://fonts.googleapis.com/css2?family=Raleway&display=swap" />
     <link rel = "stylesheet" href = "https://fonts.googleapis.com/css2?family=Lato:ital,wght@1,300&display=swap" />
-</head>
-<style>
-    .cur {
-        height: 31px;
-        width: 31px;
-        z-index: 99999999;
-        pointer-events: none;
-        /* background: grey;*/
-        border-radius: 50%;
-        position: absolute;
-        /*animation: cursorAnim .5s infinite alternate;*/
-        animation: rotate 4s infinite linear;
-        transition: all 0.3s ease;
-        transition-property: background, transform;
-        transform-origin: 100%, 100%;
-      }
 
-      .main-cur {
-        animation: none;
-        margin: 0px;
-        content: "";
-        width: 0.1px;
-        height: 0.1px;
-        border: 10.5px solid#1A28CF;
-        position: absolute;
-        border-radius: 50%;
-        /* opacity: .5; */
-        top: 4.5px;
-        left: 4.5px;
-        /* transform: translate(-50%, -50%); */
-        animation: cursorAnim 0.5s infinite alternate;
-      }
+    <!-- preloader -->
+    <link href="assets/css/style.css" rel="stylesheet" />
 
-      .satelite {
-        height: 30px;
-        margin: 30px;
-        transform: rotate(-1deg);
-        /* transition-duration: 200ms;
-    transition-timing-function: ease-out;
-    */
-      }
-
-      @keyframes rotate {
-        from {
-          transform: rotate(0deg);
-        }
-        to {
-          transform: rotate(359deg);
-        }
-      }
-
-      @keyframes cursorAnim {
-        from {
-          transform: scale(1);
-        }
-        to {
-          transform: scale(0.7);
-        }
-      }
-
-      @keyframes cursorClick {
-        0% {
-          transform: scale(1);
-        }
-        50% {
-          transform: scale(2);
-        }
-        100% {
-          transform: scale(1);
-          opacity: 0;
-        }
-      }
-
-      .expand {
-        animation: cursorClick 0.5s forwards;
-        border: 1px solid blue;
-      }
-
-      .link-grow {
-        transform: scale(2);
-        background: #1a28cf;
-      }
-
-    @media only screen and (max-width: 380px) {
+    <style>
         .cur {
-            display: none;
+            height: 31px;
+            width: 31px;
+            z-index: 99999999;
+            pointer-events: none;
+            /* background: grey;*/
+            border-radius: 50%;
+            position: absolute;
+            /*animation: cursorAnim .5s infinite alternate;*/
+            animation: rotate 4s infinite linear;
+            transition: all 0.3s ease;
+            transition-property: background, transform;
+            transform-origin: 100%, 100%;
+          }
+    
+          .main-cur {
+            animation: none;
+            margin: 0px;
+            content: "";
+            width: 0.1px;
+            height: 0.1px;
+            border: 10.5px solid#1A28CF;
+            position: absolute;
+            border-radius: 50%;
+            /* opacity: .5; */
+            top: 4.5px;
+            left: 4.5px;
+            /* transform: translate(-50%, -50%); */
+            animation: cursorAnim 0.5s infinite alternate;
+          }
+    
+          .satelite {
+            height: 30px;
+            margin: 30px;
+            transform: rotate(-1deg);
+            /* transition-duration: 200ms;
+        transition-timing-function: ease-out;
+        */
+          }
+    
+          @keyframes rotate {
+            from {
+              transform: rotate(0deg);
+            }
+            to {
+              transform: rotate(359deg);
+            }
+          }
+    
+          @keyframes cursorAnim {
+            from {
+              transform: scale(1);
+            }
+            to {
+              transform: scale(0.7);
+            }
+          }
+    
+          @keyframes cursorClick {
+            0% {
+              transform: scale(1);
+            }
+            50% {
+              transform: scale(2);
+            }
+            100% {
+              transform: scale(1);
+              opacity: 0;
+            }
+          }
+    
+          .expand {
+            animation: cursorClick 0.5s forwards;
+            border: 1px solid blue;
+          }
+    
+          .link-grow {
+            transform: scale(2);
+            background: #1a28cf;
+          }
+    
+        @media only screen and (max-width: 380px) {
+            .cur {
+                display: none;
+            }
+            body {
+                cursor: default;
+            }
         }
-        body {
-            cursor: default;
+    
+        .heading h1 {
+            font-size: 2em;
         }
-    }
+    
+        h2 {
+            font-size: 2rem; 
+            font-weight: bold;
+        }
+    </style>
+</head>
 
-    .heading h1 {
-        font-size: 2em;
-    }
-
-</style>
 <body>
     <div class = "container-team">
         <%- include('partials/navbar')%>
@@ -117,7 +126,7 @@
         <div id="chief" class="wrapper">
 
             <div class="heading wow zoomIn">
-                <h1 style="font-size: 2em;">Chief Coordinator</h1>
+                <h1 style="font-size: 2em; text-align: center;">CHIEF COORDINATOR</h1>
             </div>
 
             <div class="card-section">
@@ -131,9 +140,9 @@
                             <span></span>
                             <span></span>
                             <span></span>
-                            <h2 style="font-size: 2rem; font-weight: bold;">Sathvik Chilka</h2>
-                            <p><i style="color: red;" class="fas fa-envelope-square"></i>123ab@iitbbs.ac.in<br>
-                            <i style="color: green;" class="fab fa-whatsapp"></i>1234567890</p> 
+                            <h2 style="font-size: 1.8rem; font-weight: bold;">SATHVIK CHILKA</h2>
+                            <p style="font-size: 1.5rem; font-weight: bold;"><i style="color: red; margin-right: 4px;" class="fas fa-envelope-square"></i>cs34@iitbbs.ac.in<br>
+                            <i style="color: green; margin-right: 4px;" class="fab fa-whatsapp"></i>9502931419</p> 
                         </div>
                     </div>
                 </div>
@@ -148,7 +157,7 @@
         <div id="marketing" class="wrapper">
 
             <div class="heading wow zoomIn">
-                <h1>Marketing</h1>
+                <h1 style="text-align: center;">MARKETING</h1>
             </div>
 
             <div class="card-section">
@@ -162,9 +171,9 @@
                             <span></span>
                             <span></span>
                             <span></span>
-                            <h2 style="font-size: 2rem; font-weight: bold;">ANIKET</h2>
-                            <p><i style="color: red;" class="fas fa-envelope-square"></i>123ab@iitbbs.ac.in<br>
-                                <i style="color: green;" class="fab fa-whatsapp"></i>1234567890</p>                     </div>
+                            <h2 style="font-size: 2rem; font-weight: bold;">DHEERAJ</h2>
+                            <p style="font-size: 1.5rem; font-weight: bold;"><i style="color: red; margin-right: 4px;" class="fas fa-envelope-square"></i>knd12@iitbbs.ac.in<br>
+                                <i style="color: green; margin-right: 4px;" class="fab fa-whatsapp"></i>8374991328</p>                     </div>
                     </div>
                 </div>
 
@@ -177,9 +186,9 @@
                         <span></span>
                         <span></span>
                         <span></span>
-                        <h2>VAIBHAV</h2>
-                        <p><i style="color: red;" class="fas fa-envelope-square"></i>123ab@iitbbs.ac.in<br>
-                            <i style="color: green;" class="fab fa-whatsapp"></i>1234567890</p>                     </div>
+                        <h2 style="font-size: 1.6rem; font-weight: bold;">HARSHAVARDHAN</h2>
+                        <p style="font-size: 1.5rem; font-weight: bold;"><i style="color: red; margin-right: 4px;" class="fas fa-envelope-square"></i>vh14@iitbbs.ac.in<br>
+                            <i style="color: green; margin-right: 4px;" class="fab fa-whatsapp"></i>9337079323</p>                     </div>
                 </div>
                 </div>
 
@@ -192,9 +201,9 @@
                         <span></span>
                         <span></span>
                         <span></span>
-                        <h2>LIKHITHA</h2>
-                        <p><i style="color: red;" class="fas fa-envelope-square"></i>123ab@iitbbs.ac.in<br>
-                            <i style="color: green;" class="fab fa-whatsapp"></i>1234567890</p>                     </div>
+                        <h2 style="font-size: 1.8rem; font-weight: bold;">DEDIPYA NAMA</h2>
+                        <p style="font-size: 1.5rem; font-weight: bold;"><i style="color: red; margin-right: 4px;" class="fas fa-envelope-square"></i>nsd12@iitbbs.ac.in<br>
+                            <i style="color: green; margin-right: 4px;" class="fab fa-whatsapp"></i>8897705091</p>                     </div>
                 </div>
                 </div>
 
@@ -207,9 +216,9 @@
                         <span></span>
                         <span></span>
                         <span></span>
-                        <h2>JAYADITYA</h2>
-                        <p><i style="color: red;" class="fas fa-envelope-square"></i>123ab@iitbbs.ac.in<br>
-                            <i style="color: green;" class="fab fa-whatsapp"></i>1234567890</p>                     </div>
+                        <h2 style="font-size: 2rem; font-weight: bold;">NAUSHABA</h2>
+                        <p style="font-size: 1.5rem; font-weight: bold;"><i style="color: red; margin-right: 4px;" class="fas fa-envelope-square"></i>sn34@iitbbs.ac.in<br>
+                            <i style="color: green; margin-right: 4px;" class="fab fa-whatsapp"></i>9390141774</p>                     </div>
                 </div>
                 </div>
 
@@ -222,9 +231,9 @@
                         <span></span>
                         <span></span>
                         <span></span>
-                        <h2>SAITEJA</h2>
-                        <p><i style="color: red;" class="fas fa-envelope-square"></i>123ab@iitbbs.ac.in<br>
-                            <i style="color: green;" class="fab fa-whatsapp"></i>1234567890</p>                     </div>
+                        <h2 style="font-size: 2rem; font-weight: bold;">DHIREN</h2>
+                        <p style="font-size: 1.5rem; font-weight: bold;"><i style="color: red; margin-right: 4px;" class="fas fa-envelope-square"></i>dtm11@iitbbs.ac.in<br>
+                            <i style="color: green; margin-right: 4px;" class="fab fa-whatsapp"></i>9100853699</p>                     </div>
                 </div>
                 </div>
 
@@ -237,12 +246,26 @@
                         <span></span>
                         <span></span>
                         <span></span>
-                        <h2>RAHUL</h2>
-                        <p><i style="color: red;" class="fas fa-envelope-square"></i>123ab@iitbbs.ac.in<br>
-                            <i style="color: green;" class="fab fa-whatsapp"></i>1234567890</p>                     </div>
-                </div>
+                        <h2 style="font-size: 2rem; font-weight: bold;">AKHIL</h2>
+                        <p style="font-size: 1.5rem; font-weight: bold;"><i style="color: red; margin-right: 4px;" class="fas fa-envelope-square"></i>sga10@iitbbs.ac.in <br>
+                            <i style="color: green; margin-right: 4px;" class="fab fa-whatsapp"></i>9618148936</p>                     </div>
+                    </div>
                 </div>
 
+                <div class="big-box wow zoomIn" data-wow-delay=".75s"> 
+                    <div class="box">
+                        <div class="img img7"></div>
+                        <div class="overlay"></div>
+                        <div class="text">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                            <h2 style="font-size: 2rem; font-weight: bold;">SAKETH</h2>
+                            <p style="font-size: 1.5rem; font-weight: bold;"><i style="color: red; margin-right: 4px;" class="fas fa-envelope-square"></i>js28@iitbbs.ac.in <br>
+                                <i style="color: green; margin-right: 4px;" class="fab fa-whatsapp"></i>7799606053</p>                     </div>
+                        </div>
+                    </div>
             </div>
             
         </div>
@@ -252,7 +275,7 @@
         <div id="branding" class="wrapper">
 
             <div class="heading wow zoomIn">
-                <h1>Branding</h3>
+                <h1 style="text-align: center;">BRANDING</h3>
             </div>
 
             <div class="card-section">
@@ -266,9 +289,9 @@
                         <span></span>
                         <span></span>
                         <span></span>
-                        <h2>ANISH</h2>
-                        <p><i style="color: red;" class="fas fa-envelope-square"></i>123ab@iitbbs.ac.in<br>
-                            <i style="color: green;" class="fab fa-whatsapp"></i>1234567890</p>                     </div>
+                        <h2 style="font-size: 2rem; font-weight: bold;">SATHVIK TONY</h2>
+                        <p style="font-size: 1.5rem; font-weight: bold;"><i style="color: red; margin-right: 4px;" class="fas fa-envelope-square"></i>tcs14@iitbbs.ac.in<br>
+                            <i style="color: green; margin-right: 4px;" class="fab fa-whatsapp"></i>9959239513</p>                     </div>
                 </div>
                 </div>
 
@@ -281,9 +304,9 @@
                         <span></span>
                         <span></span>
                         <span></span>
-                        <h2>SWAPNIL</h2>
-                        <p><i style="color: red;" class="fas fa-envelope-square"></i>123ab@iitbbs.ac.in<br>
-                            <i style="color: green;" class="fab fa-whatsapp"></i>1234567890</p>                     </div>
+                        <h2 style="font-size: 2rem; font-weight: bold;">ABHILASH</h2>
+                        <p style="font-size: 1.5rem; font-weight: bold;"><i style="color: red; margin-right: 4px;" class="fas fa-envelope-square"></i>ar39@iitbbs.ac.in<br>
+                            <i style="color: green; margin-right: 4px;" class="fab fa-whatsapp"></i>8688473151</p>                     </div>
                 </div>
                 </div>
 
@@ -296,12 +319,26 @@
                         <span></span>
                         <span></span>
                         <span></span>
-                        <h2>SHREEKAR</h2>
-                        <p><i style="color: red;" class="fas fa-envelope-square"></i>123ab@iitbbs.ac.in<br>
-                            <i style="color: green;" class="fab fa-whatsapp"></i>1234567890</p>                     </div>
+                        <h2 style="font-size: 2rem; font-weight: bold;">NALINIKANTH</h2>
+                        <p style="font-size: 1.5rem; font-weight: bold;"><i style="color: red; margin-right: 4px;" class="fas fa-envelope-square"></i>bnc12@iitbbs.ac.in<br>
+                            <i style="color: green; margin-right: 4px;" class="fab fa-whatsapp"></i>8790882749</p>                     </div>
                 </div>
                 </div>
 
+                <div class="big-box wow zoomIn" data-wow-delay=".6s">
+                    <div class="box">
+                        <div class="img img4"></div>
+                        <div class="overlay"></div>
+                        <div class="text">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                            <h2 style="font-size: 2rem; font-weight: bold;">BHASVANA</h2>
+                            <p style="font-size: 1.5rem; font-weight: bold;"><i style="color: red; margin-right: 4px;" class="fas fa-envelope-square"></i>db20@iitbbs.ac.in <br>
+                                <i style="color: green; margin-right: 4px;" class="fab fa-whatsapp"></i>9390262243</p>                     </div>
+                    </div>
+                </div>
             </div>
             
         </div>
@@ -311,7 +348,7 @@
         <div id="workshops" class="wrapper">
 
             <div class="heading wow zoomIn">
-                <h1>Workshops</h1>
+                <h1 style="text-align: center;">WORKSHOPS</h1>
             </div>
 
             <div class="card-section">
@@ -325,9 +362,9 @@
                         <span></span>
                         <span></span>
                         <span></span>
-                        <h2>CHAITRA VARDHAN</h2>
-                        <p><i style="color: red;" class="fas fa-envelope-square"></i>123ab@iitbbs.ac.in<br>
-                            <i style="color: green;" class="fab fa-whatsapp"></i>1234567890</p>                     </div>
+                        <h2 style="font-size: 1.8rem; font-weight: bold;">DIVYESH CIRIKONDA</h2>
+                        <p style="font-size: 1.5rem; font-weight: bold;"><i style="color: red; margin-right: 4px;" class="fas fa-envelope-square"></i>cd11@iitbbs.ac.in<br>
+                            <i style="color: green; margin-right: 4px;" class="fab fa-whatsapp"></i>8317652305</p>                     </div>
                 </div>
                 </div>
 
@@ -340,12 +377,41 @@
                         <span></span>
                         <span></span>
                         <span></span>
-                        <h2>AAKANSHA</h2>
-                        <p><i style="color: red;" class="fas fa-envelope-square"></i>123ab@iitbbs.ac.in<br>
-                            <i style="color: green;" class="fab fa-whatsapp"></i>1234567890</p>                     </div>
+                        <h2 style="font-size: 2rem; font-weight: bold;">AKARSH</h2>
+                        <p style="font-size: 1.5rem; font-weight: bold;"><i style="color: red; margin-right: 4px;" class="fas fa-envelope-square"></i>kvs11@iitbbs.ac.in<br>
+                            <i style="color: green; margin-right: 4px;" class="fab fa-whatsapp"></i>8317555341</p>                     </div>
                 </div>
                 </div>
 
+                <div class="big-box wow" data-wow-delay=".55s">
+                    <div class="box">
+                        <div class="img img3"></div>
+                        <div class="overlay"></div>
+                        <div class="text">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                            <h2 style="font-size: 2rem; font-weight: bold;">BHAVIKA</h2>
+                            <p style="font-size: 1.5rem; font-weight: bold;"><i style="color: red; margin-right: 4px;" class="fas fa-envelope-square"></i>bk21@iitbbs.ac.in<br>
+                                <i style="color: green; margin-right: 4px;" class="fab fa-whatsapp"></i>8790712827</p>                     </div>
+                    </div>
+                </div>
+
+                <div class="big-box wow" data-wow-delay=".55s">
+                    <div class="box">
+                        <div class="img img4"></div>
+                        <div class="overlay"></div>
+                        <div class="text">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                            <h2 style="font-size: 1.8rem; font-weight: bold;">SASIDHAR PENTAPATI</h2>
+                            <p style="font-size: 1.5rem; font-weight: bold;"><i style="color: red; margin-right: 4px;" class="fas fa-envelope-square"></i>ps46@iitbbs.ac.in<br>
+                                <i style="color: green; margin-right: 4px;" class="fab fa-whatsapp"></i>9381621272</p>                     </div>
+                    </div>
+                </div>
             </div>
             
         </div>
@@ -355,7 +421,7 @@
         <div id="competitions" class="wrapper">
 
             <div class="heading wow zoomIn">
-                <h1>Competitions</h1>
+                <h1 style="text-align: center;">COMPETITIONS</h1>
             </div>
 
             <div class="card-section">
@@ -369,9 +435,9 @@
                         <span></span>
                         <span></span>
                         <span></span>
-                        <h2>SATWIK</h2>
-                        <p><i style="color: red;" class="fas fa-envelope-square"></i>123ab@iitbbs.ac.in<br>
-                            <i style="color: green;" class="fab fa-whatsapp"></i>1234567890</p>                     </div>
+                        <h2 style="font-size: 2rem; font-weight: bold;">NAGAMANU</h2>
+                        <p style="font-size: 1.5rem; font-weight: bold;"><i style="color: red; margin-right: 4px;" class="fas fa-envelope-square"></i>asn12@iitbbs.ac.in<br>
+                            <i style="color: green; margin-right: 4px;" class="fab fa-whatsapp"></i>8247832789</p>                     </div>
                 </div>
                 </div>
 
@@ -384,9 +450,9 @@
                         <span></span>
                         <span></span>
                         <span></span>
-                        <h2>HARSHA</h2>
-                        <p><i style="color: red;" class="fas fa-envelope-square"></i>123ab@iitbbs.ac.in<br>
-                            <i style="color: green;" class="fab fa-whatsapp"></i>1234567890</p>                     </div>
+                        <h2 style="font-size: 2rem; font-weight: bold;">TARUN</h2>
+                        <p style="font-size: 1.5rem; font-weight: bold;"><i style="color: red; margin-right: 4px;" class="fas fa-envelope-square"></i>tr14@iitbbs.ac.in<br>
+                            <i style="color: green; margin-right: 4px;" class="fab fa-whatsapp"></i>9456252824</p>                     </div>
                 </div>
                 </div>
 
@@ -399,7 +465,7 @@
         <div id="public-relations" class="wrapper">
 
             <div class="heading wow zoomIn">
-                <h1>Public Relations</h1>
+                <h1 style="text-align: center;">PUBLIC RELATIONS</h1>
             </div>
 
             <div class="card-section">
@@ -413,9 +479,9 @@
                         <span></span>
                         <span></span>
                         <span></span>
-                        <h2>PRANEETH</h2>
-                        <p><i style="color: red;" class="fas fa-envelope-square"></i>123ab@iitbbs.ac.in<br>
-                            <i style="color: green;" class="fab fa-whatsapp"></i>1234567890</p>                     </div>
+                        <h2 style="font-size: 2rem; font-weight: bold;">ANIRUDH</h2>
+                        <p style="font-size: 1.5rem; font-weight: bold;"><i style="color: red; margin-right: 4px;" class="fas fa-envelope-square"></i>ma31@iitbbs.ac.in<br>
+                            <i style="color: green; margin-right: 4px;" class="fab fa-whatsapp"></i>8688562466</p>                     </div>
                 </div>
                 </div>
 
@@ -428,9 +494,9 @@
                         <span></span>
                         <span></span>
                         <span></span>
-                        <h2>VARUN</h2>
-                        <p><i style="color: red;" class="fas fa-envelope-square"></i>123ab@iitbbs.ac.in<br>
-                            <i style="color: green;" class="fab fa-whatsapp"></i>1234567890</p>                     </div>
+                        <h2 style="font-size: 2rem; font-weight: bold;">SRAVANI T.N</h2>
+                        <p style="font-size: 1.5rem; font-weight: bold;"><i style="color: red; margin-right: 4px;" class="fas fa-envelope-square"></i>tns14@iitbbs.ac.in<br>
+                            <i style="color: green; margin-right: 4px;" class="fab fa-whatsapp"></i>9133710059</p>                     </div>
                 </div>
                 </div>
 
@@ -443,13 +509,13 @@
                         <span></span>
                         <span></span>
                         <span></span>
-                        <h2>SHREYA</h2>
-                        <p><i style="color: red;" class="fas fa-envelope-square"></i>123ab@iitbbs.ac.in<br>
-                            <i style="color: green;" class="fab fa-whatsapp"></i>1234567890</p>                     </div>
+                        <h2 style="font-size: 2rem; font-weight: bold;">NANDINI</h2>
+                        <p style="font-size: 1.5rem; font-weight: bold;"><i style="color: red; margin-right: 4px;" class="fas fa-envelope-square"></i>ugn12@iitbbs.ac.in<br>
+                            <i style="color: green; margin-right: 4px;" class="fab fa-whatsapp"></i>8790861349</p>                     </div>
                 </div>
                 </div>
 
-                <div class="big-box wow zoomIn" data-wow-delay=".65s">
+                <!-- <div class="big-box wow zoomIn" data-wow-delay=".65s">
                 <div class="box">
                     <div class="img img4"></div>
                     <div class="overlay"></div>
@@ -458,13 +524,13 @@
                         <span></span>
                         <span></span>
                         <span></span>
-                        <h2>SAHITHI</h2>
-                        <p><i style="color: red;" class="fas fa-envelope-square"></i>123ab@iitbbs.ac.in<br>
-                            <i style="color: green;" class="fab fa-whatsapp"></i>1234567890</p>                     </div>
+                        <h2 style="font-size: 2rem; font-weight: bold;">SAHITHI</h2>
+                        <p style="font-size: 1.5rem; font-weight: bold;"><i style="color: red; margin-right: 4px;" class="fas fa-envelope-square"></i>123ab@iitbbs.ac.in<br>
+                            <i style="color: green; margin-right: 4px;" class="fab fa-whatsapp"></i>1234567890</p>                     </div>
                 </div>
-                </div>
+                </div> -->
 
-                <div class="big-box wow zoomIn" data-wow-delay=".7s">
+                <!-- <div class="big-box wow zoomIn" data-wow-delay=".7s">
                 <div class="box">
                     <div class="img img5"></div>
                     <div class="overlay"></div>
@@ -473,13 +539,13 @@
                         <span></span>
                         <span></span>
                         <span></span>
-                        <h2>RITHIK</h2>
-                        <p><i style="color: red;" class="fas fa-envelope-square"></i>123ab@iitbbs.ac.in<br>
-                            <i style="color: green;" class="fab fa-whatsapp"></i>1234567890</p>                     </div>
+                        <h2 style="font-size: 2rem; font-weight: bold;">RITHIK</h2>
+                        <p style="font-size: 1.5rem; font-weight: bold;"><i style="color: red; margin-right: 4px;" class="fas fa-envelope-square"></i>123ab@iitbbs.ac.in<br>
+                            <i style="color: green; margin-right: 4px;" class="fab fa-whatsapp"></i>1234567890</p>                     </div>
                 </div>
-                </div>
+                </div> -->
 
-                <div class="big-box wow zoomIn" data-wow-delay=".75s">
+                <!-- <div class="big-box wow zoomIn" data-wow-delay=".75s">
                 <div class="box">
                     <div class="img img6"></div>
                     <div class="overlay"></div>
@@ -488,13 +554,13 @@
                         <span></span>
                         <span></span>
                         <span></span>
-                        <h2>CHARAN</h2>
-                        <p><i style="color: red;" class="fas fa-envelope-square"></i>123ab@iitbbs.ac.in<br>
-                            <i style="color: green;" class="fab fa-whatsapp"></i>1234567890</p>                     </div>
+                        <h2 style="font-size: 2rem; font-weight: bold;">CHARAN</h2>
+                        <p style="font-size: 1.5rem; font-weight: bold;"><i style="color: red; margin-right: 4px;" class="fas fa-envelope-square"></i>123ab@iitbbs.ac.in<br>
+                            <i style="color: green; margin-right: 4px;" class="fab fa-whatsapp"></i>1234567890</p>                     </div>
                 </div>
-                </div>
+                </div> -->
 
-                <div class="big-box wow zoomIn" data-wow-delay=".8s">
+                <!-- <div class="big-box wow zoomIn" data-wow-delay=".8s">
                 <div class="box">
                     <div class="img img7"></div>
                     <div class="overlay"></div>
@@ -503,11 +569,11 @@
                         <span></span>
                         <span></span>
                         <span></span>
-                        <h2>ABHINAV</h2>
-                        <p><i style="color: red;" class="fas fa-envelope-square"></i>123ab@iitbbs.ac.in<br>
-                            <i style="color: green;" class="fab fa-whatsapp"></i>1234567890</p>                     </div>
+                        <h2 style="font-size: 2rem; font-weight: bold;">ABHINAV</h2>
+                        <p style="font-size: 1.5rem; font-weight: bold;"><i style="color: red; margin-right: 4px;" class="fas fa-envelope-square"></i>123ab@iitbbs.ac.in<br>
+                            <i style="color: green; margin-right: 4px;" class="fab fa-whatsapp"></i>1234567890</p>                     </div>
                 </div>
-                </div>
+                </div> -->
                 
             </div>
             
@@ -518,7 +584,7 @@
         <div id="ca-program" class="wrapper">
 
             <div class="heading wow zoomIn">
-                <h1>Campus Ambassador Program</h1>
+                <h1 style="text-align: center;">CAMPUS AMBASSADOR PROGRAM</h1>
             </div>
 
             <div class="card-section">
@@ -532,9 +598,9 @@
                         <span></span>
                         <span></span>
                         <span></span>
-                        <h2>VIVEK</h2>
-                        <p><i style="color: red;" class="fas fa-envelope-square"></i>123ab@iitbbs.ac.in<br>
-                            <i style="color: green;" class="fab fa-whatsapp"></i>1234567890</p>                     </div>
+                        <h2 style="font-size: 1.8rem; font-weight: bold;">RAGHU VAMSIDHAR</h2>
+                        <p style="font-size: 1.5rem; font-weight: bold;"><i style="color: red; margin-right: 4px;" class="fas fa-envelope-square"></i>srv12@iitbbs.ac.in<br>
+                            <i style="color: green; margin-right: 4px;" class="fab fa-whatsapp"></i>6309375140</p>                     </div>
                 </div>
                 </div>
 
@@ -547,7 +613,7 @@
         <div id="exhibits" class="wrapper">
 
             <div class="heading wow zoomIn">
-                <h1>Exhibits</h1>
+                <h1 style="text-align: center;">EXHIBITS</h1>
             </div>
 
             <div class="card-section">
@@ -561,9 +627,9 @@
                         <span></span>
                         <span></span>
                         <span></span>
-                        <h2>RAVIKANTH</h2>
-                        <p><i style="color: red;" class="fas fa-envelope-square"></i>123ab@iitbbs.ac.in<br>
-                            <i style="color: green;" class="fab fa-whatsapp"></i>1234567890</p>                     </div>
+                        <h2 style="font-size: 1.8rem; font-weight: bold;">SHIVRAJIT SOM</h2>
+                        <p style="font-size: 1.5rem; font-weight: bold;"><i style="color: red; margin-right: 4px;" class="fas fa-envelope-square"></i>ss114@iitbbs.ac.in <br>
+                            <i style="color: green; margin-right: 4px;" class="fab fa-whatsapp"></i>9929583770</p>                     </div>
                 </div>
                 </div>
 
@@ -576,9 +642,9 @@
                         <span></span>
                         <span></span>
                         <span></span>
-                        <h2>REVANTH</h2>
-                        <p><i style="color: red;" class="fas fa-envelope-square"></i>123ab@iitbbs.ac.in<br>
-                            <i style="color: green;" class="fab fa-whatsapp"></i>1234567890</p>                     </div>
+                        <h2 style="font-size: 2rem; font-weight: bold;">ANIRUDHA</h2>
+                        <p style="font-size: 1.5rem; font-weight: bold;"><i style="color: red; margin-right: 4px;" class="fas fa-envelope-square"></i>amu10@iitbbs.ac.in<br>
+                            <i style="color: green; margin-right: 4px;" class="fab fa-whatsapp"></i>9521206656</p>                     </div>
                 </div>
                 </div>
 
@@ -591,7 +657,7 @@
         <div id="qwissenaire" class="wrapper">
 
             <div class="heading wow zoomIn">
-                <h1>Qwissenaire</h1>
+                <h1 style="text-align: center;">QWISSENAIRE</h1>
             </div>
 
             <div class="card-section">
@@ -605,9 +671,9 @@
                         <span></span>
                         <span></span>
                         <span></span>
-                        <h2>MANOJ</h2>
-                        <p><i style="color: red;" class="fas fa-envelope-square"></i>123ab@iitbbs.ac.in<br>
-                            <i style="color: green;" class="fab fa-whatsapp"></i>1234567890</p>                     </div>
+                        <h2 style="font-size: 2rem; font-weight: bold;">ROHAN REDDY</h2>
+                        <p style="font-size: 1.5rem; font-weight: bold;"><i style="color: red; margin-right: 4px;" class="fas fa-envelope-square"></i>arr10@iitbbs.ac.in<br>
+                            <i style="color: green; margin-right: 4px;" class="fab fa-whatsapp"></i>7702825377</p>                     </div>
                 </div>
                 </div>
 
@@ -620,13 +686,13 @@
                         <span></span>
                         <span></span>
                         <span></span>
-                        <h2>HRUSHIKESH</h2>
-                        <p><i style="color: red;" class="fas fa-envelope-square"></i>123ab@iitbbs.ac.in<br>
-                            <i style="color: green;" class="fab fa-whatsapp"></i>1234567890</p>                     </div>
+                        <h2 style="font-size: 2rem; font-weight: bold;">SWATHI BODA</h2>
+                        <p style="font-size: 1.5rem; font-weight: bold;"><i style="color: red; margin-right: 4px;" class="fas fa-envelope-square"></i>bs26@iitbbs.ac.in<br>
+                            <i style="color: green; margin-right: 4px;" class="fab fa-whatsapp"></i>8367026424</p>                     </div>
                 </div>
                 </div>
 
-                <div class="big-box wow zoomIn" data-wow-delay=".6s">
+                <!-- <div class="big-box wow zoomIn" data-wow-delay=".6s">
                 <div class="box">
                     <div class="img img3"></div>
                     <div class="overlay"></div>
@@ -635,11 +701,11 @@
                         <span></span>
                         <span></span>
                         <span></span>
-                        <h2>SHIVDARSHAN</h2>
-                        <p><i style="color: red;" class="fas fa-envelope-square"></i>123ab@iitbbs.ac.in<br>
-                            <i style="color: green;" class="fab fa-whatsapp"></i>1234567890</p>                     </div>
+                        <h2 style="font-size: 2rem; font-weight: bold;">SHIVDARSHAN</h2>
+                        <p style="font-size: 1.5rem; font-weight: bold;"><i style="color: red; margin-right: 4px;" class="fas fa-envelope-square"></i>123ab@iitbbs.ac.in<br>
+                            <i style="color: green; margin-right: 4px;" class="fab fa-whatsapp"></i>1234567890</p>                     </div>
                 </div>
-                </div>
+                </div> -->
 
             </div>
             
@@ -650,7 +716,7 @@
         <div id="guest-lecture" class="wrapper">
 
             <div class="heading wow zoomIn">
-                <h1>Guest Lectures</h1>
+                <h1 style="text-align: center;">GUEST LECTURES</h1>
             </div>
 
             <div class="card-section">
@@ -664,9 +730,9 @@
                         <span></span>
                         <span></span>
                         <span></span>
-                        <h2>SNEHITHA</h2>
-                        <p><i style="color: red;" class="fas fa-envelope-square"></i>123ab@iitbbs.ac.in<br>
-                            <i style="color: green;" class="fab fa-whatsapp"></i>1234567890</p>                     </div>
+                        <h2 style="font-size: 2rem; font-weight: bold;">DEEPTHI SAI</h2>
+                        <p style="font-size: 1.5rem; font-weight: bold;"><i style="color: red; margin-right: 4px;" class="fas fa-envelope-square"></i>pds12@iitbbs.ac.in<br>
+                            <i style="color: green; margin-right: 4px;" class="fab fa-whatsapp"></i>8688198270</p>                     </div>
                 </div>
                 </div>
 
@@ -679,9 +745,9 @@
                         <span></span>
                         <span></span>
                         <span></span>
-                        <h2>SWETHA</h2>
-                        <p><i style="color: red;" class="fas fa-envelope-square"></i>123ab@iitbbs.ac.in<br>
-                            <i style="color: green;" class="fab fa-whatsapp"></i>1234567890</p>                     </div>
+                        <h2 style="font-size: 2rem; font-weight: bold;">YASASWINI N</h2>
+                        <p style="font-size: 1.5rem; font-weight: bold;"><i style="color: red; margin-right: 4px;" class="fas fa-envelope-square"></i>ny14@iitbbs.ac.in<br>
+                            <i style="color: green; margin-right: 4px;" class="fab fa-whatsapp"></i>7095753086</p>                     </div>
                 </div>
                 </div>
 
@@ -694,7 +760,7 @@
         <div id="creatives" class="wrapper">
 
             <div class="heading wow zoomIn">
-                <h1>Creatives</h1>
+                <h1 style="text-align: center;">CREATIVES</h1>
             </div>
 
             <div class="card-section">
@@ -708,9 +774,9 @@
                         <span></span>
                         <span></span>
                         <span></span>
-                        <h2>JITHENDRA</h2>
-                        <p><i style="color: red;" class="fas fa-envelope-square"></i>123ab@iitbbs.ac.in<br>
-                            <i style="color: green;" class="fab fa-whatsapp"></i>1234567890</p>                     </div>
+                        <h2 style="font-size: 2rem; font-weight: bold;">PAVAN KUMAR</h2>
+                        <p style="font-size: 1.5rem; font-weight: bold;"><i style="color: red; margin-right: 4px;" class="fas fa-envelope-square"></i>npk13@iitbbs.ac.in<br>
+                            <i style="color: green; margin-right: 4px;" class="fab fa-whatsapp"></i>7013347804</p>                     </div>
                 </div>
                 </div>
 
@@ -723,9 +789,9 @@
                         <span></span>
                         <span></span>
                         <span></span>
-                        <h2>JITENDRA</h2>
-                        <p><i style="color: red;" class="fas fa-envelope-square"></i>123ab@iitbbs.ac.in<br>
-                            <i style="color: green;" class="fab fa-whatsapp"></i>1234567890</p>                     </div>
+                        <h2 style="font-size: 2rem; font-weight: bold;">ROHAN SAI</h2>
+                        <p style="font-size: 1.5rem; font-weight: bold;"><i style="color: red; margin-right: 4px;" class="fas fa-envelope-square"></i>shv12@iitbbs.ac.in<br>
+                            <i style="color: green; margin-right: 4px;" class="fab fa-whatsapp"></i>7075014903</p>                     </div>
                 </div>
                 </div>
 
@@ -738,13 +804,13 @@
                         <span></span>
                         <span></span>
                         <span></span>
-                        <h2>NARESH</h2>
-                        <p><i style="color: red;" class="fas fa-envelope-square"></i>123ab@iitbbs.ac.in<br>
-                            <i style="color: green;" class="fab fa-whatsapp"></i>1234567890</p>                     </div>
+                        <h2 style="font-size: 1.8rem; font-weight: bold;">KOUSHIK KUMAR</h2>
+                        <p style="font-size: 1.5rem; font-weight: bold;"><i style="color: red; margin-right: 4px;" class="fas fa-envelope-square"></i>kkk14@iitbbs.ac.in<br>
+                            <i style="color: green; margin-right: 4px;" class="fab fa-whatsapp"></i>6300992496</p>                     </div>
                 </div>
                 </div>
 
-                <div class="big-box wow zoomIn" data-wow-delay=".65s">
+                <!-- <div class="big-box wow zoomIn" data-wow-delay=".65s">
                     <div class="box">
                     <div class="img img4"></div>
                     <div class="overlay"></div>
@@ -753,13 +819,13 @@
                         <span></span>
                         <span></span>
                         <span></span>
-                        <h2>KARTHEEK</h2>
-                        <p><i style="color: red;" class="fas fa-envelope-square"></i>123ab@iitbbs.ac.in<br>
-                            <i style="color: green;" class="fab fa-whatsapp"></i>1234567890</p>                     </div>
+                        <h2 style="font-size: 2rem; font-weight: bold;">KARTHEEK</h2>
+                        <p style="font-size: 1.5rem; font-weight: bold;"><i style="color: red; margin-right: 4px;" class="fas fa-envelope-square"></i>123ab@iitbbs.ac.in<br>
+                            <i style="color: green; margin-right: 4px;" class="fab fa-whatsapp"></i>1234567890</p>                     </div>
                 </div>
-                </div>
+                </div> -->
 
-                <div class="big-box wow zoomIn" data-wow-delay=".7s">
+                <!-- <div class="big-box wow zoomIn" data-wow-delay=".7s">
                     <div class="box">
                     <div class="img img5"></div>
                     <div class="overlay"></div>
@@ -768,11 +834,11 @@
                         <span></span>
                         <span></span>
                         <span></span>
-                        <h2>SAI RAM</h2>
-                        <p><i style="color: red;" class="fas fa-envelope-square"></i>123ab@iitbbs.ac.in<br>
-                            <i style="color: green;" class="fab fa-whatsapp"></i>1234567890</p>                     </div>
+                        <h2 style="font-size: 2rem; font-weight: bold;">SAI RAM</h2>
+                        <p style="font-size: 1.5rem; font-weight: bold;"><i style="color: red; margin-right: 4px;" class="fas fa-envelope-square"></i>123ab@iitbbs.ac.in<br>
+                            <i style="color: green; margin-right: 4px;" class="fab fa-whatsapp"></i>1234567890</p>                     </div>
                 </div>
-                </div>
+                </div> -->
 
             </div>
             
@@ -783,7 +849,7 @@
         <div id="web" class="wrapper">
 
             <div class="heading wow zoomIn">
-                <h1>Web</h2>
+                <h1 style="text-align: center;">WEB</h2>
             </div>
 
             <div class="card-section wow zoomIn" data-wow-delay=".5s" >
@@ -797,9 +863,9 @@
                         <span></span>
                         <span></span>
                         <span></span>
-                        <h2>SUDHEER</h2>
-                        <p><i style="color: red;" class="fas fa-envelope-square"></i>123ab@iitbbs.ac.in<br>
-                            <i style="color: green;" class="fab fa-whatsapp"></i>1234567890</p>                     </div>
+                        <h2 style="font-size: 2rem; font-weight: bold;">NAVANEETH</h2>
+                        <p style="font-size: 1.5rem; font-weight: bold;"><i style="color: red; margin-right: 4px;" class="fas fa-envelope-square"></i>brn14@iitbbs.ac.in<br>
+                            <i style="color: green; margin-right: 4px;" class="fab fa-whatsapp"></i>8985749089</p>                     </div>
                 </div>
                 </div>
 
@@ -812,9 +878,9 @@
                         <span></span>
                         <span></span>
                         <span></span>
-                        <h2>VASANTH</h2>
-                        <p><i style="color: red;" class="fas fa-envelope-square"></i>123ab@iitbbs.ac.in<br>
-                            <i style="color: green;" class="fab fa-whatsapp"></i>1234567890</p>                     </div>
+                        <h2 style="font-size: 2rem; font-weight: bold;">SATHIYA</h2>
+                        <p style="font-size: 1.5rem; font-weight: bold;"><i style="color: red; margin-right: 4px;" class="fas fa-envelope-square"></i>sss18@iitbbs.ac.in<br>
+                            <i style="color: green; margin-right: 4px;" class="fab fa-whatsapp"></i>8919212893</p>                     </div>
                 </div>
                 </div>
 
@@ -827,9 +893,9 @@
                         <span></span>
                         <span></span>
                         <span></span>
-                        <h2>CHANDANA</h2>
-                        <p><i style="color: red;" class="fas fa-envelope-square"></i>123ab@iitbbs.ac.in<br>
-                            <i style="color: green;" class="fab fa-whatsapp"></i>1234567890</p>                     </div>
+                        <h2 style="font-size: 2rem; font-weight: bold;">KARTIKEYA</h2>
+                        <p style="font-size: 1.5rem; font-weight: bold;"><i style="color: red; margin-right: 4px;" class="fas fa-envelope-square"></i>pk39@iitbbs.ac.in<br>
+                            <i style="color: green; margin-right: 4px;" class="fab fa-whatsapp"></i>7337034444</p>                     </div>
                 </div>
                 </div>
 
@@ -842,9 +908,9 @@
                         <span></span>
                         <span></span>
                         <span></span>
-                        <h2>ROHITH</h2>
-                        <p><i style="color: red;" class="fas fa-envelope-square"></i>123ab@iitbbs.ac.in<br>
-                            <i style="color: green;" class="fab fa-whatsapp"></i>1234567890</p>                     </div>
+                        <h2 style="font-size: 2rem; font-weight: bold;">SWAROOP</h2>
+                        <p style="font-size: 1.5rem; font-weight: bold;"><i style="color: red; margin-right: 4px;" class="fas fa-envelope-square"></i>rss13@iitbbs.ac.in<br>
+                            <i style="color: green; margin-right: 4px;" class="fab fa-whatsapp"></i>8688958277</p>                     </div>
                 </div>
                 </div>
                 
@@ -890,7 +956,9 @@
           }, 500);
         });
       </script>
-      
+      <div id="preloader"></div>
+      <!-- preloader -->
+      <script src="assets/js/main.js"></script>
 </body>
 </html>
 <!-- NeuroGC1234 --> 
@@ -949,3 +1017,8 @@ Karthikeya
 Navaneeth
 Swaroop
 Sathya Sheelan -->
+
+
+<!-- 
+    sathvik tony
+ -->

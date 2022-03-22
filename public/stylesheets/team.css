@@ -135,72 +135,84 @@ body{
 } 
 /* chief coordinator */
 #chief .card-section .box .img1{
-    background:url('./../assets/img/team/SathvikChilaka.JPG');
+    background:url('./../assets/img/team/SathvikChilaka.jpg');
 }
 
 /* Marketing */
 
 /* 1 */
 #marketing .card-section .box .img1{
-    background:url('./../assets/img/team/Anirudha.JPG');
+    background:url('./../assets/img/team/Dheeraj.jpg');
 }
 /* 2 */
 #marketing .card-section .box .img2{
-    background:url(14.JPG);
+    background:url('./../assets/img/team/harshavardhan.jpg');
 }
 /* 3 */
 #marketing .card-section .box .img3{
-    background:url(10.JPG);
+    background:url('./../assets/img/team/Dedipya.jpg');
 }
 /* 4 */
 #marketing .card-section .box .img4{
-    background:url(9.JPG);
+    background:url('./../assets/img/team/NaushabaShaik.jpg');
 }
 /* 5 */
 #marketing .card-section .box .img5{
-    background:url(12.jpg);
+    background:url('./../assets/img/team/Dhiren.jpg');
 }
 /* 6 */
 #marketing .card-section .box .img6{
-    background:url(11.JPG);
+    background:url('./../assets/img/team/GuruSaiAkhil.jpg');
 }
 
-
+/* 7 */
+#marketing .card-section .box .img7{
+    background:url('./../assets/img/team/Saketh.jpg');
+}
 /* Branding */
 
 /* 1 */
 #branding .card-section .box .img1{
-    background:url(3.JPG);
+    background:url('./../assets/img/team/sathvik_tony.jpeg');
 }
 /* 2 */
 #branding .card-section .box .img2{
-    background:url(2.jpeg);
+    background:url('./../assets/img/team/Abhilash.jpg');
 }
 /* 3 */
 #branding .card-section .box .img3{
-    background:url(13.JPG);
+    background:url('./../assets/img/team/Nalinikanth.jpg');
 }
 
+#branding .card-section .box .img4{
+    background:url('./../assets/img/team/Bhasvana.jpg');
+}
 /* Workshops */
 
 /* 1 */
 #workshops .card-section .box .img1{
-    background:url(5.JPG);
+    background:url('./../assets/img/team/Divyesh.jpg');
 }
 /* 2 */
 #workshops .card-section .box .img2{
-    background:url(4.JPG);
+    background:url('./../assets/img/team/Akarsh.jpg');
 }
 
+#workshops .card-section .box .img3{
+    background:url('./../assets/img/team/Bhavika.jpg');
+}
+#workshops .card-section .box .img4{
+    background:url('./../assets/img/team/Sasidhar.jpg');
+}
 /* Competitions */
 
 /* 1 */
 #competitions .card-section .box .img1{
-    background:url(6.jpeg);
+    background:url('./../assets/img/team/Manu.jpg');
 }
 /* 2 */
 #competitions .card-section .box .img2{
-    background:url(7.JPG);
+    background:url('./../assets/img/team/Tarun.jpg');
 }
 
 
@@ -208,15 +220,15 @@ body{
 
 /* 1 */
 #public-relations .card-section .box .img1{
-    background:url(16.jpeg);
+    background:url('./../assets/img/team/Anirudh.jpg');
 }
 /* 2 */
 #public-relations .card-section .box .img2{
-    background:url(17.JPG);
+    background:url('./../assets/img/team/sravani.jpg');
 }
 /* 3 */
 #public-relations .card-section .box .img3{
-    background:url(19.JPG);
+    background:url('./../assets/img/team/Nandini.jpg');
 }
 /* 4 */
 #public-relations .card-section .box .img4{
@@ -232,53 +244,53 @@ body{
 }
 /* 7 */
 #public-relations .card-section .box .img7{
-    background:url(15.JPG);
+    background:url(15.jpg);
 }
 
 /* CA program */
 
 /* 1 */
 #ca-program .card-section .box .img1{
-    background:url(22.JPG);
+    background:url('./../assets/img/team/Raghu_vamsidhar.jpg');
 }
 
 /* Exhibits */
 
 /* 1 */
 #exhibits .card-section .box .img1{
-    background:url(25.jpeg);
+    background:url('./../assets/img/team/Shivrajit.jpg');
 }
 
 /* 2 */
 #exhibits .card-section .box .img2{
-    background:url(24.jpeg);
+    background:url('./../assets/img/team/Anirudha.jpg');
 }
 
 /* Qwissenaire */
 
 /* 1 */
 #qwissenaire .card-section .box .img1{
-    background:url(33.JPG);
+    background:url('./../assets/img/team/RohanReddy.jpg');
 }
 
 /* 2 */
 #qwissenaire .card-section .box .img2{
-    background:url(26.jpeg);
+    background:url('./../assets/img/team/swathi.jpg');
 }
 /* 3 */
 #qwissenaire .card-section .box .img3{
-    background:url(23.JPG);
+    background:url(23.jpg);
 }
 
 /* guest Lecture */
 
 /* 1 */
 #guest-lecture .card-section .box .img1{
-    background:url(34.JPG);
+    background:url('./../assets/img/team/DeepthiSaiP.jpg');
 }
 /* 2 */
 #guest-lecture .card-section .box .img2{
-    background:url(35.JPG);
+    background:url('./../assets/img/team/Yasaswini.jpg');
 }
 
 
@@ -286,42 +298,42 @@ body{
 
 /* 1 */
 #creatives .card-section .box .img1{
-    background:url(29.jpg);
+    background:url('./../assets/img/team/pavankumar.jpg');
 }
 /* 2 */
 #creatives .card-section .box .img2{
-    background:url(31.JPG);
+    background:url('./../assets/img/team/sai_rohan.jpg');
 }
 /* 3 */
 #creatives .card-section .box .img3{
-    background:url(32.JPG);
+    background:url('./../assets/img/team/koushikkumar.jpg');
 }
 /* 4 */
 #creatives .card-section .box .img4{
-    background:url(28.JPG);
+    background:url(28.jpg);
 }
 /* 5 */
 #creatives .card-section .box .img5{
-    background:url(30.JPG);
+    background:url(30.jpg);
 }
 
 /* web */
 
 /* 1 */
 #web .card-section .box .img1{
-    background:url(36.JPG);
+    background:url('./../assets/img/team/Navaneeth.jpg');
 }
 /* 2 */
 #web .card-section .box .img2{
-    background:url(38.JPG);
+    background:url('./../assets/img/team/sathiya.jpg');
 }
 /* 3 */
 #web .card-section .box .img3{
-    background:url(37.JPG);
+    background:url('./../assets/img/team/kartikeya.jpg');
 }
 /* 4 */
 #web .card-section .box .img4{
-    background:url(27.JPG);
+    background:url('./../assets/img/team/Swaroop.jpg');
 }
 
 #chief .card-section .box .text h2{

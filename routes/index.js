@@ -3,6 +3,8 @@ const userController = require("../controller/userController");
 const renderController = require("../controller/renderController");
 const paymentController = require("../controller/paymentController");
 const wsController = require("../controller/wsController");
+const competitionController = require("./../controller/competitionsController");
+
 const app = require("../app");
 const router = express.Router();
 
@@ -28,7 +30,7 @@ router.get("/sponsors", renderController.renderSponsors);
 router.get("/reachUs", renderController.renderContact);
 router.post("/contact", userController.postContact);
 router.post("/updateProfile", userController.updateProfile);
-//individual competition routes
+router.post("/register-competition",ensureAuthenticated, userController.registerCompetition);
 
 //individual workshop routes
 router.get("/workshop-blockchain", wsController.blockchain);
@@ -40,6 +42,9 @@ router.get("/workshop-automobile", wsController.automobile);
 //posting a query in contact
 
 
+//individual competition routes
+router.get("/artelligence", competitionController.artelligence);
+router.get("/riddlegenix", competitionController.riddlegenix);
 //payment route
 // router.post('/payment', paymentController.initiatePayment);
 //single webpages

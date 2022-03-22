@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>RiddleGeniX | Wissenaire'22</title>
+    <link rel="icon" type="image/x-icon" href="./assets/img/blue_favicon.ico">
+    <link
+      href="https://fonts.googleapis.com/css?family=Exo+2:600,700,800,900"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <link rel="stylesheet" href="./stylesheets/heading.css" />
+    <!--ajax-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script>
+    
+    <style>
+      body {
+        margin: 0;
+        background-color: #121212;
+        cursor: none !important;
+      }
+      .top-layer {
+        position: absolute;
+        width: 100%;
+        z-index: 1;
+        top: 12vh;
+        left: 0;
+      }
+
+      body {
+        cursor: none !important;
+      }
+
+      .cur {
+        height: 31px;
+        width: 31px;
+        z-index: 99999999;
+        pointer-events: none;
+        border-radius: 50%;
+        position: absolute;
+        animation: rotate 4s infinite linear;
+        transition: all 0.3s ease;
+        transition-property: background, transform;
+        transform-origin: 100%, 100%;
+      }
+
+      .main-cur {
+        animation: none;
+        margin: 0px;
+        content: "";
+        width: 0.1px;
+        height: 0.1px;
+        border: 10.5px solid#1A28CF;
+        position: absolute;
+        border-radius: 50%;
+        /* opacity: .5; */
+        top: 4.5px;
+        left: 4.5px;
+        /* transform: translate(-50%, -50%); */
+        animation: cursorAnim 0.5s infinite alternate;
+      }
+
+      .satelite {
+        height: 30px;
+        margin: 30px;
+        transform: rotate(-1deg);
+      }
+
+      @keyframes rotate {
+        from {
+          transform: rotate(0deg);
+        }
+        to {
+          transform: rotate(359deg);
+        }
+      }
+
+      @keyframes cursorAnim {
+        from {
+          transform: scale(1);
+        }
+        to {
+          transform: scale(0.7);
+        }
+      }
+
+      @keyframes cursorClick {
+        0% {
+          transform: scale(1);
+        }
+        50% {
+          transform: scale(2);
+        }
+        100% {
+          transform: scale(1);
+          opacity: 0;
+        }
+      }
+
+      .expand {
+        animation: cursorClick 0.5s forwards;
+        border: 1px solid blue;
+      }
+
+      .link-grow {
+        transform: scale(2);
+        background: #1a28cf;
+      }
+    </style>
+
+    <!-- <link rel="stylesheet" href="./css/css1.css"> -->
+    <link rel="stylesheet" href="./css/css2.css" />
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.0.6/css/all.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css?family=Abril+Fatface"
+    />
+    <link rel="stylesheet" href="./css/hover-min.css" />
+    <!-- <link rel="stylesheet" href="./css/workshop.css" /> -->
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <script src="https://kit.fontawesome.com/a48cc7111e.js" crossorigin="anonymous"></script>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+
+    <!-- razorpay -->
+    <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+    <!-- preloader -->
+    <link href="assets/css/style.css" rel="stylesheet" />
+  </head>
+
+  <body style = "background-color: #121212; color: white;">
+    <%- include('partials/navbar')%>
+    <div class = "container" id = "intro">
+      <p style="font-weight: 800; font-size: 40px;text-align: center;">MATRIKS - RIDDLEGENIX</p>
+      <div class="row" style="margin-top: 5vh;">
+        <div class="col-12 col-md-6" style="height: 0px;"></div>
+        <div class="col-12 col-md-6" style="margin-bottom: 2.5%;">
+          <div class="row">
+            <%if(!participant) {%>
+            <button type="button" class="btn btn-success" style="width: 40%; margin: auto;" onclick="redirectToLogin()">
+              Register
+              <i class="fa fa-long-arrow-alt-right" id="sl" style="margin-left: 10px;"></i>
+            </button>
+            <%} else if(!participant.phoneNumber){%>
+              <button type="button" class="btn btn-success" style="width: 40%; margin: auto;" onclick="redirectToProfile()">
+                Register
+                <i class="fa fa-long-arrow-alt-right" id="sl" style="margin-left: 10px;"></i>
+              </button>
+            <%} else {%>
+              <button type="button" class="btn btn-success" style="width: 40%; margin: auto;" onclick="continueToBooking()">
+                Register
+                <i class="fa fa-long-arrow-alt-right" id="sl" style="margin-left: 10px;"></i>
+              </button>
+            <%}%>
+
+            <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+						<script>
+							function redirectToLogin(){
+								swal({
+									title: "Authentication Required",
+									text: "You haven't logged into your profile. Kindly login and fill your profile before registration",
+									icon: "warning",
+									button: "Continue to Login",
+									dangerMode: true,
+								})
+								.then((button) => {
+									if (button) {
+										window.location.href= "/auth/google"
+									} else {
+									}
+								});
+							}
+
+              function redirectToProfile(){
+								swal({
+									title: "Profile details required",
+									text: "Kindly fill your profile details before registration",
+									icon: "warning",
+									button: "Continue to Profile",
+									dangerMode: true,
+								})
+								.then((button) => {
+									if (button) {
+										window.location.href= "/profile"
+									} else {
+									}
+								});
+							}
+
+              function continueToBooking(){
+                    let isIITBBS = "<%=isIITBBS%>";
+                    if(isIITBBS === "yes") {
+                            swal({
+								title: "Ready to book your slot",
+                                text: `Click the below confirmation button, to confirm your booking`,
+								icon: "success",
+								button: "Confirm",
+								dangerMode: true,
+							}).then((button) => {
+                                if(button) {
+                                    $.ajax({
+                                    type: "POST",
+                                    url: '/register-competition',
+                                    data:  {
+                                        competition : "riddlegenix"
+                                    }, 
+                                    success: function(result) {
+                                        if(result){
+                                                new swal({
+                                                    title: 'Success',
+                                                    text: 'Registered successfully',
+                                                    icon: 'success'
+                                                }).then(flag => {
+                                                    if(flag) {
+                                                        window.location.href='/competitions';
+                                                    }
+                                                });
+                                        }else {
+                                                new swal({
+                                                    title: 'Error',
+                                                    text: 'Please try again',
+                                                    icon: 'error'
+                                                });
+                                        }
+                                    }
+                                    });
+                                                    }
+                            })
+                    } else {
+                            swal({
+								title: "Ready to book your slot",
+                                text: `Enter the same email address (${"<%=participant.email%>"}) while filling the payment form. Click continue to continue your booking.`,
+								icon: "success",
+								button: "Continue to booking",
+								dangerMode: true,
+							}).then((button) => {
+                                if(button) {
+                                    window.location.href = `https://rzp.io/l/ZnMvJYpF`;
+                                }
+                            })
+                    }
+								
+              }
+						</script>
+            <button type="button" class="btn btn-primary" id = "download-pdf" style="width: 40%; margin: auto;">
+              Download
+              <i class="fa fa-long-arrow-alt-right" id="sl" style="margin-left: 10px;"></i>
+            </button>
+  
+          </div>
+        </div>
+        <div class="col-12 col-md-6">
+          <p style="font-weight: 650; font-size: 28px;">Introduction</p>
+          <p>
+            This event will be a series of puzzles like crossword and riddles that would add the salt of fun and
+mystery to the fest. The event will be based on a collection of exciting challenges and puzzles that
+do not require any specific knowledge or experience so anyone can participate in it without
+restriction.
+The event will consist of a total of 6 problems that will be given to the participants under a fixed
+time to solve. The order of attempting though depends on the participant and the event gives full
+flexibility to choose the questions of interest and flow of attempt. Each question will have same
+score so choosing an easier one first may seem to be a good option.
+
+The event will be a limited time event that will be held in both online and offline medium but will
+have different time limits to compensate for the uneasiness of online medium. Time limits are as
+follows: <br/>
+Online medium: 60 mins. <br/>
+Offline medium: 45 mins.
+          </p>
+        </div>
+        <div class="col-12 col-md-6">
+          <p style="font-weight: 650; font-size: 28px;"> Event Format </p>
+          <p>
+            <u>Online Mode:</u> In online mode of conduct a zip folder containing problem files will be sent to the participants email
+            (same email as used while registration of event). Along with the zip folder a link of Google form will be
+            sent where participants need to submit the keys they found from the problems.
+            It is advised to keep a rough page or notebook for rough work and storing the keys. <br/>
+            <u>Offline Mode:</u> In offline mode the participants will be given a set of problem statements and an answer sheet
+at the end where they need to fill in the response keys and submit back to the invigilator.
+          </p>
+        </div>
+        <div class="col-12 col-md-6">
+          <p style="font-weight: 650; font-size: 28px;">Rules & Regulations</p>
+          <p>
+            Decisions of the judging committee will be final.
+          </p>
+          <p>
+            Wissenaire and its teams holds full right to disqualify any particular or group of participants from
+a single or multiple events without specifying the reason. By participating in the event you agree
+to this.
+          </p>
+          <p>
+            Judgment will be fully unbiased and based on judging criterion and cannot be challenged if
+unsatisfied.
+          </p>
+          <p>
+            If any malpractice is found to occur it may lead to disqualification from single or multiple events.
+          </p>
+          <p>
+            Time will be the deciding factor on the leaderboard. This means that if none of the teams are able
+            to solve all questions the favor goes to the team with maximum marks that submitted the answers
+            fastest.
+          </p>
+          <p>For more information, please download the pdf from above</p>
+          <br>
+          <p style="line-height: 2;">
+          
+          </p>
+        </div>
+
+        <div class="col-12 col-md-6">
+            <p style="font-weight: 650; font-size: 28px;">Judgement criteria</p>
+             
+          <p>
+            Judgment will be based on the following criterion by priority:
+          </p>
+          <p>
+            1. Correctness of Solution
+          </p>
+          <p>
+            2. Time of submission
+          </p>
+          <p>
+            <u>NOTE:</u> for offline mode of conduct the time of 45 min will be scaled up to 60 minutes before
+            consideration. i.e. if a participant took 30 mins offline then his time of submission will be
+            considered to be 40 mins when scaled up to 60 minutes.
+          </p>
+          <br>
+          <p style="line-height: 2;">
+          
+          </p>
+        </div>
+        
+        <div class="col-12 col-md-6">
+          <p style="font-weight: 650; font-size: 28px;"> Contact</p>
+          <p style="line-height: 2;"><i class="fa fa-user"></i>&ensp;SUKHADEVE SHREYAS ARVIND<br>
+            <i class="fa fa-envelope"></i>&ensp;20cs01056@iitbbs.ac.in<br>
+            <i class="fa fa-phone"></i>&ensp;8208487623
+          </p>
+
+        </div>
+        <!-- <div class="col-12 col-md-6">
+          <p style="font-weight: 650; font-size: 28px;"> Organising Partner</p>
+          <a href="/" target="blank_"><img src="./assets/img/workshops/partners/ditto.jpg" style="width: 30%;"></a>
+        </div> -->
+        <!-- <div class="col-12 col-md-6">
+        </div> -->
+
+        <div class="col-12 col-md-6" style="margin-bottom: 2.5%;">
+          <div class="row" style="margin-top: 20px;">
+            <button type="button" class="btn" style="width: 40%; margin: auto;" onclick="prev()">
+              <i class="fa fa-long-arrow-alt-left" id="previous" style="margin-right: 10px;"></i>
+              Previous
+            </button>
+            <button type="button" class="btn"  style="width: 40%; margin: auto;" onclick="next()">
+              Next
+              <i class="fa fa-long-arrow-alt-right" id="next" style="margin-left: 10px;"></i>
+            </button>
+            <script>
+			    function prev() {
+                    const prevURL = "/artelligence";
+                    window.location.href = prevURL;
+                }
+                function next() {
+                    const nextURL = "/counter-cypher";
+                    window.location.href = nextURL;
+                }
+			</script>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <div class="cur" id="circle">
+      <div class="main-cur"></div>
+      <img class="satelite" src="./Satellite.svg" alt="" />
+    </div>
+
+    <script src="./js/js1.js"></script>
+    <script src="./js/js2.js"></script>
+    <script src="./js/js3.js"></script>
+    <script src="./js/js4.js"></script>
+    <script src="./js/js5.js"></script>
+    <script src="./js/js6.js"></script>
+    <script>
+      let links = document.querySelector(".main-content a");
+      const cursors = document.querySelector(".cur");
+      document.addEventListener("mousemove", (e) => {
+        let x = e.pageX;
+        let y = e.pageY;
+        cursors.setAttribute(
+          "style",
+          "top: " + (e.pageY - 10) + "px; left: " + (e.pageX - 10) + "px;"
+        );
+      });
+
+      document.addEventListener("click", () => {
+        cursors.classList.add("expand");
+        setTimeout(() => {
+          cursors.classList.remove("expand");
+        }, 500);
+      });
+    </script>
+
+<script>
+  const downloadPdf = document.querySelector("#download-pdf");
+
+  downloadPdf.addEventListener("click", () => {
+
+      // Creating the element anchor that
+      // will download pdf
+      let element = document.createElement("a");
+      element.href = "./assets/competition-pdfs/riddlegenix";
+      element.download = "riddlegenix.pdf";
+
+      // Adding the element to body
+      document.documentElement.appendChild(element);
+
+      // Above code is equivalent to
+      // <a href="path of file" download="file name"> 
+
+      // onClick property, to trigger download
+      element.click();
+
+      // Removing the element from body
+      document.documentElement.removeChild(element);
+
+       // onClick property, to trigger submit form
+      submitForm.click();
+  });
+</script>
+<div id="preloader"></div>
+    <script src="assets/js/main.js"></script>
+  </body>
+</html>
