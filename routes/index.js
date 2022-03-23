@@ -74,7 +74,7 @@ router.get("/robo-cad", competitionController.roboCAD);
 router.get("/innowise", competitionController.innoWise);
 router.get("/auction-war", competitionController.auctionWar);
 router.get("/pioneers-plan", competitionController.pioneersPlan);
-router.get("/investar", competitionController.investar)
+router.get("/investrx", competitionController.investar)
 //payment route
 // router.post('/payment', paymentController.initiatePayment);
 //single webpages

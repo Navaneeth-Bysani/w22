@@ -135,7 +135,7 @@ body{
 } 
 /* chief coordinator */
 #chief .card-section .box .img1{
-    background:url('./../assets/img/team/SathvikChilaka.jpg');
+    background:url('./../assets/img/team/SathvikChilaka1.jpg');
 }
 
 /* Marketing */
@@ -251,6 +251,7 @@ body{
 
 /* 1 */
 #ca-program .card-section .box .img1{
+    /* background:'https://ibb.co/G3hJHMh'; */
     background:url('./../assets/img/team/Raghu_vamsidhar.jpg');
 }
 
