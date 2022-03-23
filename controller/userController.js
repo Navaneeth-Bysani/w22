@@ -56,7 +56,8 @@ exports.registerCompetition = catchAsync(async(req,res,next) => {
         email : user.email,
         phoneNumber : user.phoneNumber,
         institute : user.institute,
-        competition : req.body.competition
+        competition : req.body.competition,
+        wissId : user.wissId
     }
 
     let registeredCompetition = await Competition.create(registration);

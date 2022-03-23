@@ -1,0 +1,477 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Goldberg Challenge | Wissenaire'22</title>
+    <link rel="icon" type="image/x-icon" href="./assets/img/blue_favicon.ico">
+    <link
+      href="https://fonts.googleapis.com/css?family=Exo+2:600,700,800,900"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <link rel="stylesheet" href="./stylesheets/heading.css" />
+    <!--ajax-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script>
+    
+    <style>
+      body {
+        margin: 0;
+        background-color: #121212;
+        cursor: none !important;
+      }
+      .top-layer {
+        position: absolute;
+        width: 100%;
+        z-index: 1;
+        top: 12vh;
+        left: 0;
+      }
+
+      body {
+        cursor: none !important;
+      }
+
+      .cur {
+        height: 31px;
+        width: 31px;
+        z-index: 99999999;
+        pointer-events: none;
+        border-radius: 50%;
+        position: absolute;
+        animation: rotate 4s infinite linear;
+        transition: all 0.3s ease;
+        transition-property: background, transform;
+        transform-origin: 100%, 100%;
+      }
+
+      .main-cur {
+        animation: none;
+        margin: 0px;
+        content: "";
+        width: 0.1px;
+        height: 0.1px;
+        border: 10.5px solid#1A28CF;
+        position: absolute;
+        border-radius: 50%;
+        /* opacity: .5; */
+        top: 4.5px;
+        left: 4.5px;
+        /* transform: translate(-50%, -50%); */
+        animation: cursorAnim 0.5s infinite alternate;
+      }
+
+      .satelite {
+        height: 30px;
+        margin: 30px;
+        transform: rotate(-1deg);
+      }
+
+      @keyframes rotate {
+        from {
+          transform: rotate(0deg);
+        }
+        to {
+          transform: rotate(359deg);
+        }
+      }
+
+      @keyframes cursorAnim {
+        from {
+          transform: scale(1);
+        }
+        to {
+          transform: scale(0.7);
+        }
+      }
+
+      @keyframes cursorClick {
+        0% {
+          transform: scale(1);
+        }
+        50% {
+          transform: scale(2);
+        }
+        100% {
+          transform: scale(1);
+          opacity: 0;
+        }
+      }
+
+      .expand {
+        animation: cursorClick 0.5s forwards;
+        border: 1px solid blue;
+      }
+
+      .link-grow {
+        transform: scale(2);
+        background: #1a28cf;
+      }
+    </style>
+
+    <!-- <link rel="stylesheet" href="./css/css1.css"> -->
+    <link rel="stylesheet" href="./css/css2.css" />
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.0.6/css/all.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css?family=Abril+Fatface"
+    />
+    <link rel="stylesheet" href="./css/hover-min.css" />
+    <!-- <link rel="stylesheet" href="./css/workshop.css" /> -->
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <script src="https://kit.fontawesome.com/a48cc7111e.js" crossorigin="anonymous"></script>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+
+    <!-- razorpay -->
+    <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+    <!-- preloader -->
+    <link href="assets/css/style.css" rel="stylesheet" />
+  </head>
+
+  <body style = "background-color: #121212; color: white;">
+    <%- include('partials/navbar')%>
+    <div class = "container" id = "intro">
+      <p style="font-weight: 800; font-size: 40px;text-align: center;">GRAND ARCANUM - GOLDBERG CHALLENGE</p>
+      <div class="row" style="margin-top: 5vh;">
+        <div class="col-12 col-md-6" style="height: 0px;"></div>
+        <div class="col-12 col-md-6" style="margin-bottom: 2.5%;">
+          <div class="row">
+            <%if(!participant) {%>
+            <button type="button" class="btn btn-success" style="width: 40%; margin: auto;" onclick="redirectToLogin()">
+              Register
+              <i class="fa fa-long-arrow-alt-right" id="sl" style="margin-left: 10px;"></i>
+            </button>
+            <%} else if(!participant.phoneNumber){%>
+              <button type="button" class="btn btn-success" style="width: 40%; margin: auto;" onclick="redirectToProfile()">
+                Register
+                <i class="fa fa-long-arrow-alt-right" id="sl" style="margin-left: 10px;"></i>
+              </button>
+            <%} else {%>
+              <button type="button" class="btn btn-success" style="width: 40%; margin: auto;" onclick="continueToBooking()">
+                Register
+                <i class="fa fa-long-arrow-alt-right" id="sl" style="margin-left: 10px;"></i>
+              </button>
+            <%}%>
+
+            <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+						<script>
+							function redirectToLogin(){
+								swal({
+									title: "Authentication Required",
+									text: "You haven't logged into your profile. Kindly login and fill your profile before registration",
+									icon: "warning",
+									button: "Continue to Login",
+									dangerMode: true,
+								})
+								.then((button) => {
+									if (button) {
+										window.location.href= "/auth/google"
+									} else {
+									}
+								});
+							}
+
+              function redirectToProfile(){
+								swal({
+									title: "Profile details required",
+									text: "Kindly fill your profile details before registration",
+									icon: "warning",
+									button: "Continue to Profile",
+									dangerMode: true,
+								})
+								.then((button) => {
+									if (button) {
+										window.location.href= "/profile"
+									} else {
+									}
+								});
+							}
+
+              function continueToBooking(){
+                    let isIITBBS = "<%=isIITBBS%>";
+                    if(isIITBBS === "yes") {
+                            swal({
+								title: "Ready to book your slot",
+                                text: `Click the below confirmation button, to confirm your booking`,
+								icon: "success",
+								button: "Confirm",
+								dangerMode: true,
+							}).then((button) => {
+                                if(button) {
+                                    $.ajax({
+                                    type: "POST",
+                                    url: '/register-competition',
+                                    data:  {
+                                        competition : "goldberg-challenge"
+                                    }, 
+                                    success: function(result) {
+                                        if(result){
+                                                new swal({
+                                                    title: 'Success',
+                                                    text: 'Registered successfully',
+                                                    icon: 'success'
+                                                }).then(flag => {
+                                                    if(flag) {
+                                                        window.location.href='/competitions';
+                                                    }
+                                                });
+                                        }else {
+                                                new swal({
+                                                    title: 'Error',
+                                                    text: 'Please try again',
+                                                    icon: 'error'
+                                                });
+                                        }
+                                    }
+                                    });
+                                                    }
+                            })
+                    } else {
+                            swal({
+								title: "Ready to book your slot",
+                                text: `Enter the same email address (${"<%=participant.email%>"}) while filling the payment form. Click continue to continue your booking.`,
+								icon: "success",
+								button: "Continue to booking",
+								dangerMode: true,
+							}).then((button) => {
+                                if(button) {
+                                    window.location.href = `https://rzp.io/l/mhzR3zXH`;
+                                }
+                            })
+                    }
+								
+              }
+						</script>
+            <button type="button" class="btn btn-primary" id = "download-pdf" style="width: 40%; margin: auto;">
+              Download
+              <i class="fa fa-long-arrow-alt-right" id="sl" style="margin-left: 10px;"></i>
+            </button>
+  
+          </div>
+        </div>
+        <div class="col-12 col-md-6">
+          <p style="font-weight: 650; font-size: 28px;">Introduction</p>
+          <p>
+            This event allows participants to think out of the box and bring out their creativity to design a Rube
+            Goldberg machine – a Domino effect-based machine that performs a simple task in an indirect, overly
+            complicated yet sequential manner. The event tests the participants’ ability to construct and connect
+            mechanisms in the most sophisticated way to leave the judges amazed with their creativity.
+          </p>
+        </div>
+        <div class="col-12 col-md-6">
+          <p style="font-weight: 650; font-size: 28px;"> Event Format </p>
+          <p>
+            1. The teams will be provided with 2 problem statements.
+          </p>
+          <p>
+            2. Out of these, the teams must attempt to build a working Rube Goldberg machine solving any
+            one problem statement of their choice.
+          </p>
+          <p>
+            3. The machine must have a minimum of 15 steps. There is no maximum number of steps. The
+running time for the machine should not exceed five (5) minutes.
+          </p>
+          <p>
+            4. The problem statements will be provided to the teams on the day of commencement of the
+event, i.e., 26th March 2022.
+          </p>
+          <p>
+           5. They must submit a video of the actual working Rube machine constructed by them that
+satisfies the problem statement. Teams should also add a short writeup explaining details
+about the machine, materials used (along with their cost), specifications of items, etc.
+          </p>
+          <p>
+          6. The length of the video should not exceed ten (10) minutes. Participants can also explain the
+idea and thought process behind the machine they have constructed in the video.
+          </p>
+          <p>
+          7. The deadline for submitting the video is 2nd April 2022 (includes the time utilized to make the
+          machine, write the description about the machine's specifications, and compile and submit
+          the working video.)
+          </p>
+        </div>
+        <div class="col-12 col-md-6">
+          <p style="font-weight: 650; font-size: 28px;">Rules & Regulations</p>
+          <p>
+           1. Individual participants or teams with a maximum of 3 members can participate in the event.
+          </p>
+          <p>
+            2. If the Rube Goldberg machine becomes standstill at some point, it can be triggered manually
+at that point to continue the operation of the machine. The participants can do this a
+maximum of two times.
+          </p>
+          <p>
+            3. Electric switches, triggers or other circuits can be used.
+          </p>
+          <p>
+            4. No hazardous materials or explosives can be used on the machine.
+          </p>
+          
+          <p>
+            5. No flames should be used on the machine.
+          </p>
+          <p>
+            6. A step will be counted as any action or a series of similar action which are a part of your
+            Rube Goldberg Mechanism. Do not count similar steps as many-For example-In a
+            Dominoes-different objects will initiate the fall of each other but it will be counted as one
+            step only. It is expected that each step will initiate the next step (until it is not a termination
+            of some branch steps).
+          </p>
+          <p>
+            7. Participants should upload the videos and writeup (in document format) on google drive and
+            send the link through mail (competitions.wissenaire@gmail.com)
+          </p>
+          <br>
+          <p style="line-height: 2;">
+          
+          </p>
+        </div>
+
+        <div class="col-12 col-md-6">
+            <p style="font-weight: 650; font-size: 28px;">Judgement criteria</p>
+          <p>
+            1. Complexity and creativity in the idea and design.
+          </p>
+          <p>
+           2. Variety of items used for the mechanism.
+          </p>
+          <p>
+            3. If the machine works or not (criterion for direct elimination).
+          </p>
+          <p>
+            4. Efficient and Effective usage of the items (extra points for unexpected use of items that
+            impresses judges).
+          </p>
+          <p>
+            5. Extra points will be given for a greater number of parallel paths used.
+          </p>
+          <p>
+            6. Advantageous application of physics concepts.
+          </p>
+          <br>
+          <p style="font-weight: 650; font-size: 28px;"> Contact Details</p>
+          <p style="line-height: 2;"><i class="fa fa-user"></i>&ensp;Shikhar Agrawal<br/>
+            <i class="fa fa-envelope"></i>&ensp;20ec01013@iitbbs.ac.in<br>
+            <i class="fa fa-phone"></i>&ensp;8599812216
+          </p>
+          <p style="line-height: 2;">
+          
+          </p>
+        </div>
+        <!-- <div class="col-12 col-md-6">
+            <p style="font-weight: 650; font-size: 28px;">Online Mode</p>
+            <p>Your team has to login by id and password provided to you during registration. Your submission will be
+                active in the timeline only.
+            </p>
+            <p>
+                Your notebook should give the same score as your submission score else will be considered as plagiarism.
+            </p>
+        </div> -->
+
+
+        <div class="col-12 col-md-6">
+          
+
+        </div>
+        <!-- <div class="col-12 col-md-6">
+          <p style="font-weight: 650; font-size: 28px;"> Organising Partner</p>
+          <a href="/" target="blank_"><img src="./assets/img/workshops/partners/ditto.jpg" style="width: 30%;"></a>
+        </div> -->
+        
+
+        <div class="col-12 col-md-6" style="margin-bottom: 2.5%;">
+          <div class="row" style="margin-top: 20px;">
+            <button type="button" class="btn" style="width: 40%; margin: auto;" onclick="prev()">
+              <i class="fa fa-long-arrow-alt-left" id="previous" style="margin-right: 10px;"></i>
+              Previous
+            </button>
+            <button type="button" class="btn"  style="width: 40%; margin: auto;" onclick="next()">
+              Next
+              <i class="fa fa-long-arrow-alt-right" id="next" style="margin-left: 10px;"></i>
+            </button>
+            <script>
+			        function prev() {
+                    const prevURL = "/humanity";
+                    window.location.href = prevURL;
+              }
+              function next() {
+                    const nextURL = "/quizzaire";
+                    window.location.href = nextURL;
+              }
+			      </script>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <div class="cur" id="circle">
+      <div class="main-cur"></div>
+      <img class="satelite" src="./Satellite.svg" alt="" />
+    </div>
+
+    <script src="./js/js1.js"></script>
+    <script src="./js/js2.js"></script>
+    <script src="./js/js3.js"></script>
+    <script src="./js/js4.js"></script>
+    <script src="./js/js5.js"></script>
+    <script src="./js/js6.js"></script>
+    <script>
+      let links = document.querySelector(".main-content a");
+      const cursors = document.querySelector(".cur");
+      document.addEventListener("mousemove", (e) => {
+        let x = e.pageX;
+        let y = e.pageY;
+        cursors.setAttribute(
+          "style",
+          "top: " + (e.pageY - 10) + "px; left: " + (e.pageX - 10) + "px;"
+        );
+      });
+
+      document.addEventListener("click", () => {
+        cursors.classList.add("expand");
+        setTimeout(() => {
+          cursors.classList.remove("expand");
+        }, 500);
+      });
+    </script>
+
+<script>
+  const downloadPdf = document.querySelector("#download-pdf");
+
+  downloadPdf.addEventListener("click", () => {
+
+      // Creating the element anchor that
+      // will download pdf
+      let element = document.createElement("a");
+      element.href = "./assets/competition-pdfs/goldberg.pdf";
+      element.download = "goldberg-challenge.pdf";
+
+      // Adding the element to body
+      document.documentElement.appendChild(element);
+
+      // Above code is equivalent to
+      // <a href="path of file" download="file name"> 
+
+      // onClick property, to trigger download
+      element.click();
+
+      // Removing the element from body
+      document.documentElement.removeChild(element);
+
+       // onClick property, to trigger submit form
+      submitForm.click();
+  });
+</script>
+<div id="preloader"></div>
+    <script src="assets/js/main.js"></script>
+  </body>
+</html>

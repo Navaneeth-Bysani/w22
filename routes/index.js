@@ -45,6 +45,36 @@ router.get("/workshop-automobile", wsController.automobile);
 //individual competition routes
 router.get("/artelligence", competitionController.artelligence);
 router.get("/riddlegenix", competitionController.riddlegenix);
+router.get("/counter-cypher", competitionController.counterCypher);
+router.get("/colloquia-cs", competitionController.colloquiaCS);
+router.get("/colloquia-civil", competitionController.colloquiaCivil);
+router.get("/colloquia-electrical", competitionController.colloquiaElectrical);
+router.get("/colloquia-mechanical", competitionController.colloquiaMechanical);
+
+router.get("/analog-circuit-design", competitionController.analogCircuitDesign);
+router.get("/maths-olympiad", competitionController.mathsOlympiad);
+router.get("/scriptic-wissen", competitionController.scripticWissen);
+router.get("/humanity", competitionController.humanity);
+router.get("/goldberg-challenge", competitionController.goldbergChallenge);
+
+router.get("/quizzaire", competitionController.quizzaire);
+
+router.get("/bgmi", competitionController.bgmi);
+router.get("/valorant", competitionController.valorant);
+
+router.get("/school-champ", competitionController.schoolChamp);
+
+router.get("/science-toons", competitionController.scienceToons);
+router.get("/sherlock", competitionController.sherlock);
+router.get("/shutter", competitionController.shutter);
+
+router.get("/arduino-hackathon", competitionController.arduinoHackathon);
+router.get("/robo-cad", competitionController.roboCAD);
+
+router.get("/innowise", competitionController.innoWise);
+router.get("/auction-war", competitionController.auctionWar);
+router.get("/pioneers-plan", competitionController.pioneersPlan);
+router.get("/investar", competitionController.investar)
 //payment route
 // router.post('/payment', paymentController.initiatePayment);
 //single webpages

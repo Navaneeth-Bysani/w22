@@ -20,6 +20,10 @@ const competitionSchema = new mongoose.Schema({
     competition : {
         type : String,
         required : true
+    },
+    wissId : {
+        type : String,
+        required : true
     }
 })
 

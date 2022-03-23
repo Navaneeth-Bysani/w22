@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pioneer's plan | Wissenaire'22</title>
+    <link rel="icon" type="image/x-icon" href="./assets/img/blue_favicon.ico">
+    <link
+      href="https://fonts.googleapis.com/css?family=Exo+2:600,700,800,900"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <link rel="stylesheet" href="./stylesheets/heading.css" />
+    <!--ajax-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script>
+    
+    <style>
+      body {
+        margin: 0;
+        background-color: #121212;
+        cursor: none !important;
+      }
+      .top-layer {
+        position: absolute;
+        width: 100%;
+        z-index: 1;
+        top: 12vh;
+        left: 0;
+      }
+
+      body {
+        cursor: none !important;
+      }
+
+      .cur {
+        height: 31px;
+        width: 31px;
+        z-index: 99999999;
+        pointer-events: none;
+        border-radius: 50%;
+        position: absolute;
+        animation: rotate 4s infinite linear;
+        transition: all 0.3s ease;
+        transition-property: background, transform;
+        transform-origin: 100%, 100%;
+      }
+
+      .main-cur {
+        animation: none;
+        margin: 0px;
+        content: "";
+        width: 0.1px;
+        height: 0.1px;
+        border: 10.5px solid#1A28CF;
+        position: absolute;
+        border-radius: 50%;
+        /* opacity: .5; */
+        top: 4.5px;
+        left: 4.5px;
+        /* transform: translate(-50%, -50%); */
+        animation: cursorAnim 0.5s infinite alternate;
+      }
+
+      .satelite {
+        height: 30px;
+        margin: 30px;
+        transform: rotate(-1deg);
+      }
+
+      @keyframes rotate {
+        from {
+          transform: rotate(0deg);
+        }
+        to {
+          transform: rotate(359deg);
+        }
+      }
+
+      @keyframes cursorAnim {
+        from {
+          transform: scale(1);
+        }
+        to {
+          transform: scale(0.7);
+        }
+      }
+
+      @keyframes cursorClick {
+        0% {
+          transform: scale(1);
+        }
+        50% {
+          transform: scale(2);
+        }
+        100% {
+          transform: scale(1);
+          opacity: 0;
+        }
+      }
+
+      .expand {
+        animation: cursorClick 0.5s forwards;
+        border: 1px solid blue;
+      }
+
+      .link-grow {
+        transform: scale(2);
+        background: #1a28cf;
+      }
+    </style>
+
+    <!-- <link rel="stylesheet" href="./css/css1.css"> -->
+    <link rel="stylesheet" href="./css/css2.css" />
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.0.6/css/all.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css?family=Abril+Fatface"
+    />
+    <link rel="stylesheet" href="./css/hover-min.css" />
+    <!-- <link rel="stylesheet" href="./css/workshop.css" /> -->
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <script src="https://kit.fontawesome.com/a48cc7111e.js" crossorigin="anonymous"></script>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+
+    <!-- razorpay -->
+    <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+    <!-- preloader -->
+    <link href="assets/css/style.css" rel="stylesheet" />
+  </head>
+
+  <body style = "background-color: #121212; color: white;">
+    <%- include('partials/navbar')%>
+    <div class = "container" id = "intro">
+      <p style="font-weight: 800; font-size: 40px;text-align: center;">EXECUTIVE-SUITE - PIONEER'S PLAN</p>
+      <div class="row" style="margin-top: 5vh;">
+        <div class="col-12 col-md-6" style="height: 0px;"></div>
+        <div class="col-12 col-md-6" style="margin-bottom: 2.5%;">
+          <div class="row">
+            <%if(!participant) {%>
+            <button type="button" class="btn btn-success" style="width: 40%; margin: auto;" onclick="redirectToLogin()">
+              Register
+              <i class="fa fa-long-arrow-alt-right" id="sl" style="margin-left: 10px;"></i>
+            </button>
+            <%} else if(!participant.phoneNumber){%>
+              <button type="button" class="btn btn-success" style="width: 40%; margin: auto;" onclick="redirectToProfile()">
+                Register
+                <i class="fa fa-long-arrow-alt-right" id="sl" style="margin-left: 10px;"></i>
+              </button>
+            <%} else {%>
+              <button type="button" class="btn btn-success" style="width: 40%; margin: auto;" onclick="continueToBooking()">
+                Register
+                <i class="fa fa-long-arrow-alt-right" id="sl" style="margin-left: 10px;"></i>
+              </button>
+            <%}%>
+
+            <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+						<script>
+							function redirectToLogin(){
+								swal({
+									title: "Authentication Required",
+									text: "You haven't logged into your profile. Kindly login and fill your profile before registration",
+									icon: "warning",
+									button: "Continue to Login",
+									dangerMode: true,
+								})
+								.then((button) => {
+									if (button) {
+										window.location.href= "/auth/google"
+									} else {
+									}
+								});
+							}
+
+              function redirectToProfile(){
+								swal({
+									title: "Profile details required",
+									text: "Kindly fill your profile details before registration",
+									icon: "warning",
+									button: "Continue to Profile",
+									dangerMode: true,
+								})
+								.then((button) => {
+									if (button) {
+										window.location.href= "/profile"
+									} else {
+									}
+								});
+							}
+
+              function continueToBooking(){
+                    let isIITBBS = "<%=isIITBBS%>";
+                    if(isIITBBS === "yes") {
+                            swal({
+								title: "Ready to book your slot",
+                                text: `Click the below confirmation button, to confirm your booking`,
+								icon: "success",
+								button: "Confirm",
+								dangerMode: true,
+							}).then((button) => {
+                                if(button) {
+                                    $.ajax({
+                                    type: "POST",
+                                    url: '/register-competition',
+                                    data:  {
+                                        competition : "pioneers-plan"
+                                    }, 
+                                    success: function(result) {
+                                        if(result){
+                                                new swal({
+                                                    title: 'Success',
+                                                    text: 'Registered successfully',
+                                                    icon: 'success'
+                                                }).then(flag => {
+                                                    if(flag) {
+                                                        window.location.href='/competitions';
+                                                    }
+                                                });
+                                        }else {
+                                                new swal({
+                                                    title: 'Error',
+                                                    text: 'Please try again',
+                                                    icon: 'error'
+                                                });
+                                        }
+                                    }
+                                    });
+                                                    }
+                            })
+                    } else {
+                            swal({
+								title: "Ready to book your slot",
+                                text: `Enter the same email address (${"<%=participant.email%>"}) while filling the payment form. Click continue to continue your booking.`,
+								icon: "success",
+								button: "Continue to booking",
+								dangerMode: true,
+							}).then((button) => {
+                                if(button) {
+                                    window.location.href = `https://rzp.io/l/ZpsdKcz`;
+                                }
+                            })
+                    }
+								
+              }
+						</script>
+            <button type="button" class="btn btn-primary" id = "download-pdf" style="width: 40%; margin: auto;">
+              Download
+              <i class="fa fa-long-arrow-alt-right" id="sl" style="margin-left: 10px;"></i>
+            </button>
+  
+          </div>
+        </div>
+        <div class="col-12 col-md-6">
+          <p style="font-weight: 650; font-size: 28px;">Introduction</p>
+          <p>
+            “Good fortune is what happens when opportunity meets with planning.” ― Thomas Edison <br/>
+            An amazingly different idea can often lead to an innovation and revolution. Start-ups have this
+            extraordinary power to turn commoners to billionaires. A very usual idea with planning and execution can
+            turn the tables Planning shows an amazing way to serve and leave an impact on the world you live in. This
+            event provides many opportunities to students for fulfilling their dreams. Participants get a chance to
+            present their ideas in front of experienced people which will play a vital role in developing your skills and
+            grow as an individual. So, all the planners out there, what are you all waiting for?
+          </p>
+        </div>
+        <div class="col-12 col-md-6">
+          <p style="font-weight: 650; font-size: 28px;"> Event Format </p>
+          <p>
+            This event has two rounds, the qualifying round and the finale, which will be conducted in online
+mode. <br>
+<u>ROUND-1(online):</u><br>
+1. The participants are supposed to submit an abstract of their business plan to
+competitions.wissenaire@gmail.com (for details about the abstract see below).<br>
+2. A confirmation mail will be sent to the participants eligible for the 2nd round.<br>
+
+<u>ROUND-2(online):</u><br>
+1. Teams finalized for the 2nd round would have to give a Verbal Business Plan Presentation.<br>
+2. The use of all types of media presentation tools is highly suggested for this round.<br>
+3. The presentation time should not exceed 15 minutes.
+          </p>
+        </div>
+        <div class="col-12 col-md-6">
+          <p style="font-weight: 650; font-size: 28px;">Rules & Regulations</p>
+          <p>
+          1. Each team must have two or three members. <br>
+2. Team members are allowed to be from different institutes.<br>
+3. There is no limit on the number of entries per university/college/organization.<br>
+4. A participant cannot be a part of two ormore teams.<br>
+5. The submission for round 1 isto be mailed to competitions.wissenaire@gmail.com with subject
+title as “PIONEERS PLAN – Registration ID”.<br>
+6. Round 2 will be conducted in MS teams where participants are supposed to present their
+business plan and present it by sharing the monitor screen.<br>
+
+7. Judge’s decision would be the final one.<br>
+
+8. In case of any problem, Team Wissenaire’s ultimate decision will be considered.<br>
+9. Last date of abstract submission is 30th March 2022.<br>
+</p>
+<p style="color: orangered; font-weight: bold;">
+    For all the details of what your abstract business plan should include, please download the pdf from above
+</p>
+        </div>
+
+        
+        
+        <div class="col-12 col-md-6">
+          <p style="font-weight: 650; font-size: 28px;"> Contact</p>
+          <p style="line-height: 2;"><i class="fa fa-user"></i>&ensp;Shivang Pandey<br>
+            <i class="fa fa-envelope"></i>&ensp;20ce2018@iitbbs.ac.in<br>
+            <i class="fa fa-phone"></i>&ensp;9424460989
+          </p>
+
+        </div>
+        <!-- <div class="col-12 col-md-6">
+          <p style="font-weight: 650; font-size: 28px;"> Organising Partner</p>
+          <a href="/" target="blank_"><img src="./assets/img/workshops/partners/ditto.jpg" style="width: 30%;"></a>
+        </div> -->
+        <div class="col-12 col-md-6">
+        </div>
+
+        <div class="col-12 col-md-6" style="margin-bottom: 2.5%;">
+          <div class="row" style="margin-top: 20px;">
+            <button type="button" class="btn" style="width: 40%; margin: auto;" onclick="prev()">
+              <i class="fa fa-long-arrow-alt-left" id="previous" style="margin-right: 10px;"></i>
+              Previous
+            </button>
+            <button type="button" class="btn"  style="width: 40%; margin: auto;" onclick="next()">
+              Next
+              <i class="fa fa-long-arrow-alt-right" id="next" style="margin-left: 10px;"></i>
+            </button>
+            <script>
+			        function prev() {
+                    const prevURL = "/auction-war";
+                    window.location.href = prevURL;
+              }
+              function next() {
+                    const nextURL = "/investar";
+                    window.location.href = nextURL;
+              }
+			      </script>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <div class="cur" id="circle">
+      <div class="main-cur"></div>
+      <img class="satelite" src="./Satellite.svg" alt="" />
+    </div>
+
+    <script src="./js/js1.js"></script>
+    <script src="./js/js2.js"></script>
+    <script src="./js/js3.js"></script>
+    <script src="./js/js4.js"></script>
+    <script src="./js/js5.js"></script>
+    <script src="./js/js6.js"></script>
+    <script>
+      let links = document.querySelector(".main-content a");
+      const cursors = document.querySelector(".cur");
+      document.addEventListener("mousemove", (e) => {
+        let x = e.pageX;
+        let y = e.pageY;
+        cursors.setAttribute(
+          "style",
+          "top: " + (e.pageY - 10) + "px; left: " + (e.pageX - 10) + "px;"
+        );
+      });
+
+      document.addEventListener("click", () => {
+        cursors.classList.add("expand");
+        setTimeout(() => {
+          cursors.classList.remove("expand");
+        }, 500);
+      });
+    </script>
+
+<script>
+  const downloadPdf = document.querySelector("#download-pdf");
+
+  downloadPdf.addEventListener("click", () => {
+
+      // Creating the element anchor that
+      // will download pdf
+      let element = document.createElement("a");
+      element.href = "./assets/competition-pdfs/pioneers-plan.pdf";
+      element.download = "pioneers-plan.pdf";
+
+      // Adding the element to body
+      document.documentElement.appendChild(element);
+
+      // Above code is equivalent to
+      // <a href="path of file" download="file name"> 
+
+      // onClick property, to trigger download
+      element.click();
+
+      // Removing the element from body
+      document.documentElement.removeChild(element);
+
+       // onClick property, to trigger submit form
+      submitForm.click();
+  });
+</script>
+<div id="preloader"></div>
+    <script src="assets/js/main.js"></script>
+  </body>
+</html>
