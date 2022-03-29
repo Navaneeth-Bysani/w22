@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Exhibits | Wissenaire'22</title>
+    <link rel="icon" type="image/x-icon" href="./assets/img/blue_favicon.ico">
+    <link
+      href="https://fonts.googleapis.com/css?family=Exo+2:600,700,800,900"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <link rel="stylesheet" href="./stylesheets/heading.css" />
+
+    <style>
+      body {
+        margin: 0;
+        background-color: #121212;
+        cursor: none !important;
+      }
+      
+
+      .top-layer {
+        position: absolute;
+        width: 100%;
+        z-index: 1;
+        top: 12vh;
+        left: 0;
+      }
+
+      body {
+        cursor: none !important;
+      }
+
+      .cur {
+        height: 31px;
+        width: 31px;
+        z-index: 99999999;
+        pointer-events: none;
+        /* background: grey;*/
+        border-radius: 50%;
+        position: absolute;
+        /*animation: cursorAnim .5s infinite alternate;*/
+        animation: rotate 4s infinite linear;
+        transition: all 0.3s ease;
+        transition-property: background, transform;
+        transform-origin: 100%, 100%;
+      }
+
+      /* @media screen and (max-width: 1279px) {
+  .cur {
+    display: none;
+  }
+  body {
+    cursor: default;
+  }
+} */
+
+      .main-cur {
+        animation: none;
+        margin: 0px;
+        content: "";
+        width: 0.1px;
+        height: 0.1px;
+        border: 10.5px solid#1A28CF;
+        position: absolute;
+        border-radius: 50%;
+        /* opacity: .5; */
+        top: 4.5px;
+        left: 4.5px;
+        /* transform: translate(-50%, -50%); */
+        animation: cursorAnim 0.5s infinite alternate;
+      }
+
+      .satelite {
+        height: 30px;
+        margin: 30px;
+        transform: rotate(-1deg);
+        /* transition-duration: 200ms;
+    transition-timing-function: ease-out;
+    */
+      }
+
+      @keyframes rotate {
+        from {
+          transform: rotate(0deg);
+        }
+        to {
+          transform: rotate(359deg);
+        }
+      }
+
+      @keyframes cursorAnim {
+        from {
+          transform: scale(1);
+        }
+        to {
+          transform: scale(0.7);
+        }
+      }
+
+      @keyframes cursorClick {
+        0% {
+          transform: scale(1);
+        }
+        50% {
+          transform: scale(2);
+        }
+        100% {
+          transform: scale(1);
+          opacity: 0;
+        }
+      }
+
+      .expand {
+        animation: cursorClick 0.5s forwards;
+        border: 1px solid blue;
+      }
+
+      .link-grow {
+        transform: scale(2);
+        background: #1a28cf;
+      }
+
+      /* @media only screen and (max-width: 380px) {
+  .cur {
+    display: none;
+  }
+  body {
+    cursor: default;
+  }
+} */
+    body {
+        background-image: url(https://imgs.search.brave.com/JdeKaPC9jGNAh9DrzUFrCTG-Khy8_Zgr94L2JAxEC_o/rs:fit:640:359:1/g:ce/aHR0cHM6Ly9zLmFv/bGNkbi5jb20vaHNz/L3N0b3JhZ2UvbWlk/YXMvODEzNDU4ZTBh/OWU4ODdhMmY5MGNk/YTNhYTJmZGI1MmQv/MjA1Nzg1MjQ4L2Ns/aWNrY2xhY2suZ2lm.gif);
+        background-repeat: no-repeat;
+        height: 100%;
+
+/* Center and scale the image nicely */
+background-position: center;
+background-size: cover;
+    }
+    .wrapper {
+        /* top: 0; */
+        margin-top: 50px;
+        background-color: black;
+        /* opacity: 0.75; */
+        padding: 20px;
+        border-radius: 3%;
+        backdrop-filter: blur(5%);
+        top: 20%;
+    }
+
+    .heading-new h1 {
+        color: white; 
+        font-size: 50px; 
+        letter-spacing: 5px; 
+        float: left;
+        font-weight: bold;
+    }
+
+    .heading-new img {
+        float: right; 
+        height: 60px; 
+        width: auto;
+    }
+
+    .details .show-image {
+        margin-top: 5%;
+    }
+    
+    .details {
+        width: 80%;
+        margin: auto;
+        
+        color: white;
+    }
+    .details .show-heading{
+        font-size: 30px;
+        text-align: center;
+        font-weight: bold;
+        background-color: rgba(0,0,0,0.75);
+    }
+
+    .robo-register {
+        margin: auto;
+        text-align: center;
+        display: block;
+        margin-top: 10px;
+        margin-bottom: 20px;
+        font-size: 30px;
+        background-color: #4CAF50; /* Green */
+        border: none;
+        color: white;
+        padding: 15px 32px;
+        text-align: center;
+        text-decoration: none;
+        font-weight: bold;
+        letter-spacing: 5px;
+    }
+
+    @media only screen and (min-width: 480px) {
+        .heading-new h1{
+            font-size: 80px;
+        }
+
+        .heading-new img {
+            height: 80px;
+        }
+
+        .details .show-heading {
+            font-size: 50px;
+        }
+    }
+
+    
+    </style>
+
+    <!-- <link rel="stylesheet" href="./css/css1.css"> -->
+    <!-- CSS for heading begins -->
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/modern-css-reset/dist/reset.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/splitting/dist/splitting.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/splitting/dist/splitting-cells.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Cabin+Condensed:wght@700&amp;display=swap"
+    />
+    <link rel="stylesheet" href="https://use.typekit.net/zlj2zcu.css" />
+
+    <!-- CSS for heading ends -->
+
+    <link rel="stylesheet" href="./css/css2.css" />
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.0.6/css/all.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css?family=Abril+Fatface"
+    />
+    <link rel="stylesheet" href="./css/hover-min.css" />
+    <link rel="stylesheet" href="./css/workshop.css" />
+    <!-- preloader -->
+    <link href="assets/css/style.css" rel="stylesheet" />
+  </head>
+
+  <body>
+    <%- include('partials/navbar')%>
+
+    <!-- <div class="top-layer">
+      
+    </div> -->
+    <div class="wrapper">
+        <div class="heading-new">
+            <h1>EXHIBITS</h1>
+            <img src = "./assets/img/robo.png" />
+        </div>
+    </div>
+    <script>
+        const clicked = () => {
+            window.location.href = "https://forms.gle/8KinP6769eJMjyHo7";
+        }
+    </script>
+    <div class="details">
+        <h2 class="show-heading">HUMANOID ROBO DANCE SHOW</h1>
+        <img class = "show-image" src = "./assets/img/robo.jpg"/>
+        <button class="robo-register" id = "robo-register" onclick="clicked()">REGISTER</button>
+    </div>
+    <div class="details">
+        <h2 class="show-heading">HAND GESTURE DRONES</h1>
+        <img class = "show-image" src = "./assets/img/hand-drones.jpg" style="margin-bottom: 30px;"/>
+        <!-- <button class="robo-register" id = "robo-register" onclick="clicked()">REGISTER</button> -->
+    </div>
+
+    <div class="details">
+        <h2 class="show-heading">SELF BALANCING SCOOTERS</h1>
+        <img class = "show-image" src = "./assets/img/self-balancing.webp" style="margin-bottom: 30px;"/>
+        <!-- <button class="robo-register" id = "robo-register" onclick="clicked()">REGISTER</button> -->
+    </div>
+
+    <div class="details">
+        <h2 class="show-heading">NEUROSKY DEVICES</h1>
+        <img class = "show-image" src = "./assets/img/neurosky.jpg" style="margin-bottom: 30px;"/>
+        <!-- <button class="robo-register" id = "robo-register" onclick="clicked()">REGISTER</button> -->
+    </div>
+    <div class="cur" id="circle">
+      <div class="main-cur"></div>
+      <img class="satelite" src="./Satellite.svg" alt="" />
+    </div>
+
+    <script src="./js/js1.js"></script>
+    <script src="./js/js2.js"></script>
+    <script src="./js/js3.js"></script>
+    <script src="./js/js4.js"></script>
+    <script src="./js/js5.js"></script>
+    <script src="./js/js6.js"></script>
+    <script>
+      let links = document.querySelector(".main-content a");
+      const cursors = document.querySelector(".cur");
+      document.addEventListener("mousemove", (e) => {
+        let x = e.pageX;
+        let y = e.pageY;
+        cursors.setAttribute(
+          "style",
+          "top: " + (e.pageY - 10) + "px; left: " + (e.pageX - 10) + "px;"
+        );
+      });
+
+      document.addEventListener("click", () => {
+        cursors.classList.add("expand");
+        setTimeout(() => {
+          cursors.classList.remove("expand");
+        }, 500);
+      });
+    </script>
+
+    <!-- preloader -->
+    <div id="preloader"></div>
+    <script src="assets/js/main.js"></script>
+  </body>
+</html>
