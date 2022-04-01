@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Arduino Hackathon | Wissenaire'22</title>
-    <link rel="icon" type="image/x-icon" href="./assets/img/blue_favicon.ico">
+    <link rel="icon" type="image/x-icon" href="./assets/img/blue_favicon.ico" />
     <link
       href="https://fonts.googleapis.com/css?family=Exo+2:600,700,800,900"
       rel="stylesheet"
@@ -14,8 +14,12 @@
     <link rel="stylesheet" href="./stylesheets/heading.css" />
     <!--ajax-->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script>
-    
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"
+      integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg=="
+      crossorigin="anonymous"
+    ></script>
+
     <style>
       body {
         margin: 0;
@@ -53,7 +57,7 @@
         content: "";
         width: 0.1px;
         height: 0.1px;
-        border: 10.5px solid#1A28CF;
+        border: 10.5px solid #1a28cf;
         position: absolute;
         border-radius: 50%;
         /* opacity: .5; */
@@ -124,12 +128,27 @@
     <link rel="stylesheet" href="./css/hover-min.css" />
     <!-- <link rel="stylesheet" href="./css/workshop.css" /> -->
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-    <script src="https://kit.fontawesome.com/a48cc7111e.js" crossorigin="anonymous"></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+      integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+      integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://kit.fontawesome.com/a48cc7111e.js"
+      crossorigin="anonymous"
+    ></script>
 
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+      integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+      crossorigin="anonymous"
+    />
 
     <!-- razorpay -->
     <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
@@ -137,245 +156,285 @@
     <link href="assets/css/style.css" rel="stylesheet" />
   </head>
 
-  <body style = "background-color: #121212; color: white;">
+  <body style="background-color: #121212; color: white">
     <%- include('partials/navbar')%>
-    <div class = "container" id = "intro">
-      <p style="font-weight: 800; font-size: 40px;text-align: center;">YANTHRIX - ARDUINO HACKATHON</p>
-      <div class="row" style="margin-top: 5vh;">
-        <div class="col-12 col-md-6" style="height: 0px;"></div>
-        <div class="col-12 col-md-6" style="margin-bottom: 2.5%;">
+    <div class="container" id="intro">
+      <p style="font-weight: 800; font-size: 40px; text-align: center">
+        YANTHRIX - ARDUINO HACKATHON
+      </p>
+      <div class="row" style="margin-top: 5vh">
+        <div class="col-12 col-md-6" style="height: 0px"></div>
+        <div class="col-12 col-md-6" style="margin-bottom: 2.5%">
           <div class="row">
             <%if(!participant) {%>
-            <button type="button" class="btn btn-success" style="width: 40%; margin: auto;" onclick="redirectToLogin()">
+            <button
+              type="button"
+              class="btn btn-success"
+              style="width: 40%; margin: auto"
+              onclick="redirectToLogin()"
+            >
               Register
-              <i class="fa fa-long-arrow-alt-right" id="sl" style="margin-left: 10px;"></i>
+              <i
+                class="fa fa-long-arrow-alt-right"
+                id="sl"
+                style="margin-left: 10px"
+              ></i>
             </button>
             <%} else if(!participant.phoneNumber){%>
-              <button type="button" class="btn btn-success" style="width: 40%; margin: auto;" onclick="redirectToProfile()">
-                Register
-                <i class="fa fa-long-arrow-alt-right" id="sl" style="margin-left: 10px;"></i>
-              </button>
+            <button
+              type="button"
+              class="btn btn-success"
+              style="width: 40%; margin: auto"
+              onclick="redirectToProfile()"
+            >
+              Register
+              <i
+                class="fa fa-long-arrow-alt-right"
+                id="sl"
+                style="margin-left: 10px"
+              ></i>
+            </button>
             <%} else {%>
-              <button type="button" class="btn btn-success" style="width: 40%; margin: auto;" onclick="continueToBooking()">
-                Register
-                <i class="fa fa-long-arrow-alt-right" id="sl" style="margin-left: 10px;"></i>
-              </button>
+            <button
+              type="button"
+              class="btn btn-success"
+              style="width: 40%; margin: auto"
+              onclick="continueToBooking()"
+            >
+              Register
+              <i
+                class="fa fa-long-arrow-alt-right"
+                id="sl"
+                style="margin-left: 10px"
+              ></i>
+            </button>
             <%}%>
 
             <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
-						<script>
-							function redirectToLogin(){
-								swal({
-									title: "Authentication Required",
-									text: "You haven't logged into your profile. Kindly login and fill your profile before registration",
-									icon: "warning",
-									button: "Continue to Login",
-									dangerMode: true,
-								})
-								.then((button) => {
-									if (button) {
-										window.location.href= "/auth/google"
-									} else {
-									}
-								});
-							}
-
-              function redirectToProfile(){
-								swal({
-									title: "Profile details required",
-									text: "Kindly fill your profile details before registration",
-									icon: "warning",
-									button: "Continue to Profile",
-									dangerMode: true,
-								})
-								.then((button) => {
-									if (button) {
-										window.location.href= "/profile"
-									} else {
-									}
-								});
-							}
-
-              function continueToBooking(){
-                    let isIITBBS = "<%=isIITBBS%>";
-                    if(isIITBBS === "yes") {
-                            swal({
-								title: "Ready to book your slot",
-                                text: `Click the below confirmation button, to confirm your booking`,
-								icon: "success",
-								button: "Confirm",
-								dangerMode: true,
-							}).then((button) => {
-                                if(button) {
-                                    $.ajax({
-                                    type: "POST",
-                                    url: '/register-competition',
-                                    data:  {
-                                        competition : "arduino-hackathon"
-                                    }, 
-                                    success: function(result) {
-                                        if(result){
-                                                new swal({
-                                                    title: 'Success',
-                                                    text: 'Registered successfully',
-                                                    icon: 'success'
-                                                }).then(flag => {
-                                                    if(flag) {
-                                                        window.location.href='/competitions';
-                                                    }
-                                                });
-                                        }else {
-                                                new swal({
-                                                    title: 'Error',
-                                                    text: 'Please try again',
-                                                    icon: 'error'
-                                                });
-                                        }
-                                    }
-                                    });
-                                                    }
-                            })
-                    } else {
-                            swal({
-								title: "Ready to book your slot",
-                                text: `Enter the same email address (${"<%=participant.email%>"}) while filling the payment form. Click continue to continue your booking.`,
-								icon: "success",
-								button: "Continue to booking",
-								dangerMode: true,
-							}).then((button) => {
-                                if(button) {
-                                    window.location.href = `https://rzp.io/l/Z2bsLDmSEw`;
-                                }
-                            })
-                    }
-								
+            <script>
+              function redirectToLogin() {
+                swal({
+                  title: "Authentication Required",
+                  text: "You haven't logged into your profile. Kindly login and fill your profile before registration",
+                  icon: "warning",
+                  button: "Continue to Login",
+                  dangerMode: true,
+                }).then((button) => {
+                  if (button) {
+                    window.location.href = "/auth/google";
+                  } else {
+                  }
+                });
               }
-						</script>
-            <button type="button" class="btn btn-primary" id = "download-pdf" style="width: 40%; margin: auto;">
+
+              function redirectToProfile() {
+                swal({
+                  title: "Profile details required",
+                  text: "Kindly fill your profile details before registration",
+                  icon: "warning",
+                  button: "Continue to Profile",
+                  dangerMode: true,
+                }).then((button) => {
+                  if (button) {
+                    window.location.href = "/profile";
+                  } else {
+                  }
+                });
+              }
+
+              function continueToBooking() {
+                let isIITBBS = "<%=isIITBBS%>";
+                if (isIITBBS === "yes") {
+                  swal({
+                    title: "Ready to book your slot",
+                    text: `Click the below confirmation button, to confirm your booking`,
+                    icon: "success",
+                    button: "Confirm",
+                    dangerMode: true,
+                  }).then((button) => {
+                    if (button) {
+                      $.ajax({
+                        type: "POST",
+                        url: "/register-competition",
+                        data: {
+                          competition: "arduino-hackathon",
+                        },
+                        success: function (result) {
+                          if (result) {
+                            new swal({
+                              title: "Success",
+                              text: "Registered successfully",
+                              icon: "success",
+                            }).then((flag) => {
+                              if (flag) {
+                                window.location.href = "/competitions";
+                              }
+                            });
+                          } else {
+                            new swal({
+                              title: "Error",
+                              text: "Please try again",
+                              icon: "error",
+                            });
+                          }
+                        },
+                      });
+                    }
+                  });
+                } else {
+                  swal({
+                    title: "Ready to book your slot",
+                    text: `Enter the same email address (${"<%=participant.email%>"}) while filling the payment form. Click continue to continue your booking.`,
+                    icon: "success",
+                    button: "Continue to booking",
+                    dangerMode: true,
+                  }).then((button) => {
+                    if (button) {
+                      window.location.href = `https://rzp.io/l/Z2bsLDmSEw`;
+                    }
+                  });
+                }
+              }
+            </script>
+            <button
+              type="button"
+              class="btn btn-primary"
+              id="download-pdf"
+              style="width: 40%; margin: auto"
+            >
               Download
-              <i class="fa fa-long-arrow-alt-right" id="sl" style="margin-left: 10px;"></i>
+              <i
+                class="fa fa-long-arrow-alt-right"
+                id="sl"
+                style="margin-left: 10px"
+              ></i>
             </button>
-  
           </div>
         </div>
         <div class="col-12 col-md-6">
-          <p style="font-weight: 650; font-size: 28px;">Introduction</p>
+          <p style="font-weight: 650; font-size: 28px">Introduction</p>
           <p>
-            Arduino Hackathon is a competition in which your problem solving skills and coding skills will be tested on
-Arduino in TinkerCAD.
+            Arduino Hackathon is a competition in which your problem solving
+            skills and coding skills will be tested on Arduino in TinkerCAD.
           </p>
-        <!-- </div>
+          <!-- </div>
         <div class="col-12 col-md-6"> -->
-          <p style="font-weight: 650; font-size: 28px;"> Description </p>
+          <p style="font-weight: 650; font-size: 28px">Description</p>
           <p>
-            A real-life problem will be given to you. You are expected to design and simulate a circuit with Arduino in
-TinkerCAD to solve the problem statement and submit it within the time limit.
+            A real-life problem will be given to you. You are expected to design
+            and simulate a circuit with Arduino in TinkerCAD to solve the
+            problem statement and submit it within the time limit.
           </p>
-          <p style="font-weight: 650; font-size: 28px;">Judgement criteria And Marking Scheme</p>
+          <p style="font-weight: 650; font-size: 28px">
+            Judgement criteria And Marking Scheme
+          </p>
           <p>
-            Points will be awarded based on the time taken and the extent to which the problem is solved. Time
-taken will be a major factor as the problem statement will be relatively easy to solve.
+            Points will be awarded based on the time taken and the extent to
+            which the problem is solved. Time taken will be a major factor as
+            the problem statement will be relatively easy to solve.
           </p>
         </div>
         <div class="col-12 col-md-6">
-          <p style="font-weight: 650; font-size: 28px;">Rules & Regulations</p>
-          <br><p>
-            There will be 2 rounds. Participants will have to create and simulate an Arduino circuit in TinkerCAD that
-could solve the given problem within the time limit. Marks will be awarded based on the extent of
-solving the problem statement and the time taken to create and submit the circuit. Marks obtained for
-both rounds will be summed at the end.
-          </p>
+          <p style="font-weight: 650; font-size: 28px">Rules & Regulations</p>
+          <br />
           <p>
-            Qualifier: 
+            There will be 2 rounds. Participants will have to create and
+            simulate an Arduino circuit in TinkerCAD that could solve the given
+            problem within the time limit. Marks will be awarded based on the
+            extent of solving the problem statement and the time taken to create
+            and submit the circuit. Marks obtained for both rounds will be
+            summed at the end.
           </p>
+          <p>Qualifier:</p>
+          <p>&nbsp; - Maximum time limit: 60 minutes</p>
+          <p>&nbsp; - Maximum points: 40</p>
+
+          <p>Finals:</p>
+          <p>&nbsp; - Maximum time limit: 90 minutes</p>
+          <p>&nbsp; - Maximum points: 60</p>
+
+          <p style="line-height: 2"></p>
+        </div>
+
+        <div class="col-12 col-md-6">
+          <p style="font-weight: 650; font-size: 28px">Submission Format</p>
           <p>
-           &nbsp; - Maximum time limit: 60 minutes
+            1. A short video (max. 30 seconds) ofthe simulation ofthe circuit
+            designedmust bemade. (Video should be recorded by any screen
+            recording software and not by the mobile camera)
           </p>
+          <p>2. Screenshot of the circuit. (image in any format)</p>
+          <p>3. Upload the code as a text (.txt) file.</p>
+          <p>4. Share the link of the TinkerCAD file in a text (.txt) file.</p>
           <p>
-            &nbsp; - Maximum points: 40
-          </p>
-          
-          <p> 
-            Finals:
-          </p>
-          <p>
-            &nbsp; - Maximum time limit: 90 minutes
-           </p>
-           <p>
-             &nbsp; - Maximum points: 60
-           </p>
-          
-          <p style="line-height: 2;">
-          
+            For the TinkerCAD link, you may refer to “
+            https://www.youtube.com/watch?v=LiRCd59iJtw ” Remember not to share
+            your TinkerCAD file link with others as the circuit can be modified
+            by anyone with the link and we won’t we responsible if the
+            screenshot of the circuit doesn’t match with the circuit. Zip above
+            4 files, name zip file as “YourFullName_ParticipationNumber” Send
+            the Zip file via Google form provided at the start of the
+            competition.
           </p>
         </div>
 
-
-
         <div class="col-12 col-md-6">
-            <p style="font-weight: 650; font-size: 28px;">Submission Format</p>
-            <p>1. A short video (max. 30 seconds) ofthe simulation ofthe circuit designedmust bemade. (Video should
-              be recorded by any screen recording software and not by the mobile camera)
-            </p>
-            <p>
-              2. Screenshot of the circuit. (image in any format)
-            </p>
-            <p>
-              3. Upload the code as a text (.txt) file.
-            </p>
-            <p>
-              4. Share the link of the TinkerCAD file in a text (.txt) file.
-            </p>
-            <p>
-              For the TinkerCAD link, you may refer to “ https://www.youtube.com/watch?v=LiRCd59iJtw ”
-Remember not to share your TinkerCAD file link with others as the circuit can be modified by anyone
-with the link and we won’t we responsible if the screenshot of the circuit doesn’t match with the circuit.
-Zip above 4 files, name zip file as “YourFullName_ParticipationNumber” Send the Zip file via Google form
-provided at the start of the competition.
-            </p>
-        </div>
-
-
-        <div class="col-12 col-md-6">
-          <p style="font-weight: 650; font-size: 28px;"> Contact</p>
-          <p style="line-height: 2;"><i class="fa fa-user"></i>&ensp;Mohith Kumar<br>
+          <p style="font-weight: 650; font-size: 28px">Contact</p>
+          <p style="line-height: 2">
+            <i class="fa fa-user"></i>&ensp;Mohith Kumar<br />
             <!-- <i class="fa fa-envelope"></i>&ensp;20cs01056@iitbbs.ac.in<br> -->
             <i class="fa fa-phone"></i>&ensp;7337232276
           </p>
-
         </div>
         <!-- <div class="col-12 col-md-6">
           <p style="font-weight: 650; font-size: 28px;"> Organising Partner</p>
           <a href="/" target="blank_"><img src="./assets/img/workshops/partners/ditto.jpg" style="width: 30%;"></a>
         </div> -->
-        <div class="col-12 col-md-6">
-        </div>
+        <div class="col-12 col-md-6"></div>
 
-        <div class="col-12 col-md-6" style="margin-bottom: 2.5%;">
-          <div class="row" style="margin-top: 20px;">
-            <button type="button" class="btn" style="width: 40%; margin: auto;" onclick="prev()">
-              <i class="fa fa-long-arrow-alt-left" id="previous" style="margin-right: 10px;"></i>
+        <div class="col-12 col-md-6" style="margin-bottom: 2.5%">
+          <div class="row" style="margin-top: 20px">
+            <button
+              type="button"
+              class="btn"
+              style="width: 40%; margin: auto"
+              onclick="prev()"
+            >
+              <i
+                class="fa fa-long-arrow-alt-left"
+                id="previous"
+                style="margin-right: 10px"
+              ></i>
               Previous
             </button>
-            <button type="button" class="btn"  style="width: 40%; margin: auto;" onclick="next()">
+            <button
+              type="button"
+              class="btn"
+              style="width: 40%; margin: auto"
+              onclick="next()"
+            >
               Next
-              <i class="fa fa-long-arrow-alt-right" id="next" style="margin-left: 10px;"></i>
+              <i
+                class="fa fa-long-arrow-alt-right"
+                id="next"
+                style="margin-left: 10px"
+              ></i>
             </button>
             <script>
-			        function prev() {
-                    const prevURL = "/shutter";
-                    window.location.href = prevURL;
+              function prev() {
+                const prevURL = "/shutter";
+                window.location.href = prevURL;
               }
               function next() {
-                    const nextURL = "/robo-cad";
-                    window.location.href = nextURL;
+                const nextURL = "/robo-cad";
+                window.location.href = nextURL;
               }
-			      </script>
+            </script>
           </div>
         </div>
       </div>
     </div>
-    
+
     <div class="cur" id="circle">
       <div class="main-cur"></div>
       <img class="satelite" src="./Satellite.svg" alt="" />
@@ -407,34 +466,33 @@ provided at the start of the competition.
       });
     </script>
 
-<script>
-  const downloadPdf = document.querySelector("#download-pdf");
+    <script>
+      const downloadPdf = document.querySelector("#download-pdf");
 
-  downloadPdf.addEventListener("click", () => {
+      downloadPdf.addEventListener("click", () => {
+        // Creating the element anchor that
+        // will download pdf
+        let element = document.createElement("a");
+        element.href = "./assets/competition-pdfs/arduino.pdf";
+        element.download = "arduino-hackathon.pdf";
 
-      // Creating the element anchor that
-      // will download pdf
-      let element = document.createElement("a");
-      element.href = "./assets/competition-pdfs/arduino.pdf";
-      element.download = "arduino-hackathon.pdf";
+        // Adding the element to body
+        document.documentElement.appendChild(element);
 
-      // Adding the element to body
-      document.documentElement.appendChild(element);
+        // Above code is equivalent to
+        // <a href="path of file" download="file name">
 
-      // Above code is equivalent to
-      // <a href="path of file" download="file name"> 
+        // onClick property, to trigger download
+        element.click();
 
-      // onClick property, to trigger download
-      element.click();
+        // Removing the element from body
+        document.documentElement.removeChild(element);
 
-      // Removing the element from body
-      document.documentElement.removeChild(element);
-
-       // onClick property, to trigger submit form
-      submitForm.click();
-  });
-</script>
-<div id="preloader"></div>
+        // onClick property, to trigger submit form
+        submitForm.click();
+      });
+    </script>
+    <div id="preloader"></div>
     <script src="assets/js/main.js"></script>
   </body>
 </html>

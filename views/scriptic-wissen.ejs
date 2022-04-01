@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Scriptic wissen | Wissenaire'22</title>
-    <link rel="icon" type="image/x-icon" href="./assets/img/blue_favicon.ico">
+    <link rel="icon" type="image/x-icon" href="./assets/img/blue_favicon.ico" />
     <link
       href="https://fonts.googleapis.com/css?family=Exo+2:600,700,800,900"
       rel="stylesheet"
@@ -14,8 +14,12 @@
     <link rel="stylesheet" href="./stylesheets/heading.css" />
     <!--ajax-->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script>
-    
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"
+      integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg=="
+      crossorigin="anonymous"
+    ></script>
+
     <style>
       body {
         margin: 0;
@@ -53,7 +57,7 @@
         content: "";
         width: 0.1px;
         height: 0.1px;
-        border: 10.5px solid#1A28CF;
+        border: 10.5px solid #1a28cf;
         position: absolute;
         border-radius: 50%;
         /* opacity: .5; */
@@ -124,12 +128,27 @@
     <link rel="stylesheet" href="./css/hover-min.css" />
     <!-- <link rel="stylesheet" href="./css/workshop.css" /> -->
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-    <script src="https://kit.fontawesome.com/a48cc7111e.js" crossorigin="anonymous"></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+      integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+      integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://kit.fontawesome.com/a48cc7111e.js"
+      crossorigin="anonymous"
+    ></script>
 
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+      integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+      crossorigin="anonymous"
+    />
 
     <!-- razorpay -->
     <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
@@ -137,170 +156,214 @@
     <link href="assets/css/style.css" rel="stylesheet" />
   </head>
 
-  <body style = "background-color: #121212; color: white;">
+  <body style="background-color: #121212; color: white">
     <%- include('partials/navbar')%>
-    <div class = "container" id = "intro">
-      <p style="font-weight: 800; font-size: 40px;text-align: center;">GRAND ARCANUM - SCRIPTIC WISSEN</p>
-      <div class="row" style="margin-top: 5vh;">
-        <div class="col-12 col-md-6" style="height: 0px;"></div>
-        <div class="col-12 col-md-6" style="margin-bottom: 2.5%;">
+    <div class="container" id="intro">
+      <p style="font-weight: 800; font-size: 40px; text-align: center">
+        GRAND ARCANUM - SCRIPTIC WISSEN
+      </p>
+      <div class="row" style="margin-top: 5vh">
+        <div class="col-12 col-md-6" style="height: 0px"></div>
+        <div class="col-12 col-md-6" style="margin-bottom: 2.5%">
           <div class="row">
             <%if(!participant) {%>
-            <button type="button" class="btn btn-success" style="width: 40%; margin: auto;" onclick="redirectToLogin()">
+            <button
+              type="button"
+              class="btn btn-success"
+              style="width: 40%; margin: auto"
+              onclick="redirectToLogin()"
+            >
               Register
-              <i class="fa fa-long-arrow-alt-right" id="sl" style="margin-left: 10px;"></i>
+              <i
+                class="fa fa-long-arrow-alt-right"
+                id="sl"
+                style="margin-left: 10px"
+              ></i>
             </button>
             <%} else if(!participant.phoneNumber){%>
-              <button type="button" class="btn btn-success" style="width: 40%; margin: auto;" onclick="redirectToProfile()">
-                Register
-                <i class="fa fa-long-arrow-alt-right" id="sl" style="margin-left: 10px;"></i>
-              </button>
+            <button
+              type="button"
+              class="btn btn-success"
+              style="width: 40%; margin: auto"
+              onclick="redirectToProfile()"
+            >
+              Register
+              <i
+                class="fa fa-long-arrow-alt-right"
+                id="sl"
+                style="margin-left: 10px"
+              ></i>
+            </button>
             <%} else {%>
-              <button type="button" class="btn btn-success" style="width: 40%; margin: auto;" onclick="continueToBooking()">
-                Register
-                <i class="fa fa-long-arrow-alt-right" id="sl" style="margin-left: 10px;"></i>
-              </button>
+            <button
+              type="button"
+              class="btn btn-success"
+              style="width: 40%; margin: auto"
+              onclick="continueToBooking()"
+            >
+              Register
+              <i
+                class="fa fa-long-arrow-alt-right"
+                id="sl"
+                style="margin-left: 10px"
+              ></i>
+            </button>
             <%}%>
 
             <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
-						<script>
-							function redirectToLogin(){
-								swal({
-									title: "Authentication Required",
-									text: "You haven't logged into your profile. Kindly login and fill your profile before registration",
-									icon: "warning",
-									button: "Continue to Login",
-									dangerMode: true,
-								})
-								.then((button) => {
-									if (button) {
-										window.location.href= "/auth/google"
-									} else {
-									}
-								});
-							}
-
-              function redirectToProfile(){
-								swal({
-									title: "Profile details required",
-									text: "Kindly fill your profile details before registration",
-									icon: "warning",
-									button: "Continue to Profile",
-									dangerMode: true,
-								})
-								.then((button) => {
-									if (button) {
-										window.location.href= "/profile"
-									} else {
-									}
-								});
-							}
-
-              function continueToBooking(){
-                    let isIITBBS = "<%=isIITBBS%>";
-                    if(isIITBBS === "yes") {
-                            swal({
-								title: "Ready to book your slot",
-                                text: `Click the below confirmation button, to confirm your booking`,
-								icon: "success",
-								button: "Confirm",
-								dangerMode: true,
-							}).then((button) => {
-                                if(button) {
-                                    $.ajax({
-                                    type: "POST",
-                                    url: '/register-competition',
-                                    data:  {
-                                        competition : "scriptic-wissen"
-                                    }, 
-                                    success: function(result) {
-                                        if(result){
-                                                new swal({
-                                                    title: 'Success',
-                                                    text: 'Registered successfully',
-                                                    icon: 'success'
-                                                }).then(flag => {
-                                                    if(flag) {
-                                                        window.location.href='/competitions';
-                                                    }
-                                                });
-                                        }else {
-                                                new swal({
-                                                    title: 'Error',
-                                                    text: 'Please try again',
-                                                    icon: 'error'
-                                                });
-                                        }
-                                    }
-                                    });
-                                                    }
-                            })
-                    } else {
-                            swal({
-								title: "Ready to book your slot",
-                                text: `Enter the same email address (${"<%=participant.email%>"}) while filling the payment form. Click continue to continue your booking.`,
-								icon: "success",
-								button: "Continue to booking",
-								dangerMode: true,
-							}).then((button) => {
-                                if(button) {
-                                    window.location.href = `https://rzp.io/l/xuHJWIjWB`;
-                                }
-                            })
-                    }
-								
+            <script>
+              function redirectToLogin() {
+                swal({
+                  title: "Authentication Required",
+                  text: "You haven't logged into your profile. Kindly login and fill your profile before registration",
+                  icon: "warning",
+                  button: "Continue to Login",
+                  dangerMode: true,
+                }).then((button) => {
+                  if (button) {
+                    window.location.href = "/auth/google";
+                  } else {
+                  }
+                });
               }
-						</script>
-            <button type="button" class="btn btn-primary" id = "download-pdf" style="width: 40%; margin: auto;">
+
+              function redirectToProfile() {
+                swal({
+                  title: "Profile details required",
+                  text: "Kindly fill your profile details before registration",
+                  icon: "warning",
+                  button: "Continue to Profile",
+                  dangerMode: true,
+                }).then((button) => {
+                  if (button) {
+                    window.location.href = "/profile";
+                  } else {
+                  }
+                });
+              }
+
+              function continueToBooking() {
+                let isIITBBS = "<%=isIITBBS%>";
+                if (isIITBBS === "yes") {
+                  swal({
+                    title: "Ready to book your slot",
+                    text: `Click the below confirmation button, to confirm your booking`,
+                    icon: "success",
+                    button: "Confirm",
+                    dangerMode: true,
+                  }).then((button) => {
+                    if (button) {
+                      $.ajax({
+                        type: "POST",
+                        url: "/register-competition",
+                        data: {
+                          competition: "scriptic-wissen",
+                        },
+                        success: function (result) {
+                          if (result) {
+                            new swal({
+                              title: "Success",
+                              text: "Registered successfully",
+                              icon: "success",
+                            }).then((flag) => {
+                              if (flag) {
+                                window.location.href = "/competitions";
+                              }
+                            });
+                          } else {
+                            new swal({
+                              title: "Error",
+                              text: "Please try again",
+                              icon: "error",
+                            });
+                          }
+                        },
+                      });
+                    }
+                  });
+                } else {
+                  swal({
+                    title: "Ready to book your slot",
+                    text: `Enter the same email address (${"<%=participant.email%>"}) while filling the payment form. Click continue to continue your booking.`,
+                    icon: "success",
+                    button: "Continue to booking",
+                    dangerMode: true,
+                  }).then((button) => {
+                    if (button) {
+                      window.location.href = `https://rzp.io/l/xuHJWIjWB`;
+                    }
+                  });
+                }
+              }
+            </script>
+            <button
+              type="button"
+              class="btn btn-primary"
+              id="download-pdf"
+              style="width: 40%; margin: auto"
+            >
               Download
-              <i class="fa fa-long-arrow-alt-right" id="sl" style="margin-left: 10px;"></i>
+              <i
+                class="fa fa-long-arrow-alt-right"
+                id="sl"
+                style="margin-left: 10px"
+              ></i>
             </button>
-  
           </div>
         </div>
         <div class="col-12 col-md-6">
-          <p style="font-weight: 650; font-size: 28px;">Introduction</p>
+          <p style="font-weight: 650; font-size: 28px">Introduction</p>
           <p>
-            Ever wondered about how much knowledge you have about engineering design and principles as engineers. If yes, then your curiosity ends now as Wissenaire ‘22 has come up with exactly the same competition that matches your vision.The event provides  an opportunity to all the undergraduate and postgraduate engineering students who are looking to challenge themselves and  test their knowledge on some of the advanced and latest engineering designs, scientific principles on which they are based upon, challenges faced and also applications of such designs.
+            Ever wondered about how much knowledge you have about engineering
+            design and principles as engineers. If yes, then your curiosity ends
+            now as Wissenaire ‘22 has come up with exactly the same competition
+            that matches your vision.The event provides an opportunity to all
+            the undergraduate and postgraduate engineering students who are
+            looking to challenge themselves and test their knowledge on some of
+            the advanced and latest engineering designs, scientific principles
+            on which they are based upon, challenges faced and also applications
+            of such designs.
           </p>
         </div>
         <div class="col-12 col-md-6">
-          <p style="font-weight: 650; font-size: 28px;"> Event Format </p>
+          <p style="font-weight: 650; font-size: 28px">Event Format</p>
+          <p>1. Competition duration is exactly 150 minutes.</p>
           <p>
-            1. Competition duration is exactly 150 minutes.
+            2. It is an individual competition, more than one member is not
+            allowed per team..
           </p>
           <p>
-            2. It is an individual competition, more than one member is not allowed per team..
+            3. Participants will be provided with multiple questions, they have
+            to attempt only one based on their engineering stream or the area of
+            their interest.
           </p>
           <p>
-            3. Participants will be provided with multiple questions, they have to attempt only one based on their engineering stream or the area of their interest. 
+            4. Participants need to submit a pdf or doc file containing scanned
+            copies of images of the answers written by them.
           </p>
           <p>
-            4. Participants need to submit a pdf or doc file containing scanned copies of images of the answers written by them.
+            5. The document should only contain handwritten images, a keyboard
+            typed document will be considered invalid.
           </p>
           <p>
-            5. The document should only contain handwritten images, a keyboard typed document will be considered invalid.
-          </p>
-          <p>
-            6. Questions will be very open ended in nature , so try to answer as much as possible.
+            6. Questions will be very open ended in nature , so try to answer as
+            much as possible.
           </p>
         </div>
         <div class="col-12 col-md-6">
-          <p style="font-weight: 650; font-size: 28px;">Rules & Regulations</p>
+          <p style="font-weight: 650; font-size: 28px">Rules & Regulations</p>
           <p>
-           1. If Plagiarism is found in answers and solutions , they will be considered as invalid.
+            1. If Plagiarism is found in answers and solutions , they will be
+            considered as invalid.
           </p>
           <p>
-           2. Answers will be graded according to both depth of knowledge and how much you know in a particular topic.
+            2. Answers will be graded according to both depth of knowledge and
+            how much you know in a particular topic.
           </p>
-          <p>
-           3. Team Wissenaire decision is final.
-          </p>
+          <p>3. Team Wissenaire decision is final.</p>
 
-          <br>
-          <p style="line-height: 2;">
-          
-          </p>
+          <br />
+          <p style="line-height: 2"></p>
         </div>
 
         <!-- <div class="col-12 col-md-6">
@@ -330,47 +393,63 @@ low error will be on the top of leader board)
             </p>
         </div> -->
 
-
         <div class="col-12 col-md-6">
-          <p style="font-weight: 650; font-size: 28px;"> Contact Details</p>
-          <p style="line-height: 2;"><i class="fa fa-user"></i>&ensp;Tarun<br>
-            <i class="fa fa-envelope"></i>&ensp;tr14@iitbbs.ac.in<br>
+          <p style="font-weight: 650; font-size: 28px">Contact Details</p>
+          <p style="line-height: 2">
+            <i class="fa fa-user"></i>&ensp;Tarun<br />
+            <i class="fa fa-envelope"></i>&ensp;tr14@iitbbs.ac.in<br />
             <i class="fa fa-phone"></i>&ensp;9456252824
           </p>
-
         </div>
         <!-- <div class="col-12 col-md-6">
           <p style="font-weight: 650; font-size: 28px;"> Organising Partner</p>
           <a href="/" target="blank_"><img src="./assets/img/workshops/partners/ditto.jpg" style="width: 30%;"></a>
         </div> -->
-        <div class="col-12 col-md-6">
-        </div>
+        <div class="col-12 col-md-6"></div>
 
-        <div class="col-12 col-md-6" style="margin-bottom: 2.5%;">
-          <div class="row" style="margin-top: 20px;">
-            <button type="button" class="btn" style="width: 40%; margin: auto;" onclick="prev()">
-              <i class="fa fa-long-arrow-alt-left" id="previous" style="margin-right: 10px;"></i>
+        <div class="col-12 col-md-6" style="margin-bottom: 2.5%">
+          <div class="row" style="margin-top: 20px">
+            <button
+              type="button"
+              class="btn"
+              style="width: 40%; margin: auto"
+              onclick="prev()"
+            >
+              <i
+                class="fa fa-long-arrow-alt-left"
+                id="previous"
+                style="margin-right: 10px"
+              ></i>
               Previous
             </button>
-            <button type="button" class="btn"  style="width: 40%; margin: auto;" onclick="next()">
+            <button
+              type="button"
+              class="btn"
+              style="width: 40%; margin: auto"
+              onclick="next()"
+            >
               Next
-              <i class="fa fa-long-arrow-alt-right" id="next" style="margin-left: 10px;"></i>
+              <i
+                class="fa fa-long-arrow-alt-right"
+                id="next"
+                style="margin-left: 10px"
+              ></i>
             </button>
             <script>
-			        function prev() {
-                    const prevURL = "/maths-olympiad";
-                    window.location.href = prevURL;
+              function prev() {
+                const prevURL = "/maths-olympiad";
+                window.location.href = prevURL;
               }
               function next() {
-                    const nextURL = "/humanity";
-                    window.location.href = nextURL;
+                const nextURL = "/humanity";
+                window.location.href = nextURL;
               }
-			      </script>
+            </script>
           </div>
         </div>
       </div>
     </div>
-    
+
     <div class="cur" id="circle">
       <div class="main-cur"></div>
       <img class="satelite" src="./Satellite.svg" alt="" />
@@ -402,34 +481,33 @@ low error will be on the top of leader board)
       });
     </script>
 
-<script>
-  const downloadPdf = document.querySelector("#download-pdf");
+    <script>
+      const downloadPdf = document.querySelector("#download-pdf");
 
-  downloadPdf.addEventListener("click", () => {
+      downloadPdf.addEventListener("click", () => {
+        // Creating the element anchor that
+        // will download pdf
+        let element = document.createElement("a");
+        element.href = "./assets/competition-pdfs/scriptic-vision.pdf";
+        element.download = "scriptic-vision.pdf";
 
-      // Creating the element anchor that
-      // will download pdf
-      let element = document.createElement("a");
-      element.href = "./assets/competition-pdfs/scriptic-vision.pdf";
-      element.download = "scriptic-vision.pdf";
+        // Adding the element to body
+        document.documentElement.appendChild(element);
 
-      // Adding the element to body
-      document.documentElement.appendChild(element);
+        // Above code is equivalent to
+        // <a href="path of file" download="file name">
 
-      // Above code is equivalent to
-      // <a href="path of file" download="file name"> 
+        // onClick property, to trigger download
+        element.click();
 
-      // onClick property, to trigger download
-      element.click();
+        // Removing the element from body
+        document.documentElement.removeChild(element);
 
-      // Removing the element from body
-      document.documentElement.removeChild(element);
-
-       // onClick property, to trigger submit form
-      submitForm.click();
-  });
-</script>
-<div id="preloader"></div>
+        // onClick property, to trigger submit form
+        submitForm.click();
+      });
+    </script>
+    <div id="preloader"></div>
     <script src="assets/js/main.js"></script>
   </body>
 </html>

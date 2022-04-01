@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Analog Circuit Design | Wissenaire'22</title>
-    <link rel="icon" type="image/x-icon" href="./assets/img/blue_favicon.ico">
+    <link rel="icon" type="image/x-icon" href="./assets/img/blue_favicon.ico" />
     <link
       href="https://fonts.googleapis.com/css?family=Exo+2:600,700,800,900"
       rel="stylesheet"
@@ -14,8 +14,12 @@
     <link rel="stylesheet" href="./stylesheets/heading.css" />
     <!--ajax-->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script>
-    
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"
+      integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg=="
+      crossorigin="anonymous"
+    ></script>
+
     <style>
       body {
         margin: 0;
@@ -53,7 +57,7 @@
         content: "";
         width: 0.1px;
         height: 0.1px;
-        border: 10.5px solid#1A28CF;
+        border: 10.5px solid #1a28cf;
         position: absolute;
         border-radius: 50%;
         /* opacity: .5; */
@@ -124,12 +128,27 @@
     <link rel="stylesheet" href="./css/hover-min.css" />
     <!-- <link rel="stylesheet" href="./css/workshop.css" /> -->
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-    <script src="https://kit.fontawesome.com/a48cc7111e.js" crossorigin="anonymous"></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+      integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+      integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://kit.fontawesome.com/a48cc7111e.js"
+      crossorigin="anonymous"
+    ></script>
 
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+      integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+      crossorigin="anonymous"
+    />
 
     <!-- razorpay -->
     <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
@@ -137,221 +156,255 @@
     <link href="assets/css/style.css" rel="stylesheet" />
   </head>
 
-  <body style = "background-color: #121212; color: white;">
+  <body style="background-color: #121212; color: white">
     <%- include('partials/navbar')%>
-    <div class = "container" id = "intro">
+    <div class="container" id="intro">
+      <p style="font-weight: 800; font-size: 40px; text-align: center">
+        GRAND ARCANUM - ANALOG CIRCUIT DESIGN
+      </p>
 
-      <p style="font-weight: 800; font-size: 40px;text-align: center;">GRAND ARCANUM - ANALOG CIRCUIT DESIGN</p>
-
-      <div class="row" style="margin-top: 5vh;">
-        <div class="col-12 col-md-6" style="height: 0px;"></div>
-        <div class="col-12 col-md-6" style="margin-bottom: 2.5%;">
+      <div class="row" style="margin-top: 5vh">
+        <div class="col-12 col-md-6" style="height: 0px"></div>
+        <div class="col-12 col-md-6" style="margin-bottom: 2.5%">
           <div class="row">
             <%if(!participant) {%>
-            <button type="button" class="btn btn-success" style="width: 40%; margin: auto;" onclick="redirectToLogin()">
+            <button
+              type="button"
+              class="btn btn-success"
+              style="width: 40%; margin: auto"
+              onclick="redirectToLogin()"
+            >
               Register
-              <i class="fa fa-long-arrow-alt-right" id="sl" style="margin-left: 10px;"></i>
+              <i
+                class="fa fa-long-arrow-alt-right"
+                id="sl"
+                style="margin-left: 10px"
+              ></i>
             </button>
             <%} else if(!participant.phoneNumber){%>
-              <button type="button" class="btn btn-success" style="width: 40%; margin: auto;" onclick="redirectToProfile()">
-                Register
-                <i class="fa fa-long-arrow-alt-right" id="sl" style="margin-left: 10px;"></i>
-              </button>
+            <button
+              type="button"
+              class="btn btn-success"
+              style="width: 40%; margin: auto"
+              onclick="redirectToProfile()"
+            >
+              Register
+              <i
+                class="fa fa-long-arrow-alt-right"
+                id="sl"
+                style="margin-left: 10px"
+              ></i>
+            </button>
             <%} else {%>
-              <button type="button" class="btn btn-success" style="width: 40%; margin: auto;" onclick="continueToBooking()">
-                Register
-                <i class="fa fa-long-arrow-alt-right" id="sl" style="margin-left: 10px;"></i>
-              </button>
+            <button
+              type="button"
+              class="btn btn-success"
+              style="width: 40%; margin: auto"
+              onclick="continueToBooking()"
+            >
+              Register
+              <i
+                class="fa fa-long-arrow-alt-right"
+                id="sl"
+                style="margin-left: 10px"
+              ></i>
+            </button>
             <%}%>
 
             <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
-						<script>
-							function redirectToLogin(){
-								swal({
-									title: "Authentication Required",
-									text: "You haven't logged into your profile. Kindly login and fill your profile before registration",
-									icon: "warning",
-									button: "Continue to Login",
-									dangerMode: true,
-								})
-								.then((button) => {
-									if (button) {
-										window.location.href= "/auth/google"
-									} else {
-									}
-								});
-							}
-
-              function redirectToProfile(){
-								swal({
-									title: "Profile details required",
-									text: "Kindly fill your profile details before registration",
-									icon: "warning",
-									button: "Continue to Profile",
-									dangerMode: true,
-								})
-								.then((button) => {
-									if (button) {
-										window.location.href= "/profile"
-									} else {
-									}
-								});
-							}
-
-              function continueToBooking(){
-                    let isIITBBS = "<%=isIITBBS%>";
-                    if(isIITBBS === "yes") {
-                            swal({
-								title: "Ready to book your slot",
-                                text: `Click the below confirmation button, to confirm your booking`,
-								icon: "success",
-								button: "Confirm",
-								dangerMode: true,
-							}).then((button) => {
-                                if(button) {
-                                    $.ajax({
-                                    type: "POST",
-                                    url: '/register-competition',
-                                    data:  {
-                                        competition : "analog-circuit-design"
-                                    }, 
-                                    success: function(result) {
-                                        if(result){
-                                                new swal({
-                                                    title: 'Success',
-                                                    text: 'Registered successfully',
-                                                    icon: 'success'
-                                                }).then(flag => {
-                                                    if(flag) {
-                                                        window.location.href='/competitions';
-                                                    }
-                                                });
-                                        }else {
-                                                new swal({
-                                                    title: 'Error',
-                                                    text: 'Please try again',
-                                                    icon: 'error'
-                                                });
-                                        }
-                                    }
-                                    });
-                                                    }
-                            })
-                    } else {
-                            swal({
-								title: "Ready to book your slot",
-                                text: `Enter the same email address (${"<%=participant.email%>"}) while filling the payment form. Click continue to continue your booking.`,
-								icon: "success",
-								button: "Continue to booking",
-								dangerMode: true,
-							}).then((button) => {
-                                if(button) {
-                                    window.location.href = `https://rzp.io/l/KpRpOhQr`;
-                                }
-                            })
-                    }
-								
+            <script>
+              function redirectToLogin() {
+                swal({
+                  title: "Authentication Required",
+                  text: "You haven't logged into your profile. Kindly login and fill your profile before registration",
+                  icon: "warning",
+                  button: "Continue to Login",
+                  dangerMode: true,
+                }).then((button) => {
+                  if (button) {
+                    window.location.href = "/auth/google";
+                  } else {
+                  }
+                });
               }
-						</script>
-            <button type="button" class="btn btn-primary" id = "download-pdf" style="width: 40%; margin: auto;">
+
+              function redirectToProfile() {
+                swal({
+                  title: "Profile details required",
+                  text: "Kindly fill your profile details before registration",
+                  icon: "warning",
+                  button: "Continue to Profile",
+                  dangerMode: true,
+                }).then((button) => {
+                  if (button) {
+                    window.location.href = "/profile";
+                  } else {
+                  }
+                });
+              }
+
+              function continueToBooking() {
+                let isIITBBS = "<%=isIITBBS%>";
+                if (isIITBBS === "yes") {
+                  swal({
+                    title: "Ready to book your slot",
+                    text: `Click the below confirmation button, to confirm your booking`,
+                    icon: "success",
+                    button: "Confirm",
+                    dangerMode: true,
+                  }).then((button) => {
+                    if (button) {
+                      $.ajax({
+                        type: "POST",
+                        url: "/register-competition",
+                        data: {
+                          competition: "analog-circuit-design",
+                        },
+                        success: function (result) {
+                          if (result) {
+                            new swal({
+                              title: "Success",
+                              text: "Registered successfully",
+                              icon: "success",
+                            }).then((flag) => {
+                              if (flag) {
+                                window.location.href = "/competitions";
+                              }
+                            });
+                          } else {
+                            new swal({
+                              title: "Error",
+                              text: "Please try again",
+                              icon: "error",
+                            });
+                          }
+                        },
+                      });
+                    }
+                  });
+                } else {
+                  swal({
+                    title: "Ready to book your slot",
+                    text: `Enter the same email address (${"<%=participant.email%>"}) while filling the payment form. Click continue to continue your booking.`,
+                    icon: "success",
+                    button: "Continue to booking",
+                    dangerMode: true,
+                  }).then((button) => {
+                    if (button) {
+                      window.location.href = `https://rzp.io/l/KpRpOhQr`;
+                    }
+                  });
+                }
+              }
+            </script>
+            <button
+              type="button"
+              class="btn btn-primary"
+              id="download-pdf"
+              style="width: 40%; margin: auto"
+            >
               Download
-              <i class="fa fa-long-arrow-alt-right" id="sl" style="margin-left: 10px;"></i>
+              <i
+                class="fa fa-long-arrow-alt-right"
+                id="sl"
+                style="margin-left: 10px"
+              ></i>
             </button>
-  
           </div>
         </div>
         <div class="col-12 col-md-6">
-          <p style="font-weight: 650; font-size: 28px;">Introduction</p>
-
+          <p style="font-weight: 650; font-size: 28px">Introduction</p>
 
           <p>
-            “We are analog beings living in a digital world, facing a quantum future – Neil Turok”. Analog
-            links real-world senses to the digital world. The analog electronics field is going through very
-            exciting times. The digital revolution in electronics has made analog even more necessary.
-            The modern electronics technology will play an ever- increasing role in the quality and variety
-            of our lives. Therefore, it is very necessary to realize the importance of Analog electronics. We
-            here at Wissenaire’22 invite you to grab this opportunity and test your knowledge in the field
-            of Analog electronics.
+            “We are analog beings living in a digital world, facing a quantum
+            future – Neil Turok”. Analog links real-world senses to the digital
+            world. The analog electronics field is going through very exciting
+            times. The digital revolution in electronics has made analog even
+            more necessary. The modern electronics technology will play an ever-
+            increasing role in the quality and variety of our lives. Therefore,
+            it is very necessary to realize the importance of Analog
+            electronics. We here at Wissenaire’22 invite you to grab this
+            opportunity and test your knowledge in the field of Analog
+            electronics.
           </p>
-
-
         </div>
         <div class="col-12 col-md-6">
-          <p style="font-weight: 650; font-size: 28px;"> Event Description </p>
-
+          <p style="font-weight: 650; font-size: 28px">Event Description</p>
 
           <p>
-            Analog electronics constitutes of basic elements such as resistors, diodes, transistors (like BJT
-and MOSFET) and Op-Amps with which many circuits like amplifiers, filters, regulators,
-clippers, clampers are built. Here we will test your understanding on such Analog circuits and
-of course basic fundamentals.
+            Analog electronics constitutes of basic elements such as resistors,
+            diodes, transistors (like BJT and MOSFET) and Op-Amps with which
+            many circuits like amplifiers, filters, regulators, clippers,
+            clampers are built. Here we will test your understanding on such
+            Analog circuits and of course basic fundamentals.
           </p>
-
-
-        </div>
-
-         <div class="col-12 col-md-6">
-            <p style="font-weight: 650; font-size: 28px;">Event Format</p>
-            <p>Participants will be given a design-based experiment where they have to design a circuit and
-              simulate it in the “LT Spice software” and attach the results along with screenshots of LT Spice
-              schematic and required graphs in the final report within the given time duration.
-            </p><br>
-
-            <p>
-                1. Each participant will be provided with some specifications for every experiment.
-                Utilizing the provided data, they need to calculate some values, build a circuit and
-                finally simulate it in the software.
-                For example, if for a low pass filter, 3 dB cut-off frequency is given as 10Hz, and it is
-                mentioned that one is allowed to take capacitance value in the closed interval
-                [10μF,100μF], then R can be determined. Now these determined values should be
-                used as component values while doing the simulation in LT-Spice.
-            </p>
-            <p>
-                2. After completing the simulation, participants should save the graphs and schematic
-                diagrams. These along with some brief explanation about the experiment and the
-                results should form the final report.
-            </p>
-            <p>
-                3. Apart from all the things mentioned in the previous point, participants should also
-                provide short answers to some questions (related to the experiment) given in the
-                question paper at the time of the event and include them in the final report.
-            </p>
         </div>
 
         <div class="col-12 col-md-6">
-          <p style="font-weight: 650; font-size: 28px;">Rules & Regulations</p>
+          <p style="font-weight: 650; font-size: 28px">Event Format</p>
+          <p>
+            Participants will be given a design-based experiment where they have
+            to design a circuit and simulate it in the “LT Spice software” and
+            attach the results along with screenshots of LT Spice schematic and
+            required graphs in the final report within the given time duration.
+          </p>
+          <br />
+
+          <p>
+            1. Each participant will be provided with some specifications for
+            every experiment. Utilizing the provided data, they need to
+            calculate some values, build a circuit and finally simulate it in
+            the software. For example, if for a low pass filter, 3 dB cut-off
+            frequency is given as 10Hz, and it is mentioned that one is allowed
+            to take capacitance value in the closed interval [10μF,100μF], then
+            R can be determined. Now these determined values should be used as
+            component values while doing the simulation in LT-Spice.
+          </p>
+          <p>
+            2. After completing the simulation, participants should save the
+            graphs and schematic diagrams. These along with some brief
+            explanation about the experiment and the results should form the
+            final report.
+          </p>
+          <p>
+            3. Apart from all the things mentioned in the previous point,
+            participants should also provide short answers to some questions
+            (related to the experiment) given in the question paper at the time
+            of the event and include them in the final report.
+          </p>
+        </div>
+
+        <div class="col-12 col-md-6">
+          <p style="font-weight: 650; font-size: 28px">Rules & Regulations</p>
           <p>
             1. Each participant is allowed only once to appear for the event.
           </p>
 
           <p>
-            2. Everyone should make sure to confine to their given specifications unless one is left
-            free to assume certainvalues.
+            2. Everyone should make sure to confine to their given
+            specifications unless one is left free to assume certainvalues.
           </p>
 
           <p>
-            3. The final report should be made very concisely (Answers should be to the point).
+            3. The final report should be made very concisely (Answers should be
+            to the point).
           </p>
 
           <p>
-            4. No extra time shall be provided. Participants are expected to utilize theirtime
-            efficiently for doing simulations and making the final report.
+            4. No extra time shall be provided. Participants are expected to
+            utilize theirtime efficiently for doing simulations and making the
+            final report.
           </p>
-          <br>
-          <p style="font-weight: 650; font-size: 28px;">Eligibility criteria</p>
+          <br />
+          <p style="font-weight: 650; font-size: 28px">Eligibility criteria</p>
           <p>
-            Participants belonging to any branch of engineering who are familiar with Analog electronics
-and LT -Spice software can participate in the event.
+            Participants belonging to any branch of engineering who are familiar
+            with Analog electronics and LT -Spice software can participate in
+            the event.
           </p>
-          
-          <p style="line-height: 2;">
-          
-          </p>
+
+          <p style="line-height: 2"></p>
         </div>
-        
-
-        
-
 
         <!-- <div class="col-12 col-md-6">
             <p style="font-weight: 650; font-size: 28px;">Online Mode</p>
@@ -363,46 +416,62 @@ and LT -Spice software can participate in the event.
             </p>
         </div> -->
 
-
         <div class="col-12 col-md-6">
-          <p style="font-weight: 650; font-size: 28px;"> Contact Details</p>
-          <p style="line-height: 2;"><i class="fa fa-user"></i>&ensp;Shikhar Agrawal<br>
-            <i class="fa fa-envelope"></i>&ensp;20ec01013@iitbbs.ac.in<br>
+          <p style="font-weight: 650; font-size: 28px">Contact Details</p>
+          <p style="line-height: 2">
+            <i class="fa fa-user"></i>&ensp;Shikhar Agrawal<br />
+            <i class="fa fa-envelope"></i>&ensp;20ec01013@iitbbs.ac.in<br />
             <i class="fa fa-phone"></i>&ensp;8599812216
           </p>
-
         </div>
         <!-- <div class="col-12 col-md-6">
           <p style="font-weight: 650; font-size: 28px;"> Organising Partner</p>
           <a href="/" target="blank_"><img src="./assets/img/workshops/partners/ditto.jpg" style="width: 30%;"></a>
         </div> -->
-        
 
-        <div class="col-12 col-md-6" style="margin-bottom: 2.5%;">
-          <div class="row" style="margin-top: 20px;">
-            <button type="button" class="btn" style="width: 40%; margin: auto;" onclick="prev()">
-              <i class="fa fa-long-arrow-alt-left" id="previous" style="margin-right: 10px;"></i>
+        <div class="col-12 col-md-6" style="margin-bottom: 2.5%">
+          <div class="row" style="margin-top: 20px">
+            <button
+              type="button"
+              class="btn"
+              style="width: 40%; margin: auto"
+              onclick="prev()"
+            >
+              <i
+                class="fa fa-long-arrow-alt-left"
+                id="previous"
+                style="margin-right: 10px"
+              ></i>
               Previous
             </button>
-            <button type="button" class="btn"  style="width: 40%; margin: auto;" onclick="next()">
+            <button
+              type="button"
+              class="btn"
+              style="width: 40%; margin: auto"
+              onclick="next()"
+            >
               Next
-              <i class="fa fa-long-arrow-alt-right" id="next" style="margin-left: 10px;"></i>
+              <i
+                class="fa fa-long-arrow-alt-right"
+                id="next"
+                style="margin-left: 10px"
+              ></i>
             </button>
             <script>
-			        function prev() {
-                    const prevURL = "/colloquia-mechanical";
-                    window.location.href = prevURL;
+              function prev() {
+                const prevURL = "/colloquia-mechanical";
+                window.location.href = prevURL;
               }
               function next() {
-                    const nextURL = "/maths-olympiad";
-                    window.location.href = nextURL;
+                const nextURL = "/maths-olympiad";
+                window.location.href = nextURL;
               }
-			      </script>
+            </script>
           </div>
         </div>
       </div>
     </div>
-    
+
     <div class="cur" id="circle">
       <div class="main-cur"></div>
       <img class="satelite" src="./Satellite.svg" alt="" />
@@ -434,34 +503,33 @@ and LT -Spice software can participate in the event.
       });
     </script>
 
-<script>
-  const downloadPdf = document.querySelector("#download-pdf");
+    <script>
+      const downloadPdf = document.querySelector("#download-pdf");
 
-  downloadPdf.addEventListener("click", () => {
+      downloadPdf.addEventListener("click", () => {
+        // Creating the element anchor that
+        // will download pdf
+        let element = document.createElement("a");
+        element.href = "./assets/competition-pdfs/acd.pdf";
+        element.download = "analog-circuit-design.pdf";
 
-      // Creating the element anchor that
-      // will download pdf
-      let element = document.createElement("a");
-      element.href = "./assets/competition-pdfs/acd.pdf";
-      element.download = "analog-circuit-design.pdf";
+        // Adding the element to body
+        document.documentElement.appendChild(element);
 
-      // Adding the element to body
-      document.documentElement.appendChild(element);
+        // Above code is equivalent to
+        // <a href="path of file" download="file name">
 
-      // Above code is equivalent to
-      // <a href="path of file" download="file name"> 
+        // onClick property, to trigger download
+        element.click();
 
-      // onClick property, to trigger download
-      element.click();
+        // Removing the element from body
+        document.documentElement.removeChild(element);
 
-      // Removing the element from body
-      document.documentElement.removeChild(element);
-
-       // onClick property, to trigger submit form
-      submitForm.click();
-  });
-</script>
-<div id="preloader"></div>
+        // onClick property, to trigger submit form
+        submitForm.click();
+      });
+    </script>
+    <div id="preloader"></div>
     <script src="assets/js/main.js"></script>
   </body>
 </html>

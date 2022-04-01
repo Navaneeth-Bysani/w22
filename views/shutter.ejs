@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Shutter | Wissenaire'22</title>
-    <link rel="icon" type="image/x-icon" href="./assets/img/blue_favicon.ico">
+    <link rel="icon" type="image/x-icon" href="./assets/img/blue_favicon.ico" />
     <link
       href="https://fonts.googleapis.com/css?family=Exo+2:600,700,800,900"
       rel="stylesheet"
@@ -14,8 +14,12 @@
     <link rel="stylesheet" href="./stylesheets/heading.css" />
     <!--ajax-->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script>
-    
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"
+      integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg=="
+      crossorigin="anonymous"
+    ></script>
+
     <style>
       body {
         margin: 0;
@@ -53,7 +57,7 @@
         content: "";
         width: 0.1px;
         height: 0.1px;
-        border: 10.5px solid#1A28CF;
+        border: 10.5px solid #1a28cf;
         position: absolute;
         border-radius: 50%;
         /* opacity: .5; */
@@ -124,12 +128,27 @@
     <link rel="stylesheet" href="./css/hover-min.css" />
     <!-- <link rel="stylesheet" href="./css/workshop.css" /> -->
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-    <script src="https://kit.fontawesome.com/a48cc7111e.js" crossorigin="anonymous"></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+      integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+      integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://kit.fontawesome.com/a48cc7111e.js"
+      crossorigin="anonymous"
+    ></script>
 
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+      integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+      crossorigin="anonymous"
+    />
 
     <!-- razorpay -->
     <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
@@ -137,242 +156,307 @@
     <link href="assets/css/style.css" rel="stylesheet" />
   </head>
 
-  <body style = "background-color: #121212; color: white;">
+  <body style="background-color: #121212; color: white">
     <%- include('partials/navbar')%>
-    <div class = "container" id = "intro">
-      <p style="font-weight: 800; font-size: 40px;text-align: center;">ON-NET - SHUTTER</p>
-      <div class="row" style="margin-top: 5vh;">
-        <div class="col-12 col-md-6" style="height: 0px;"></div>
-        <div class="col-12 col-md-6" style="margin-bottom: 2.5%;">
+    <div class="container" id="intro">
+      <p style="font-weight: 800; font-size: 40px; text-align: center">
+        ON-NET - SHUTTER
+      </p>
+      <div class="row" style="margin-top: 5vh">
+        <div class="col-12 col-md-6" style="height: 0px"></div>
+        <div class="col-12 col-md-6" style="margin-bottom: 2.5%">
           <div class="row">
             <%if(!participant) {%>
-            <button type="button" class="btn btn-success" style="width: 40%; margin: auto;" onclick="redirectToLogin()">
+            <button
+              type="button"
+              class="btn btn-success"
+              style="width: 40%; margin: auto"
+              onclick="redirectToLogin()"
+            >
               Register
-              <i class="fa fa-long-arrow-alt-right" id="sl" style="margin-left: 10px;"></i>
+              <i
+                class="fa fa-long-arrow-alt-right"
+                id="sl"
+                style="margin-left: 10px"
+              ></i>
             </button>
             <%} else if(!participant.phoneNumber){%>
-              <button type="button" class="btn btn-success" style="width: 40%; margin: auto;" onclick="redirectToProfile()">
-                Register
-                <i class="fa fa-long-arrow-alt-right" id="sl" style="margin-left: 10px;"></i>
-              </button>
+            <button
+              type="button"
+              class="btn btn-success"
+              style="width: 40%; margin: auto"
+              onclick="redirectToProfile()"
+            >
+              Register
+              <i
+                class="fa fa-long-arrow-alt-right"
+                id="sl"
+                style="margin-left: 10px"
+              ></i>
+            </button>
             <%} else {%>
-              <button type="button" class="btn btn-success" style="width: 40%; margin: auto;" onclick="continueToBooking()">
-                Register
-                <i class="fa fa-long-arrow-alt-right" id="sl" style="margin-left: 10px;"></i>
-              </button>
+            <button
+              type="button"
+              class="btn btn-success"
+              style="width: 40%; margin: auto"
+              onclick="continueToBooking()"
+            >
+              Register
+              <i
+                class="fa fa-long-arrow-alt-right"
+                id="sl"
+                style="margin-left: 10px"
+              ></i>
+            </button>
             <%}%>
 
             <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
-						<script>
-							function redirectToLogin(){
-								swal({
-									title: "Authentication Required",
-									text: "You haven't logged into your profile. Kindly login and fill your profile before registration",
-									icon: "warning",
-									button: "Continue to Login",
-									dangerMode: true,
-								})
-								.then((button) => {
-									if (button) {
-										window.location.href= "/auth/google"
-									} else {
-									}
-								});
-							}
-
-              function redirectToProfile(){
-								swal({
-									title: "Profile details required",
-									text: "Kindly fill your profile details before registration",
-									icon: "warning",
-									button: "Continue to Profile",
-									dangerMode: true,
-								})
-								.then((button) => {
-									if (button) {
-										window.location.href= "/profile"
-									} else {
-									}
-								});
-							}
-
-              function continueToBooking(){
-                    let isIITBBS = "<%=isIITBBS%>";
-                    if(isIITBBS === "yes") {
-                            swal({
-								title: "Ready to book your slot",
-                                text: `Click the below confirmation button, to confirm your booking`,
-								icon: "success",
-								button: "Confirm",
-								dangerMode: true,
-							}).then((button) => {
-                                if(button) {
-                                    $.ajax({
-                                    type: "POST",
-                                    url: '/register-competition',
-                                    data:  {
-                                        competition : "shutter"
-                                    }, 
-                                    success: function(result) {
-                                        if(result){
-                                                new swal({
-                                                    title: 'Success',
-                                                    text: 'Registered successfully',
-                                                    icon: 'success'
-                                                }).then(flag => {
-                                                    if(flag) {
-                                                        window.location.href='/competitions';
-                                                    }
-                                                });
-                                        }else {
-                                                new swal({
-                                                    title: 'Error',
-                                                    text: 'Please try again',
-                                                    icon: 'error'
-                                                });
-                                        }
-                                    }
-                                    });
-                                                    }
-                            })
-                    } else {
-                            swal({
-								title: "Ready to book your slot",
-                                text: `Enter the same email address (${"<%=participant.email%>"}) while filling the payment form. Click continue to continue your booking.`,
-								icon: "success",
-								button: "Continue to booking",
-								dangerMode: true,
-							}).then((button) => {
-                                if(button) {
-                                    window.location.href = `https://rzp.io/l/83cIA07wt`;
-                                }
-                            })
-                    }
-								
+            <script>
+              function redirectToLogin() {
+                swal({
+                  title: "Authentication Required",
+                  text: "You haven't logged into your profile. Kindly login and fill your profile before registration",
+                  icon: "warning",
+                  button: "Continue to Login",
+                  dangerMode: true,
+                }).then((button) => {
+                  if (button) {
+                    window.location.href = "/auth/google";
+                  } else {
+                  }
+                });
               }
-						</script>
-            <button type="button" class="btn btn-primary" id = "download-pdf" style="width: 40%; margin: auto;">
+
+              function redirectToProfile() {
+                swal({
+                  title: "Profile details required",
+                  text: "Kindly fill your profile details before registration",
+                  icon: "warning",
+                  button: "Continue to Profile",
+                  dangerMode: true,
+                }).then((button) => {
+                  if (button) {
+                    window.location.href = "/profile";
+                  } else {
+                  }
+                });
+              }
+
+              function continueToBooking() {
+                let isIITBBS = "<%=isIITBBS%>";
+                if (isIITBBS === "yes") {
+                  swal({
+                    title: "Ready to book your slot",
+                    text: `Click the below confirmation button, to confirm your booking`,
+                    icon: "success",
+                    button: "Confirm",
+                    dangerMode: true,
+                  }).then((button) => {
+                    if (button) {
+                      $.ajax({
+                        type: "POST",
+                        url: "/register-competition",
+                        data: {
+                          competition: "shutter",
+                        },
+                        success: function (result) {
+                          if (result) {
+                            new swal({
+                              title: "Success",
+                              text: "Registered successfully",
+                              icon: "success",
+                            }).then((flag) => {
+                              if (flag) {
+                                window.location.href = "/competitions";
+                              }
+                            });
+                          } else {
+                            new swal({
+                              title: "Error",
+                              text: "Please try again",
+                              icon: "error",
+                            });
+                          }
+                        },
+                      });
+                    }
+                  });
+                } else {
+                  swal({
+                    title: "Ready to book your slot",
+                    text: `Enter the same email address (${"<%=participant.email%>"}) while filling the payment form. Click continue to continue your booking.`,
+                    icon: "success",
+                    button: "Continue to booking",
+                    dangerMode: true,
+                  }).then((button) => {
+                    if (button) {
+                      window.location.href = `https://rzp.io/l/83cIA07wt`;
+                    }
+                  });
+                }
+              }
+            </script>
+            <button
+              type="button"
+              class="btn btn-primary"
+              id="download-pdf"
+              style="width: 40%; margin: auto"
+            >
               Download
-              <i class="fa fa-long-arrow-alt-right" id="sl" style="margin-left: 10px;"></i>
+              <i
+                class="fa fa-long-arrow-alt-right"
+                id="sl"
+                style="margin-left: 10px"
+              ></i>
             </button>
-  
           </div>
         </div>
         <div class="col-12 col-md-6">
-          <p style="font-weight: 650; font-size: 28px;">Introduction</p>
+          <p style="font-weight: 650; font-size: 28px">Introduction</p>
           <p>
-            Have you ever captured a good photo...? <br>
-            “A good snapshot keeps a moment from running away.” ― Eudora Welty <br>
-            The photograph is to hold one’s breath, when all faculties converge to capture fleeting reality. It’s
-            at that precise moment that mastering an image becomes a great physical and intellectual joy. <br>
-            WISSENAIRE’22 provides all the photographers out there, a platform to prove yourself.
+            Have you ever captured a good photo...? <br />
+            “A good snapshot keeps a moment from running away.” ― Eudora Welty
+            <br />
+            The photograph is to hold one’s breath, when all faculties converge
+            to capture fleeting reality. It’s at that precise moment that
+            mastering an image becomes a great physical and intellectual joy.
+            <br />
+            WISSENAIRE’22 provides all the photographers out there, a platform
+            to prove yourself.
           </p>
         </div>
         <div class="col-12 col-md-6">
-          <p style="font-weight: 650; font-size: 28px;"> Event Format </p>
+          <p style="font-weight: 650; font-size: 28px">Event Format</p>
           <p>
-            1. Photos should be submitted through email: competitions.wissenaire@gmail.com with subject
-as “Shutter – Registration Id”. <br/>
-2. Provide your Facebook profile link in the mail for further judging process. <br/>
-3. The Photographs must meet the Photograph Requirements, described below. <br>
+            1. Photos should be submitted through email:
+            competitions.wissenaire@gmail.com with subject as “Shutter –
+            Registration Id”. <br />
+            2. Provide your Facebook profile link in the mail for further
+            judging process. <br />
+            3. The Photographs must meet the Photograph Requirements, described
+            below. <br />
           </p>
         </div>
         <div class="col-12 col-md-6">
-          <p style="font-weight: 650; font-size: 28px;">Rules & Regulations</p>
+          <p style="font-weight: 650; font-size: 28px">Rules & Regulations</p>
           <p>
-            1. Photographs must not have previously been submitted in any competition and/or won an
-            award or prize of any kind. <br/>
-            2. Photograph must be an original work that does not contain, incorporate or otherwise
-            use any content, material or element that is owned by a third party or entity. <br/>
-            3. Photograph must not be or include content which is derogatory, offensive,
-            threatening, defamatory, disparaging or contains any content that is inappropriate,
-            indecent, sexual, profane, tortuous, slanderous, discriminatory in any way or that
-            promotes hatred or harm against any group or person. <br>
-            4. Photographs must not contain content, material or any element that is unlawful, or otherwisein
-            violation of or contrary to all applicable federal, state, provincial or local laws and regulations in any
-            state where the Photographs were created.<br>
-            5. Photographs must not refer to any person, group or organization without their written
-            permission.
+            1. Photographs must not have previously been submitted in any
+            competition and/or won an award or prize of any kind. <br />
+            2. Photograph must be an original work that does not contain,
+            incorporate or otherwise use any content, material or element that
+            is owned by a third party or entity. <br />
+            3. Photograph must not be or include content which is derogatory,
+            offensive, threatening, defamatory, disparaging or contains any
+            content that is inappropriate, indecent, sexual, profane, tortuous,
+            slanderous, discriminatory in any way or that promotes hatred or
+            harm against any group or person. <br />
+            4. Photographs must not contain content, material or any element
+            that is unlawful, or otherwisein violation of or contrary to all
+            applicable federal, state, provincial or local laws and regulations
+            in any state where the Photographs were created.<br />
+            5. Photographs must not refer to any person, group or organization
+            without their written permission.
           </p>
-          
-          <p style="color: orangered;">For more information, please download the pdf from above</p>
-          <br>
-          <p style="line-height: 2;">
-          
+
+          <p style="color: orangered">
+            For more information, please download the pdf from above
           </p>
+          <br />
+          <p style="line-height: 2"></p>
         </div>
 
         <div class="col-12 col-md-6">
-            <p style="font-weight: 650; font-size: 28px;">Judgement criteria</p>
+          <p style="font-weight: 650; font-size: 28px">Judgement criteria</p>
           <p>
-            1. Members of Clix – The Photography Society of IIT Bhubaneswar will evaluate and
-            attribute a score to each entrant’s photograph based upon the below-listed
-            criteria. <br>
-            2. How original are the Photographs? <br>
+            1. Members of Clix – The Photography Society of IIT Bhubaneswar will
+            evaluate and attribute a score to each entrant’s photograph based
+            upon the below-listed criteria. <br />
+            2. How original are the Photographs? <br />
             3. How creative are the Photographs?
           </p>
-          <br>
-          <p style="line-height: 2;">
-          
+          <br />
+          <p style="line-height: 2"></p>
+          <p style="font-weight: 650; font-size: 28px">Problem Statement</p>
+          <p>
+            This is an online event in which participants should submit
+            photographs taken by them.
           </p>
-          <p style="font-weight: 650; font-size: 28px;">Problem Statement</p>
-          <p>This is an online event in which participants should submit photographs taken by them.</p>
-          <br>
-          <p style="font-weight: 650; font-size: 28px;">Rewards</p>
+          <br />
+          <p style="font-weight: 650; font-size: 28px">Rewards</p>
           <p>Cash prize up to 3000/- INR.</p>
         </div>
         <div class="col-12 col-md-6">
-            <p style="font-weight: 650; font-size: 28px;">Photograph Requirements</p>
-            <p>
-            1. Each photo should have a caption. <br>
-2. Photos should be taken using a camera of 3MP or more <br>
-3. Indication of specifications of photos is not mandatory. <br>
+          <p style="font-weight: 650; font-size: 28px">
+            Photograph Requirements
+          </p>
+          <p>
+            1. Each photo should have a caption. <br />
+            2. Photos should be taken using a camera of 3MP or more <br />
+            3. Indication of specifications of photos is not mandatory. <br />
 
-4. Post Processing is allowed and if done, should send the original images too. Entries will not be
-accepted if submitted via other means.<br>
-5. Last date of submission is 30th March 2022.
-            </p>
+            4. Post Processing is allowed and if done, should send the original
+            images too. Entries will not be accepted if submitted via other
+            means.<br />
+            5. Last date of submission is 30th March 2022.
+          </p>
         </div>
         <div class="col-12 col-md-6">
-          <p style="font-weight: 650; font-size: 28px;"> Contact</p>
-          <p style="line-height: 2;"><i class="fa fa-user"></i>&ensp;Karthikeya<br>
-            <i class="fa fa-envelope"></i>&ensp;20ce1042@iitbbs.ac.in<br>
+          <p style="font-weight: 650; font-size: 28px">Contact</p>
+          <p style="line-height: 2">
+            <i class="fa fa-user"></i>&ensp;Karthikeya<br />
+            <i class="fa fa-envelope"></i>&ensp;20ce1042@iitbbs.ac.in<br />
             <i class="fa fa-phone"></i>&ensp;7093867606
           </p>
-
         </div>
         <!-- <div class="col-12 col-md-6">
           <p style="font-weight: 650; font-size: 28px;"> Organising Partner</p>
           <a href="/" target="blank_"><img src="./assets/img/workshops/partners/ditto.jpg" style="width: 30%;"></a>
         </div> -->
-        <div class="col-12 col-md-6">
-        </div>
+        <div class="col-12 col-md-6"></div>
 
-        <div class="col-12 col-md-6" style="margin-bottom: 2.5%;">
-          <div class="row" style="margin-top: 20px;">
-            <button type="button" class="btn" style="width: 40%; margin: auto;" onclick="prev()">
-              <i class="fa fa-long-arrow-alt-left" id="previous" style="margin-right: 10px;"></i>
+        <div class="col-12 col-md-6" style="margin-bottom: 2.5%">
+          <div class="row" style="margin-top: 20px">
+            <button
+              type="button"
+              class="btn"
+              style="width: 40%; margin: auto"
+              onclick="prev()"
+            >
+              <i
+                class="fa fa-long-arrow-alt-left"
+                id="previous"
+                style="margin-right: 10px"
+              ></i>
               Previous
             </button>
-            <button type="button" class="btn"  style="width: 40%; margin: auto;" onclick="next()">
+            <button
+              type="button"
+              class="btn"
+              style="width: 40%; margin: auto"
+              onclick="next()"
+            >
               Next
-              <i class="fa fa-long-arrow-alt-right" id="next" style="margin-left: 10px;"></i>
+              <i
+                class="fa fa-long-arrow-alt-right"
+                id="next"
+                style="margin-left: 10px"
+              ></i>
             </button>
             <script>
-			        function prev() {
-                    const prevURL = "/sherlock";
-                    window.location.href = prevURL;
+              function prev() {
+                const prevURL = "/sherlock";
+                window.location.href = prevURL;
               }
               function next() {
-                    const nextURL = "/arduino-hackathon";
-                    window.location.href = nextURL;
+                const nextURL = "/arduino-hackathon";
+                window.location.href = nextURL;
               }
-			      </script>
+            </script>
           </div>
         </div>
       </div>
     </div>
-    
+
     <div class="cur" id="circle">
       <div class="main-cur"></div>
       <img class="satelite" src="./Satellite.svg" alt="" />
@@ -404,34 +488,33 @@ accepted if submitted via other means.<br>
       });
     </script>
 
-<script>
-  const downloadPdf = document.querySelector("#download-pdf");
+    <script>
+      const downloadPdf = document.querySelector("#download-pdf");
 
-  downloadPdf.addEventListener("click", () => {
+      downloadPdf.addEventListener("click", () => {
+        // Creating the element anchor that
+        // will download pdf
+        let element = document.createElement("a");
+        element.href = "./assets/competition-pdfs/shutter.pdf";
+        element.download = "shutter.pdf";
 
-      // Creating the element anchor that
-      // will download pdf
-      let element = document.createElement("a");
-      element.href = "./assets/competition-pdfs/shutter.pdf";
-      element.download = "shutter.pdf";
+        // Adding the element to body
+        document.documentElement.appendChild(element);
 
-      // Adding the element to body
-      document.documentElement.appendChild(element);
+        // Above code is equivalent to
+        // <a href="path of file" download="file name">
 
-      // Above code is equivalent to
-      // <a href="path of file" download="file name"> 
+        // onClick property, to trigger download
+        element.click();
 
-      // onClick property, to trigger download
-      element.click();
+        // Removing the element from body
+        document.documentElement.removeChild(element);
 
-      // Removing the element from body
-      document.documentElement.removeChild(element);
-
-       // onClick property, to trigger submit form
-      submitForm.click();
-  });
-</script>
-<div id="preloader"></div>
+        // onClick property, to trigger submit form
+        submitForm.click();
+      });
+    </script>
+    <div id="preloader"></div>
     <script src="assets/js/main.js"></script>
   </body>
 </html>

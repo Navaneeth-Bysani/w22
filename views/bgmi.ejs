@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>BGMI | Wissenaire'22</title>
-    <link rel="icon" type="image/x-icon" href="./assets/img/blue_favicon.ico">
+    <link rel="icon" type="image/x-icon" href="./assets/img/blue_favicon.ico" />
     <link
       href="https://fonts.googleapis.com/css?family=Exo+2:600,700,800,900"
       rel="stylesheet"
@@ -14,8 +14,12 @@
     <link rel="stylesheet" href="./stylesheets/heading.css" />
     <!--ajax-->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script>
-    
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"
+      integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg=="
+      crossorigin="anonymous"
+    ></script>
+
     <style>
       body {
         margin: 0;
@@ -53,7 +57,7 @@
         content: "";
         width: 0.1px;
         height: 0.1px;
-        border: 10.5px solid#1A28CF;
+        border: 10.5px solid #1a28cf;
         position: absolute;
         border-radius: 50%;
         /* opacity: .5; */
@@ -124,12 +128,27 @@
     <link rel="stylesheet" href="./css/hover-min.css" />
     <!-- <link rel="stylesheet" href="./css/workshop.css" /> -->
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-    <script src="https://kit.fontawesome.com/a48cc7111e.js" crossorigin="anonymous"></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+      integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+      integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://kit.fontawesome.com/a48cc7111e.js"
+      crossorigin="anonymous"
+    ></script>
 
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+      integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+      crossorigin="anonymous"
+    />
 
     <!-- razorpay -->
     <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
@@ -137,213 +156,241 @@
     <link href="assets/css/style.css" rel="stylesheet" />
   </head>
 
-  <body style = "background-color: #121212; color: white;">
+  <body style="background-color: #121212; color: white">
     <%- include('partials/navbar')%>
-    <div class = "container" id = "intro">
+    <div class="container" id="intro">
+      <p style="font-weight: 800; font-size: 40px; text-align: center">
+        LAN WARS - BGMI
+      </p>
 
-      <p style="font-weight: 800; font-size: 40px;text-align: center;">LAN WARS - BGMI</p>
-
-      <div class="row" style="margin-top: 5vh;">
-        <div class="col-12 col-md-6" style="height: 0px;"></div>
-        <div class="col-12 col-md-6" style="margin-bottom: 2.5%;">
+      <div class="row" style="margin-top: 5vh">
+        <div class="col-12 col-md-6" style="height: 0px"></div>
+        <div class="col-12 col-md-6" style="margin-bottom: 2.5%">
           <div class="row">
             <%if(!participant) {%>
-            <button type="button" class="btn btn-success" style="width: 40%; margin: auto;" onclick="redirectToLogin()">
+            <button
+              type="button"
+              class="btn btn-success"
+              style="width: 40%; margin: auto"
+              onclick="redirectToLogin()"
+            >
               Register
-              <i class="fa fa-long-arrow-alt-right" id="sl" style="margin-left: 10px;"></i>
+              <i
+                class="fa fa-long-arrow-alt-right"
+                id="sl"
+                style="margin-left: 10px"
+              ></i>
             </button>
             <%} else if(!participant.phoneNumber){%>
-              <button type="button" class="btn btn-success" style="width: 40%; margin: auto;" onclick="redirectToProfile()">
-                Register
-                <i class="fa fa-long-arrow-alt-right" id="sl" style="margin-left: 10px;"></i>
-              </button>
+            <button
+              type="button"
+              class="btn btn-success"
+              style="width: 40%; margin: auto"
+              onclick="redirectToProfile()"
+            >
+              Register
+              <i
+                class="fa fa-long-arrow-alt-right"
+                id="sl"
+                style="margin-left: 10px"
+              ></i>
+            </button>
             <%} else {%>
-              <button type="button" class="btn btn-success" style="width: 40%; margin: auto;" onclick="continueToBooking()">
-                Register
-                <i class="fa fa-long-arrow-alt-right" id="sl" style="margin-left: 10px;"></i>
-              </button>
+            <button
+              type="button"
+              class="btn btn-success"
+              style="width: 40%; margin: auto"
+              onclick="continueToBooking()"
+            >
+              Register
+              <i
+                class="fa fa-long-arrow-alt-right"
+                id="sl"
+                style="margin-left: 10px"
+              ></i>
+            </button>
             <%}%>
 
             <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
-						<script>
-							function redirectToLogin(){
-								swal({
-									title: "Authentication Required",
-									text: "You haven't logged into your profile. Kindly login and fill your profile before registration",
-									icon: "warning",
-									button: "Continue to Login",
-									dangerMode: true,
-								})
-								.then((button) => {
-									if (button) {
-										window.location.href= "/auth/google"
-									} else {
-									}
-								});
-							}
-
-              function redirectToProfile(){
-								swal({
-									title: "Profile details required",
-									text: "Kindly fill your profile details before registration",
-									icon: "warning",
-									button: "Continue to Profile",
-									dangerMode: true,
-								})
-								.then((button) => {
-									if (button) {
-										window.location.href= "/profile"
-									} else {
-									}
-								});
-							}
-
-              function continueToBooking(){
-                    let isIITBBS = "<%=isIITBBS%>";
-                    if(isIITBBS === "yes") {
-                            swal({
-								title: "Ready to book your slot",
-                                text: `Click the below confirmation button, to confirm your booking`,
-								icon: "success",
-								button: "Confirm",
-								dangerMode: true,
-							}).then((button) => {
-                                if(button) {
-                                    $.ajax({
-                                    type: "POST",
-                                    url: '/register-competition',
-                                    data:  {
-                                        competition : "bgmi"
-                                    }, 
-                                    success: function(result) {
-                                        if(result){
-                                                new swal({
-                                                    title: 'Success',
-                                                    text: 'Registered successfully',
-                                                    icon: 'success'
-                                                }).then(flag => {
-                                                    if(flag) {
-                                                        window.location.href='/competitions';
-                                                    }
-                                                });
-                                        }else {
-                                                new swal({
-                                                    title: 'Error',
-                                                    text: 'Please try again',
-                                                    icon: 'error'
-                                                });
-                                        }
-                                    }
-                                    });
-                                                    }
-                            })
-                    } else {
-                            swal({
-								title: "Ready to book your slot",
-                                text: `Enter the same email address (${"<%=participant.email%>"}) while filling the payment form. Click continue to continue your booking.`,
-								icon: "success",
-								button: "Continue to booking",
-								dangerMode: true,
-							}).then((button) => {
-                                if(button) {
-                                    window.location.href = `https://rzp.io/l/hsLAPqmzb`;
-                                }
-                            })
-                    }
-								
+            <script>
+              function redirectToLogin() {
+                swal({
+                  title: "Authentication Required",
+                  text: "You haven't logged into your profile. Kindly login and fill your profile before registration",
+                  icon: "warning",
+                  button: "Continue to Login",
+                  dangerMode: true,
+                }).then((button) => {
+                  if (button) {
+                    window.location.href = "/auth/google";
+                  } else {
+                  }
+                });
               }
-						</script>
-            <button type="button" class="btn btn-primary" id = "download-pdf" style="width: 40%; margin: auto;">
+
+              function redirectToProfile() {
+                swal({
+                  title: "Profile details required",
+                  text: "Kindly fill your profile details before registration",
+                  icon: "warning",
+                  button: "Continue to Profile",
+                  dangerMode: true,
+                }).then((button) => {
+                  if (button) {
+                    window.location.href = "/profile";
+                  } else {
+                  }
+                });
+              }
+
+              function continueToBooking() {
+                let isIITBBS = "<%=isIITBBS%>";
+                if (isIITBBS === "yes") {
+                  swal({
+                    title: "Ready to book your slot",
+                    text: `Click the below confirmation button, to confirm your booking`,
+                    icon: "success",
+                    button: "Confirm",
+                    dangerMode: true,
+                  }).then((button) => {
+                    if (button) {
+                      $.ajax({
+                        type: "POST",
+                        url: "/register-competition",
+                        data: {
+                          competition: "bgmi",
+                        },
+                        success: function (result) {
+                          if (result) {
+                            new swal({
+                              title: "Success",
+                              text: "Registered successfully",
+                              icon: "success",
+                            }).then((flag) => {
+                              if (flag) {
+                                window.location.href = "/competitions";
+                              }
+                            });
+                          } else {
+                            new swal({
+                              title: "Error",
+                              text: "Please try again",
+                              icon: "error",
+                            });
+                          }
+                        },
+                      });
+                    }
+                  });
+                } else {
+                  swal({
+                    title: "Ready to book your slot",
+                    text: `Enter the same email address (${"<%=participant.email%>"}) while filling the payment form. Click continue to continue your booking.`,
+                    icon: "success",
+                    button: "Continue to booking",
+                    dangerMode: true,
+                  }).then((button) => {
+                    if (button) {
+                      window.location.href = `https://rzp.io/l/hsLAPqmzb`;
+                    }
+                  });
+                }
+              }
+            </script>
+            <button
+              type="button"
+              class="btn btn-primary"
+              id="download-pdf"
+              style="width: 40%; margin: auto"
+            >
               Download
-              <i class="fa fa-long-arrow-alt-right" id="sl" style="margin-left: 10px;"></i>
+              <i
+                class="fa fa-long-arrow-alt-right"
+                id="sl"
+                style="margin-left: 10px"
+              ></i>
             </button>
-  
           </div>
         </div>
         <div class="col-12 col-md-6">
-          <p style="font-weight: 650; font-size: 28px;">Introduction</p>
-
+          <p style="font-weight: 650; font-size: 28px">Introduction</p>
 
           <p>
-            Sports is no longer exclusive to the real world, is it? In the last decade E-sports
-have taken over hearts faster than any sport ever had. The time has come to
-blend your style and experience on a global competitive stage. Build up the
-baddest squad, gear up and ready your guns as Wissenaire’22 brings to you
-Battle Ground Mobile India. Are you in for the “Chicken Dinner”?
+            Sports is no longer exclusive to the real world, is it? In the last
+            decade E-sports have taken over hearts faster than any sport ever
+            had. The time has come to blend your style and experience on a
+            global competitive stage. Build up the baddest squad, gear up and
+            ready your guns as Wissenaire’22 brings to you Battle Ground Mobile
+            India. Are you in for the “Chicken Dinner”?
           </p>
-
-
         </div>
         <div class="col-12 col-md-6">
-          <p style="font-weight: 650; font-size: 28px;"> Tournament Procedure </p>
-
+          <p style="font-weight: 650; font-size: 28px">Tournament Procedure</p>
 
           <p>
-            1. The tournament will be held ONLINE over a single day and the date and time of which will be
-uploaded on the website. <br/>
-2. The tournament will consist of many rounds depending on the number of participating teams.
+            1. The tournament will be held ONLINE over a single day and the date
+            and time of which will be uploaded on the website. <br />
+            2. The tournament will consist of many rounds depending on the
+            number of participating teams.
           </p>
-
-
         </div>
 
-         <div class="col-12 col-md-6">
-            <p style="font-weight: 650; font-size: 28px;">Round Format</p>
-            <p>
-                1. The map for each match will be Erangel. <br/>
-                2. The mode for each match will be the Classic Battle Royale. <br/>
-                3. Each round consists of 3 matches. <br/>
-                4. Each round is a knockout round. <br/>
-                5. After completion of a round, the top team will proceed to next round.
-                (the number of top teams that will proceed, will be intimated later)
-            </p>
-            <br/>
-            
-            <p style="font-weight: 650; font-size: 28px;">Game mode:</p>
-            <p>Classic</p>
-            <p style="font-weight: 650; font-size: 28px;">Map:</p>
-            <p>Erangel</p>
-            <p style="color: orangered;">For further details, please download the pdf from above</p>
-            <p style="font-weight: 650; font-size: 28px;"> Contact Details</p>
-          <p style="line-height: 2;"><i class="fa fa-user"></i>&ensp;Ayush Vinayak<br>
-            <i class="fa fa-envelope"></i>&ensp;20cs01057@iitbbs.ac.in<br>
+        <div class="col-12 col-md-6">
+          <p style="font-weight: 650; font-size: 28px">Round Format</p>
+          <p>
+            1. The map for each match will be Erangel. <br />
+            2. The mode for each match will be the Classic Battle Royale. <br />
+            3. Each round consists of 3 matches. <br />
+            4. Each round is a knockout round. <br />
+            5. After completion of a round, the top team will proceed to next
+            round. (the number of top teams that will proceed, will be intimated
+            later)
+          </p>
+          <br />
+
+          <p style="font-weight: 650; font-size: 28px">Game mode:</p>
+          <p>Classic</p>
+          <p style="font-weight: 650; font-size: 28px">Map:</p>
+          <p>Erangel</p>
+          <p style="color: orangered">
+            For further details, please download the pdf from above
+          </p>
+          <p style="font-weight: 650; font-size: 28px">Contact Details</p>
+          <p style="line-height: 2">
+            <i class="fa fa-user"></i>&ensp;Ayush Vinayak<br />
+            <i class="fa fa-envelope"></i>&ensp;20cs01057@iitbbs.ac.in<br />
             <i class="fa fa-phone"></i>&ensp;9960955907
           </p>
         </div>
 
         <div class="col-12 col-md-6">
-          <p style="font-weight: 650; font-size: 28px;">Rules & Regulations</p>
+          <p style="font-weight: 650; font-size: 28px">Rules & Regulations</p>
           <p>
-            1. Registration will be done on the website itself.<br/>
-            2. Team size: 4 players<br/>
-            3. It is a 4 Player Team Tournament. (No substitutes)<br/>
-            4. Each team must present 1 representative. He/she is responsible for
-            his/her team and will be responsible for all communication with
-            authorities.<br/>
+            1. Registration will be done on the website itself.<br />
+            2. Team size: 4 players<br />
+            3. It is a 4 Player Team Tournament. (No substitutes)<br />
+            4. Each team must present 1 representative. He/she is responsible
+            for his/her team and will be responsible for all communication with
+            authorities.<br />
             5. All the communication with the authorities will be done through
-            WhatsApp/discord.<br/>
-            
-            6. Cheating will lead to team disqualification. Game glitches are not
-            allowed and will be considered as cheating. If you have question
-            regarding a particular tactic, ask the Event coordinators prior to the
-            match.<br/>
-            7. Team member can communicate verbally at all the times.<br/>
-            8. Spectators are not allowed in the tournament area. Protest/dispute can
-            only be filled by the team leader.<br/>
-            9. In case of any disputes, the decision of the Team Wissenaire will be final.<br/>
-            10. Teams can be disqualified on the grounds of misbehavior. <br/>
-            11. Minor changes can be done in the rules which will be informed to all the
-            participants prior to the tournament.
+            WhatsApp/discord.<br />
+
+            6. Cheating will lead to team disqualification. Game glitches are
+            not allowed and will be considered as cheating. If you have question
+            regarding a particular tactic, ask the Event coordinators prior to
+            the match.<br />
+            7. Team member can communicate verbally at all the times.<br />
+            8. Spectators are not allowed in the tournament area.
+            Protest/dispute can only be filled by the team leader.<br />
+            9. In case of any disputes, the decision of the Team Wissenaire will
+            be final.<br />
+            10. Teams can be disqualified on the grounds of misbehavior. <br />
+            11. Minor changes can be done in the rules which will be informed to
+            all the participants prior to the tournament.
           </p>
-          
-          <p style="line-height: 2;">
-          
-          </p>
+
+          <p style="line-height: 2"></p>
         </div>
-        
-
-        
-
 
         <!-- <div class="col-12 col-md-6">
             <p style="font-weight: 650; font-size: 28px;">Online Mode</p>
@@ -355,42 +402,55 @@ uploaded on the website. <br/>
             </p>
         </div> -->
 
-
-        <div class="col-12 col-md-6">
-          
-
-        </div>
+        <div class="col-12 col-md-6"></div>
         <!-- <div class="col-12 col-md-6">
           <p style="font-weight: 650; font-size: 28px;"> Organising Partner</p>
           <a href="/" target="blank_"><img src="./assets/img/workshops/partners/ditto.jpg" style="width: 30%;"></a>
         </div> -->
-        
 
-        <div class="col-12 col-md-6" style="margin-bottom: 2.5%;">
-          <div class="row" style="margin-top: 20px;">
-            <button type="button" class="btn" style="width: 40%; margin: auto;" onclick="prev()">
-              <i class="fa fa-long-arrow-alt-left" id="previous" style="margin-right: 10px;"></i>
+        <div class="col-12 col-md-6" style="margin-bottom: 2.5%">
+          <div class="row" style="margin-top: 20px">
+            <button
+              type="button"
+              class="btn"
+              style="width: 40%; margin: auto"
+              onclick="prev()"
+            >
+              <i
+                class="fa fa-long-arrow-alt-left"
+                id="previous"
+                style="margin-right: 10px"
+              ></i>
               Previous
             </button>
-            <button type="button" class="btn"  style="width: 40%; margin: auto;" onclick="next()">
+            <button
+              type="button"
+              class="btn"
+              style="width: 40%; margin: auto"
+              onclick="next()"
+            >
               Next
-              <i class="fa fa-long-arrow-alt-right" id="next" style="margin-left: 10px;"></i>
+              <i
+                class="fa fa-long-arrow-alt-right"
+                id="next"
+                style="margin-left: 10px"
+              ></i>
             </button>
             <script>
-			        function prev() {
-                    const prevURL = "/quizzaire";
-                    window.location.href = prevURL;
+              function prev() {
+                const prevURL = "/quizzaire";
+                window.location.href = prevURL;
               }
               function next() {
-                    const nextURL = "/valorant";
-                    window.location.href = nextURL;
+                const nextURL = "/valorant";
+                window.location.href = nextURL;
               }
-			      </script>
+            </script>
           </div>
         </div>
       </div>
     </div>
-    
+
     <div class="cur" id="circle">
       <div class="main-cur"></div>
       <img class="satelite" src="./Satellite.svg" alt="" />
@@ -422,34 +482,33 @@ uploaded on the website. <br/>
       });
     </script>
 
-<script>
-  const downloadPdf = document.querySelector("#download-pdf");
+    <script>
+      const downloadPdf = document.querySelector("#download-pdf");
 
-  downloadPdf.addEventListener("click", () => {
+      downloadPdf.addEventListener("click", () => {
+        // Creating the element anchor that
+        // will download pdf
+        let element = document.createElement("a");
+        element.href = "./assets/competition-pdfs/bgmi.pdf";
+        element.download = "bgmi.pdf";
 
-      // Creating the element anchor that
-      // will download pdf
-      let element = document.createElement("a");
-      element.href = "./assets/competition-pdfs/bgmi.pdf";
-      element.download = "bgmi.pdf";
+        // Adding the element to body
+        document.documentElement.appendChild(element);
 
-      // Adding the element to body
-      document.documentElement.appendChild(element);
+        // Above code is equivalent to
+        // <a href="path of file" download="file name">
 
-      // Above code is equivalent to
-      // <a href="path of file" download="file name"> 
+        // onClick property, to trigger download
+        element.click();
 
-      // onClick property, to trigger download
-      element.click();
+        // Removing the element from body
+        document.documentElement.removeChild(element);
 
-      // Removing the element from body
-      document.documentElement.removeChild(element);
-
-       // onClick property, to trigger submit form
-      submitForm.click();
-  });
-</script>
-<div id="preloader"></div>
+        // onClick property, to trigger submit form
+        submitForm.click();
+      });
+    </script>
+    <div id="preloader"></div>
     <script src="assets/js/main.js"></script>
   </body>
 </html>

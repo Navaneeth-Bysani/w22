@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Science Toons | Wissenaire'22</title>
-    <link rel="icon" type="image/x-icon" href="./assets/img/blue_favicon.ico">
+    <link rel="icon" type="image/x-icon" href="./assets/img/blue_favicon.ico" />
     <link
       href="https://fonts.googleapis.com/css?family=Exo+2:600,700,800,900"
       rel="stylesheet"
@@ -14,8 +14,12 @@
     <link rel="stylesheet" href="./stylesheets/heading.css" />
     <!--ajax-->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script>
-    
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"
+      integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg=="
+      crossorigin="anonymous"
+    ></script>
+
     <style>
       body {
         margin: 0;
@@ -53,7 +57,7 @@
         content: "";
         width: 0.1px;
         height: 0.1px;
-        border: 10.5px solid#1A28CF;
+        border: 10.5px solid #1a28cf;
         position: absolute;
         border-radius: 50%;
         /* opacity: .5; */
@@ -124,12 +128,27 @@
     <link rel="stylesheet" href="./css/hover-min.css" />
     <!-- <link rel="stylesheet" href="./css/workshop.css" /> -->
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-    <script src="https://kit.fontawesome.com/a48cc7111e.js" crossorigin="anonymous"></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+      integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+      integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://kit.fontawesome.com/a48cc7111e.js"
+      crossorigin="anonymous"
+    ></script>
 
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+      integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+      crossorigin="anonymous"
+    />
 
     <!-- razorpay -->
     <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
@@ -137,202 +156,246 @@
     <link href="assets/css/style.css" rel="stylesheet" />
   </head>
 
-  <body style = "background-color: #121212; color: white;">
+  <body style="background-color: #121212; color: white">
     <%- include('partials/navbar')%>
-    <div class = "container" id = "intro">
-      <p style="font-weight: 800; font-size: 40px;text-align: center;">ON-NET - SCIENCE TOONS</p>
-      <div class="row" style="margin-top: 5vh;">
-        <div class="col-12 col-md-6" style="height: 0px;"></div>
-        <div class="col-12 col-md-6" style="margin-bottom: 2.5%;">
+    <div class="container" id="intro">
+      <p style="font-weight: 800; font-size: 40px; text-align: center">
+        ON-NET - SCIENCE TOONS
+      </p>
+      <div class="row" style="margin-top: 5vh">
+        <div class="col-12 col-md-6" style="height: 0px"></div>
+        <div class="col-12 col-md-6" style="margin-bottom: 2.5%">
           <div class="row">
             <%if(!participant) {%>
-            <button type="button" class="btn btn-success" style="width: 40%; margin: auto;" onclick="redirectToLogin()">
+            <button
+              type="button"
+              class="btn btn-success"
+              style="width: 40%; margin: auto"
+              onclick="redirectToLogin()"
+            >
               Register
-              <i class="fa fa-long-arrow-alt-right" id="sl" style="margin-left: 10px;"></i>
+              <i
+                class="fa fa-long-arrow-alt-right"
+                id="sl"
+                style="margin-left: 10px"
+              ></i>
             </button>
             <%} else if(!participant.phoneNumber){%>
-              <button type="button" class="btn btn-success" style="width: 40%; margin: auto;" onclick="redirectToProfile()">
-                Register
-                <i class="fa fa-long-arrow-alt-right" id="sl" style="margin-left: 10px;"></i>
-              </button>
+            <button
+              type="button"
+              class="btn btn-success"
+              style="width: 40%; margin: auto"
+              onclick="redirectToProfile()"
+            >
+              Register
+              <i
+                class="fa fa-long-arrow-alt-right"
+                id="sl"
+                style="margin-left: 10px"
+              ></i>
+            </button>
             <%} else {%>
-              <button type="button" class="btn btn-success" style="width: 40%; margin: auto;" onclick="continueToBooking()">
-                Register
-                <i class="fa fa-long-arrow-alt-right" id="sl" style="margin-left: 10px;"></i>
-              </button>
+            <button
+              type="button"
+              class="btn btn-success"
+              style="width: 40%; margin: auto"
+              onclick="continueToBooking()"
+            >
+              Register
+              <i
+                class="fa fa-long-arrow-alt-right"
+                id="sl"
+                style="margin-left: 10px"
+              ></i>
+            </button>
             <%}%>
 
             <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
-						<script>
-							function redirectToLogin(){
-								swal({
-									title: "Authentication Required",
-									text: "You haven't logged into your profile. Kindly login and fill your profile before registration",
-									icon: "warning",
-									button: "Continue to Login",
-									dangerMode: true,
-								})
-								.then((button) => {
-									if (button) {
-										window.location.href= "/auth/google"
-									} else {
-									}
-								});
-							}
-
-              function redirectToProfile(){
-								swal({
-									title: "Profile details required",
-									text: "Kindly fill your profile details before registration",
-									icon: "warning",
-									button: "Continue to Profile",
-									dangerMode: true,
-								})
-								.then((button) => {
-									if (button) {
-										window.location.href= "/profile"
-									} else {
-									}
-								});
-							}
-
-              function continueToBooking(){
-                    let isIITBBS = "<%=isIITBBS%>";
-                    if(isIITBBS === "yes") {
-                            swal({
-								title: "Ready to book your slot",
-                                text: `Click the below confirmation button, to confirm your booking`,
-								icon: "success",
-								button: "Confirm",
-								dangerMode: true,
-							}).then((button) => {
-                                if(button) {
-                                    $.ajax({
-                                    type: "POST",
-                                    url: '/register-competition',
-                                    data:  {
-                                        competition : "science-toons"
-                                    }, 
-                                    success: function(result) {
-                                        if(result){
-                                                new swal({
-                                                    title: 'Success',
-                                                    text: 'Registered successfully',
-                                                    icon: 'success'
-                                                }).then(flag => {
-                                                    if(flag) {
-                                                        window.location.href='/competitions';
-                                                    }
-                                                });
-                                        }else {
-                                                new swal({
-                                                    title: 'Error',
-                                                    text: 'Please try again',
-                                                    icon: 'error'
-                                                });
-                                        }
-                                    }
-                                    });
-                                                    }
-                            })
-                    } else {
-                            swal({
-								title: "Ready to book your slot",
-                                text: `Enter the same email address (${"<%=participant.email%>"}) while filling the payment form. Click continue to continue your booking.`,
-								icon: "success",
-								button: "Continue to booking",
-								dangerMode: true,
-							}).then((button) => {
-                                if(button) {
-                                    window.location.href = `https://rzp.io/l/2Ds0PWrz`;
-                                }
-                            })
-                    }
-								
+            <script>
+              function redirectToLogin() {
+                swal({
+                  title: "Authentication Required",
+                  text: "You haven't logged into your profile. Kindly login and fill your profile before registration",
+                  icon: "warning",
+                  button: "Continue to Login",
+                  dangerMode: true,
+                }).then((button) => {
+                  if (button) {
+                    window.location.href = "/auth/google";
+                  } else {
+                  }
+                });
               }
-						</script>
-            <button type="button" class="btn btn-primary" id = "download-pdf" style="width: 40%; margin: auto;">
+
+              function redirectToProfile() {
+                swal({
+                  title: "Profile details required",
+                  text: "Kindly fill your profile details before registration",
+                  icon: "warning",
+                  button: "Continue to Profile",
+                  dangerMode: true,
+                }).then((button) => {
+                  if (button) {
+                    window.location.href = "/profile";
+                  } else {
+                  }
+                });
+              }
+
+              function continueToBooking() {
+                let isIITBBS = "<%=isIITBBS%>";
+                if (isIITBBS === "yes") {
+                  swal({
+                    title: "Ready to book your slot",
+                    text: `Click the below confirmation button, to confirm your booking`,
+                    icon: "success",
+                    button: "Confirm",
+                    dangerMode: true,
+                  }).then((button) => {
+                    if (button) {
+                      $.ajax({
+                        type: "POST",
+                        url: "/register-competition",
+                        data: {
+                          competition: "science-toons",
+                        },
+                        success: function (result) {
+                          if (result) {
+                            new swal({
+                              title: "Success",
+                              text: "Registered successfully",
+                              icon: "success",
+                            }).then((flag) => {
+                              if (flag) {
+                                window.location.href = "/competitions";
+                              }
+                            });
+                          } else {
+                            new swal({
+                              title: "Error",
+                              text: "Please try again",
+                              icon: "error",
+                            });
+                          }
+                        },
+                      });
+                    }
+                  });
+                } else {
+                  swal({
+                    title: "Ready to book your slot",
+                    text: `Enter the same email address (${"<%=participant.email%>"}) while filling the payment form. Click continue to continue your booking.`,
+                    icon: "success",
+                    button: "Continue to booking",
+                    dangerMode: true,
+                  }).then((button) => {
+                    if (button) {
+                      window.location.href = `https://rzp.io/l/2Ds0PWrz`;
+                    }
+                  });
+                }
+              }
+            </script>
+            <button
+              type="button"
+              class="btn btn-primary"
+              id="download-pdf"
+              style="width: 40%; margin: auto"
+            >
               Download
-              <i class="fa fa-long-arrow-alt-right" id="sl" style="margin-left: 10px;"></i>
+              <i
+                class="fa fa-long-arrow-alt-right"
+                id="sl"
+                style="margin-left: 10px"
+              ></i>
             </button>
-  
           </div>
         </div>
         <div class="col-12 col-md-6">
-          <p style="font-weight: 650; font-size: 28px;">Introduction</p>
+          <p style="font-weight: 650; font-size: 28px">Introduction</p>
           <p>
-            “Asense of humour is a sense of proportion.” - -KHALIL GIBRAN<br>
-            Do you want to express your scientific knowledge in the form of cartoons? Excited! Then you
-have come to the right place.<br>
-Nowadays in social media the “MEMES” are very popular. Here you can show some creativity.<br>
-Scientoons are the cartoons/memes that provide scientific knowledge in a humorous way.<br>
-They look funny but at the same time provide information about new inventions, researches
-and technology updates.<br>
-They not only make you smile and laugh but also provide information about new researches,
-subjects, data and concepts in a simple understandable and interesting thought provoking way.<br>
-Wissenaire’22 provides you a platform to use your scientific knowledge and humour both
-together to create your own Scientoon (science + cartoon).<br>
-CREATIVITY IS THE POWER OF HUMAN BEING ...................................USE IT WISELY.
+            “Asense of humour is a sense of proportion.” - -KHALIL GIBRAN<br />
+            Do you want to express your scientific knowledge in the form of
+            cartoons? Excited! Then you have come to the right place.<br />
+            Nowadays in social media the “MEMES” are very popular. Here you can
+            show some creativity.<br />
+            Scientoons are the cartoons/memes that provide scientific knowledge
+            in a humorous way.<br />
+            They look funny but at the same time provide information about new
+            inventions, researches and technology updates.<br />
+            They not only make you smile and laugh but also provide information
+            about new researches, subjects, data and concepts in a simple
+            understandable and interesting thought provoking way.<br />
+            Wissenaire’22 provides you a platform to use your scientific
+            knowledge and humour both together to create your own Scientoon
+            (science + cartoon).<br />
+            CREATIVITY IS THE POWER OF HUMAN BEING
+            ...................................USE IT WISELY.
           </p>
         </div>
-        
+
         <div class="col-12 col-md-6">
-          <p style="font-weight: 650; font-size: 28px;">Rules & Regulations</p>
+          <p style="font-weight: 650; font-size: 28px">Rules & Regulations</p>
           <p>
-           1. Scientoon has to be submitted in JPEG format with the following three sections: Left: This
-should explain the scientific concept related to your Scientoon. Right: Thisshould have the
-scanned copy ofthe hand drawn sketch of the Scientoon. Bottom: This should contain the
-humour related to the content of the Scientoon.
+            1. Scientoon has to be submitted in JPEG format with the following
+            three sections: Left: This should explain the scientific concept
+            related to your Scientoon. Right: Thisshould have the scanned copy
+            ofthe hand drawn sketch of the Scientoon. Bottom: This should
+            contain the humour related to the content of the Scientoon.
           </p>
           <p>
-            2. The name of the submission file should be the theme ofthe Scientoon.
+            2. The name of the submission file should be the theme ofthe
+            Scientoon.
           </p>
           <p>
-            3. The hand drawn sketch should be clearly visiblein the final submission file.
+            3. The hand drawn sketch should be clearly visiblein the final
+            submission file.
           </p>
           <p>
-            4. The event has no specific theme but the chosen theme for the Scientoon should be related to science and technology.
+            4. The event has no specific theme but the chosen theme for the
+            Scientoon should be related to science and technology.
+          </p>
+          <p>5. One participant is allowedto submit more than one entry.</p>
+          <p>
+            5. The entry should not be copied from any sources in any form. This
+            could lead direct rejection of the entry.
           </p>
           <p>
-            5. One participant is allowedto submit more than one entry.
+            6. The entry should not be copied from any sources in any form. This
+            could lead direct rejection of the entry.
           </p>
           <p>
-            5. The entry should not be copied from any sources in any form. This could lead direct rejection of the entry.
+            7. The participantshould clearly mention his/her Name and Name of
+            Institute he/she belongsto, in the mail.
+          </p>
+          <br />
+          <p style="line-height: 2"></p>
+        </div>
+        <div class="col-12 col-md-6">
+          <p style="font-weight: 650; font-size: 28px">Event Format</p>
+          <p>
+            1. This is an online event where participants have to submit their
+            Scientoons to competitions.wissenaire@gmail.com with the subject of
+            mail as “Scientoon – Registration Id”.Last date of submission is
+            30thMarch, 2022.
           </p>
           <p>
-            6. The entry should not be copied from any sources in any form. This could lead direct rejection of the entry.
-          </p>
-          <p>
-            7. The participantshould clearly mention his/her Name and Name of Institute he/she belongsto, in the mail.
-          </p>
-          <br>
-          <p style="line-height: 2;">
-          
+            2. Results will be declared momentarily after the last date of
+            submission.
           </p>
         </div>
         <div class="col-12 col-md-6">
-          <p style="font-weight: 650; font-size: 28px;"> Event Format </p>
+          <p style="font-weight: 650; font-size: 28px">Judgement criteria</p>
           <p>
-            1. This is an online event where participants have to submit their Scientoons to
-            competitions.wissenaire@gmail.com with the subject of mail as “Scientoon – Registration
-            Id”.Last date of submission is 30thMarch, 2022.
+            Score will be given on originality, theme, art and humour conforming
+            to technical correspondence of the Scientoon. Any copied Scientoon
+            will be discarded. Decisions made by competition judges and testers
+            are final. There is no dispute resolution process, however, input
+            for process improvement is encouraged.
           </p>
-          <p>
-            2. Results will be declared momentarily after the last date of submission.
-          </p>
-        </div>
-        <div class="col-12 col-md-6">
-            <p style="font-weight: 650; font-size: 28px;">Judgement criteria</p>
-          <p>
-            Score will be given on originality, theme, art and humour conforming to technical correspondence of the
-Scientoon. Any copied Scientoon will be discarded. Decisions made by competition judges and testers
-are final. There is no dispute resolution process, however, input for process improvement is encouraged.
-          </p>
-        
-          <br>
-          <p style="line-height: 2;">
-          
-          </p>
+
+          <br />
+          <p style="line-height: 2"></p>
         </div>
         <!-- <div class="col-12 col-md-6">
             <p style="font-weight: 650; font-size: 28px;">Online Mode</p>
@@ -344,44 +407,61 @@ are final. There is no dispute resolution process, however, input for process im
             </p>
         </div> -->
         <div class="col-12 col-md-6">
-          <p style="font-weight: 650; font-size: 28px;"> Contact Details</p>
-          <p style="line-height: 2;"><i class="fa fa-user"></i>&ensp;Shreya Mohanty<br>
-            <i class="fa fa-envelope"></i>&ensp;20ec01057@iitbbs.ac.in<br>
+          <p style="font-weight: 650; font-size: 28px">Contact Details</p>
+          <p style="line-height: 2">
+            <i class="fa fa-user"></i>&ensp;Shreya Mohanty<br />
+            <i class="fa fa-envelope"></i>&ensp;20ec01057@iitbbs.ac.in<br />
             <i class="fa fa-phone"></i>&ensp;8895003190
           </p>
-
         </div>
         <!-- <div class="col-12 col-md-6">
           <p style="font-weight: 650; font-size: 28px;"> Organising Partner</p>
           <a href="/" target="blank_"><img src="./assets/img/workshops/partners/ditto.jpg" style="width: 30%;"></a>
         </div> -->
-        
 
-        <div class="col-12 col-md-6" style="margin-bottom: 2.5%;">
-          <div class="row" style="margin-top: 20px;">
-            <button type="button" class="btn" style="width: 40%; margin: auto;" onclick="prev()">
-              <i class="fa fa-long-arrow-alt-left" id="previous" style="margin-right: 10px;"></i>
+        <div class="col-12 col-md-6" style="margin-bottom: 2.5%">
+          <div class="row" style="margin-top: 20px">
+            <button
+              type="button"
+              class="btn"
+              style="width: 40%; margin: auto"
+              onclick="prev()"
+            >
+              <i
+                class="fa fa-long-arrow-alt-left"
+                id="previous"
+                style="margin-right: 10px"
+              ></i>
               Previous
             </button>
-            <button type="button" class="btn"  style="width: 40%; margin: auto;" onclick="next()">
+            <button
+              type="button"
+              class="btn"
+              style="width: 40%; margin: auto"
+              onclick="next()"
+            >
               Next
-              <i class="fa fa-long-arrow-alt-right" id="next" style="margin-left: 10px;"></i>
+              <i
+                class="fa fa-long-arrow-alt-right"
+                id="next"
+                style="margin-left: 10px"
+              ></i>
             </button>
             <script>
-			        function prev() {
-                    const prevURL = "/school-champ";
-                    window.location.href = prevURL;
+              function prev() {
+                const prevURL = "/school-champ";
+                window.location.href = prevURL;
               }
               function next() {
-                    const nextURL = "/sherlock";
-                    window.location.href = nextURL;
+                const nextURL = "/sherlock";
+                window.location.href = nextURL;
               }
-			      </script>
+            </script>
           </div>
         </div>
       </div>
     </div>
-    
+
     <div class="cur" id="circle">
       <div class="main-cur"></div>
       <img class="satelite" src="./Satellite.svg" alt="" />
@@ -413,34 +493,33 @@ are final. There is no dispute resolution process, however, input for process im
       });
     </script>
 
-<script>
-  const downloadPdf = document.querySelector("#download-pdf");
+    <script>
+      const downloadPdf = document.querySelector("#download-pdf");
 
-  downloadPdf.addEventListener("click", () => {
+      downloadPdf.addEventListener("click", () => {
+        // Creating the element anchor that
+        // will download pdf
+        let element = document.createElement("a");
+        element.href = "./assets/competition-pdfs/science-toons.pdf";
+        element.download = "science-toons.pdf";
 
-      // Creating the element anchor that
-      // will download pdf
-      let element = document.createElement("a");
-      element.href = "./assets/competition-pdfs/science-toons.pdf";
-      element.download = "science-toons.pdf";
+        // Adding the element to body
+        document.documentElement.appendChild(element);
 
-      // Adding the element to body
-      document.documentElement.appendChild(element);
+        // Above code is equivalent to
+        // <a href="path of file" download="file name">
 
-      // Above code is equivalent to
-      // <a href="path of file" download="file name"> 
+        // onClick property, to trigger download
+        element.click();
 
-      // onClick property, to trigger download
-      element.click();
+        // Removing the element from body
+        document.documentElement.removeChild(element);
 
-      // Removing the element from body
-      document.documentElement.removeChild(element);
-
-       // onClick property, to trigger submit form
-      submitForm.click();
-  });
-</script>
-<div id="preloader"></div>
+        // onClick property, to trigger submit form
+        submitForm.click();
+      });
+    </script>
+    <div id="preloader"></div>
     <script src="assets/js/main.js"></script>
   </body>
 </html>
