@@ -135,84 +135,84 @@ body{
 } 
 /* chief coordinator */
 #chief .card-section .box .img1{
-    background:url('./../assets/img/team/SathvikChilaka1.jpeg');
+    background-image:url("https://i.ibb.co/HnLMdMf/Sathvik-Chilaka1.jpg");
 }
 
 /* Marketing */
 
 /* 1 */
 #marketing .card-section .box .img1{
-    background:url('./../assets/img/team/Dheeraj.jpeg');
+    background:url('https://i.ibb.co/7GDdXb9/Dheeraj.jpg');
 }
 /* 2 */
 #marketing .card-section .box .img2{
-    background:url('./../assets/img/team/harshavardhan.jpeg');
+    background:url('https://i.ibb.co/8dkfPrJ/harshavardhan.jpg');
 }
 /* 3 */
 #marketing .card-section .box .img3{
-    background:url('./../assets/img/team/Dedipya.jpeg');
+    background:url('https://i.ibb.co/twfFqdq/Dedipya.jpg');
 }
 /* 4 */
 #marketing .card-section .box .img4{
-    background:url('./../assets/img/team/NaushabaShaik.jpeg');
+    background:url('https://i.ibb.co/JpZry3Q/Naushaba-Shaik.jpg');
 }
 /* 5 */
 #marketing .card-section .box .img5{
-    background:url('./../assets/img/team/Dhiren.jpeg');
+    background:url('https://i.ibb.co/8zcwCps/Dhiren.jpg');
 }
 /* 6 */
 #marketing .card-section .box .img6{
-    background:url('./../assets/img/team/GuruSaiAkhil.jpeg');
+    background:url('https://i.ibb.co/zNhFrRr/Guru-Sai-Akhil.jpg');
 }
 
 /* 7 */
 #marketing .card-section .box .img7{
-    background:url('./../assets/img/team/Saketh.jpeg');
+    background:url('https://i.ibb.co/Mn1s7dQ/Saketh.jpg');
 }
 /* Branding */
 
 /* 1 */
 #branding .card-section .box .img1{
-    background:url('./../assets/img/team/sathvik_tony.jpeg');
+    background:url('https://i.ibb.co/wc8Pm8w/sathvik-tony.jpg');
 }
 /* 2 */
 #branding .card-section .box .img2{
-    background:url('./../assets/img/team/Abhilash.jpeg');
+    background:url('https://i.ibb.co/fdGkbD2/Abhilash.jpg');
 }
 /* 3 */
 #branding .card-section .box .img3{
-    background:url('./../assets/img/team/Nalinikanth.jpeg');
+    background:url('https://i.ibb.co/T4d3TgP/Nalinikanth.jpg');
 }
 
 #branding .card-section .box .img4{
-    background:url('./../assets/img/team/Bhasvana.jpeg');
+    background:url('https://i.ibb.co/gg7c2v4/Bhasvana.jpg');
 }
 /* Workshops */
 
 /* 1 */
 #workshops .card-section .box .img1{
-    background:url('./../assets/img/team/Divyesh.jpeg');
+    background:url('https://i.ibb.co/vjPn4D6/Divyesh.jpg');
 }
 /* 2 */
 #workshops .card-section .box .img2{
-    background:url('./../assets/img/team/Akarsh.jpeg');
+    background:url('https://i.ibb.co/8sxLyz1/Akarsh.jpg');
 }
 
 #workshops .card-section .box .img3{
-    background:url('./../assets/img/team/Bhavika.jpeg');
+    background:url('https://i.ibb.co/gg9B1BX/Bhavika.jpg');
 }
 #workshops .card-section .box .img4{
-    background:url('./../assets/img/team/Sasidhar.jpeg');
+    background:url('https://i.ibb.co/KLyjH0C/Sasidhar.jpg');
 }
 /* Competitions */
 
 /* 1 */
 #competitions .card-section .box .img1{
-    background:url('./../assets/img/team/Manu.jpeg');
+    background:url('https://i.ibb.co/zXZh1cP/Manu.jpg');
 }
 /* 2 */
 #competitions .card-section .box .img2{
-    background:url('./../assets/img/team/Tarun.jpeg');
+    background:url('https://i.ibb.co/txKLzrF/Tarun.jpg');
 }
 
 
@@ -220,15 +220,15 @@ body{
 
 /* 1 */
 #public-relations .card-section .box .img1{
-    background:url('./../assets/img/team/Anirudh.jpeg');
+    background:url('https://i.ibb.co/qpQVV6d/Anirudh.jpg');
 }
 /* 2 */
 #public-relations .card-section .box .img2{
-    background:url('./../assets/img/team/sravani.jpeg');
+    background:url('https://i.ibb.co/ynxDy4r/sravani.jpg');
 }
 /* 3 */
 #public-relations .card-section .box .img3{
-    background:url('./../assets/img/team/Nandini.jpeg');
+    background:url('https://i.ibb.co/3CYs4d4/Nandini.jpg');
 }
 /* 4 */
 #public-relations .card-section .box .img4{
@@ -252,31 +252,31 @@ body{
 /* 1 */
 #ca-program .card-section .box .img1{
     /* background:'https://ibb.co/G3hJHMh'; */
-    background:url('./../assets/img/team/Raghu_vamsidhar.jpeg');
+    background:url('https://i.ibb.co/YdXdzxd/Raghu-vamsidhar.jpg');
 }
 
 /* Exhibits */
 
 /* 1 */
 #exhibits .card-section .box .img1{
-    background:url('./../assets/img/team/Shivrajit.jpeg');
+    background:url('https://i.ibb.co/sPnbd3f/Shivrajit.jpg');
 }
 
 /* 2 */
 #exhibits .card-section .box .img2{
-    background:url('./../assets/img/team/Anirudha.jpeg');
+    background:url('https://i.ibb.co/5cb2Xwm/Anirudha.jpg');
 }
 
 /* Qwissenaire */
 
 /* 1 */
 #qwissenaire .card-section .box .img1{
-    background:url('./../assets/img/team/RohanReddy.jpeg');
+    background:url('https://i.ibb.co/n6DCrnR/Rohan-Reddy.jpg');
 }
 
 /* 2 */
 #qwissenaire .card-section .box .img2{
-    background:url('./../assets/img/team/swathi.jpeg');
+    background:url('https://i.ibb.co/58GcCxy/swathi.jpg');
 }
 /* 3 */
 #qwissenaire .card-section .box .img3{
@@ -287,11 +287,11 @@ body{
 
 /* 1 */
 #guest-lecture .card-section .box .img1{
-    background:url('./../assets/img/team/DeepthiSaiP.jpeg');
+    background:url('https://i.ibb.co/4KJ929B/Deepthi-Sai-P.jpg');
 }
 /* 2 */
 #guest-lecture .card-section .box .img2{
-    background:url('./../assets/img/team/Yasaswini.jpeg');
+    background:url('https://i.ibb.co/8Ns8crp/Yasaswini.jpg');
 }
 
 
@@ -299,15 +299,15 @@ body{
 
 /* 1 */
 #creatives .card-section .box .img1{
-    background:url('./../assets/img/team/pavankumar.jpeg');
+    background:url('https://i.ibb.co/th6Ds9w/pavankumar.jpg');
 }
 /* 2 */
 #creatives .card-section .box .img2{
-    background:url('./../assets/img/team/sai_rohan.jpeg');
+    background:url('https://i.ibb.co/p45Lw4x/sai-rohan.jpg');
 }
 /* 3 */
 #creatives .card-section .box .img3{
-    background:url('./../assets/img/team/Koushikkkumar.jpeg');
+    background:url('https://i.ibb.co/MDDNfNG/Koushikkkumar.jpg');
 }
 /* 4 */
 #creatives .card-section .box .img4{
@@ -322,19 +322,19 @@ body{
 
 /* 1 */
 #web .card-section .box .img1{
-    background:url('./../assets/img/team/Navaneeth.jpeg');
+    background:url('https://i.ibb.co/R0QK2Yt/Navaneeth.jpg');
 }
 /* 2 */
 #web .card-section .box .img2{
-    background:url('./../assets/img/team/sathiya.jpeg');
+    background:url('https://i.ibb.co/mvzSR5Y/sathiya.jpg');
 }
 /* 3 */
 #web .card-section .box .img3{
-    background:url('./../assets/img/team/Kkartikeya.jpeg');
+    background:url('https://i.ibb.co/7jKyKbn/Kkartikeya.jpg');
 }
 /* 4 */
 #web .card-section .box .img4{
-    background:url('./../assets/img/team/Swaroop.jpeg');
+    background:url('https://i.ibb.co/1Gw51m7/Swaroop.jpg');
 }
 
 #chief .card-section .box .text h2{
