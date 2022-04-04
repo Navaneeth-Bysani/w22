@@ -41,17 +41,9 @@ exports.renderGuestLectures = async (req, res) => {
   //render Guest Lectures
   if(req.user) {
     const user = await findUser(req.user.emails[0].value);
-    if(NODE_ENV === 'development') {
-      res.render("guestlectures", {participant:user});
-    } else {
-      res.render("comingsoon", {participant:user});
-    }
+    res.render("guestlectures", {participant:user});
   } else {
-    if(NODE_ENV === 'development') {
       res.render("guestlectures", {participant:false});
-    } else {
-      res.render("comingsoon", {participant:false});
-    }
   }
 };
 
