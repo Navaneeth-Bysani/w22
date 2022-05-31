@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Wissenaire'23 | Sitp Course</title>
+    <link rel="icon" type="image/x-icon" href="./assets/img/blue_favicon.ico" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Exo+2:600,700,800,900"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <link rel="stylesheet" href="./stylesheets/heading.css" />
+
+    <style>
+      body {
+        margin: 0;
+        background-color: #121212;
+        cursor: none !important;
+      }
+
+      .top-layer {
+        position: absolute;
+        width: 100%;
+        z-index: 1;
+        top: 12vh;
+        left: 0;
+      }
+
+      body {
+        cursor: none !important;
+      }
+
+      .cur {
+        height: 31px;
+        width: 31px;
+        z-index: 99999999;
+        pointer-events: none;
+        /* background: grey;*/
+        border-radius: 50%;
+        position: absolute;
+        /*animation: cursorAnim .5s infinite alternate;*/
+        animation: rotate 4s infinite linear;
+        transition: all 0.3s ease;
+        transition-property: background, transform;
+        transform-origin: 100%, 100%;
+      }
+
+      /* @media screen and (max-width: 1279px) {
+  .cur {
+    display: none;
+  }
+  body {
+    cursor: default;
+  }
+} */
+
+      .main-cur {
+        animation: none;
+        margin: 0px;
+        content: "";
+        width: 0.1px;
+        height: 0.1px;
+        border: 10.5px solid #1a28cf;
+        position: absolute;
+        border-radius: 50%;
+        /* opacity: .5; */
+        top: 4.5px;
+        left: 4.5px;
+        /* transform: translate(-50%, -50%); */
+        animation: cursorAnim 0.5s infinite alternate;
+      }
+
+      .satelite {
+        height: 30px;
+        margin: 30px;
+        transform: rotate(-1deg);
+        /* transition-duration: 200ms;
+    transition-timing-function: ease-out;
+    */
+      }
+
+      @keyframes rotate {
+        from {
+          transform: rotate(0deg);
+        }
+        to {
+          transform: rotate(359deg);
+        }
+      }
+
+      @keyframes cursorAnim {
+        from {
+          transform: scale(1);
+        }
+        to {
+          transform: scale(0.7);
+        }
+      }
+
+      @keyframes cursorClick {
+        0% {
+          transform: scale(1);
+        }
+        50% {
+          transform: scale(2);
+        }
+        100% {
+          transform: scale(1);
+          opacity: 0;
+        }
+      }
+
+      .expand {
+        animation: cursorClick 0.5s forwards;
+        border: 1px solid blue;
+      }
+
+      .link-grow {
+        transform: scale(2);
+        background: #1a28cf;
+      }
+
+      /* @media only screen and (max-width: 380px) {
+  .cur {
+    display: none;
+  }
+  body {
+    cursor: default;
+  }
+} */
+    </style>
+
+    <!-- <link rel="stylesheet" href="./css/css1.css"> -->
+    <!-- CSS for heading begins -->
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/modern-css-reset/dist/reset.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/splitting/dist/splitting.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/splitting/dist/splitting-cells.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Cabin+Condensed:wght@700&amp;display=swap"
+    />
+    <link rel="stylesheet" href="https://use.typekit.net/zlj2zcu.css" />
+
+    <!-- CSS for heading ends -->
+
+    <link rel="stylesheet" href="./css/css2.css" />
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.0.6/css/all.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css?family=Abril+Fatface"
+    />
+    <link rel="stylesheet" href="./css/hover-min.css" />
+    <link rel="stylesheet" href="./css/workshop.css" />
+    <!-- preloader -->
+    <link href="assets/css/style.css" rel="stylesheet" />
+  </head>
+
+  <body>
+    <%- include('partials/navbar')%>
+
+    <div class="top-layer">
+      <div class="grid heading">
+        <!-- this commented code has to be there even if it is empty -->
+        <!-- <h1>
+          <span class="main" aria-label="boring" data-splittings
+            >WORKSHOPS</span
+          >
+        <script src='https://unpkg.com/splitting/dist/splitting.min.js'></script><script  src="./js/heading.js"></script>
+        </h1> -->
+      </div>
+
+      <ul class="cards">
+        <li>
+          <div class="card">
+            <img
+              src="./assets/img/sitp-python.jpg"
+              class="card__image"
+              alt="python"
+            />
+            <div class="card__overlay">
+              <div class="card__header">
+                <img class="card__thumb" src="images/picture.png" alt="" />
+                <div class="card__header-text">
+                  <h3 class="card__title">Python Programming</h3>
+                  <!-- <span class="card__status">1 hour ago</span> -->
+                </div>
+              </div>
+              <p class="card__description">
+                Python is a computer programming language often used to build websites and software, automate tasks, and conduct data analysis. Python is a general-purpose language, meaning it can be used to create a variety of different programs and isn't specialized for any specific problems.
+                <br />
+
+                <a href="/sitp-python">
+                  <b style="color: orangered; font-weight: 400">
+                    Know more ▶
+                  </b>
+                </a>
+              </p>
+            </div>
+          </div>
+        </li>
+        <li>
+            <div class="card">
+              <img
+                src="https://thumbor.forbes.com/thumbor/960x0/https%3A%2F%2Fspecials-images.forbesimg.com%2Fimageserve%2F5f278facccb6d3d3cc3c63b1%2F3-Important-Ways-Artificial-Intelligence-Will-Transform-Your-Business-And-Turbocharge%2F960x0.jpg%3Ffit%3Dscale"
+                class="card__image"
+                alt=""
+              />
+              <div class="card__overlay">
+                <div class="card__header">
+                  <img class="card__thumb" src="images/picture.png" alt="" />
+  
+                  <div class="card__header-text">
+                    <h3 class="card__title">Data Analytics & Machine Learning</h3>
+                    <!-- <span class="card__status">3 hours ago</span> -->
+                  </div>
+                </div>
+                <p class="card__description">
+                  Machine learning provides systems the ability to automatically
+                  learn and improve from experience without being explicitly
+                  programmed
+                  <br />
+  
+                  <a href="/sitp-ml">
+                    <b style="color: orangered; font-weight: 400">
+                      Know more ▶
+                    </b>
+                  </a>
+                </p>
+              </div>
+            </div>
+          </li>
+        <li>
+          <div class="card">
+            <img
+              src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRgqUbjsTHdi05Fc9cf2cGxcwl8oE1XVKHIx2yprVh9mQ9M50vnEEncW8_yS7mK0q5NmqQ&usqp=CAU"
+              class="card__image"
+              alt=""
+            />
+            <div class="card__overlay">
+              <div class="card__header">
+                <img class="card__thumb" src="images/picture.png" alt="" />
+
+                <div class="card__header-text">
+                  <h3 class="card__title">ANDROID APP DEVELOPMENT</h3>
+                  <!-- <span class="card__status">3 hours ago</span> -->
+                </div>
+              </div>
+              <p class="card__description">
+                Android software development is the process by which
+                applications are created for devices running the Android
+                operating system.
+                <br />
+
+                <a href="/sitp-android">
+                  <b style="color: orangered; font-weight: 400">
+                    Know more ▶
+                  </b>
+                </a>
+              </p>
+            </div>
+          </div>
+        </li>
+        <li>
+          <div class="card">
+            <img
+              src="./assets/img/workshops/fullstack.webp"
+              class="card__image"
+              alt=""
+            />
+            <div class="card__overlay">
+              <div class="card__header">
+                <img class="card__thumb" src="images/picture.png" alt="" />
+
+                <div class="card__header-text">
+                  <h3 class="card__title">FULLSTACK WEB DEVELOPMENT</h3>
+                  <!-- <span class="card__tagline"
+                      >Lorem ipsum dolor sit amet consectetur</span
+                    > -->
+                </div>
+              </div>
+              <p class="card__description">
+                Full stack development refers to the development of both front
+                end(client side) and back end(server side) portions of web
+                application.
+                <br />
+
+                <a href="/sitp-fullStack">
+                  <b style="color: orangered; font-weight: 400">
+                    Know more ▶
+                  </b>
+                </a>
+              </p>
+            </div>
+          </div>
+        </li>
+        <!-- </ul>
+      <ul class="cards"> -->
+        <li>
+          <div class="card">
+            <img
+              src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQDUdATyrvrvdvzytwNBfmcFPzvoDTZ9xfhgQ&usqp=CAU"
+              class="card__image"
+              alt=""
+            />
+            <div class="card__overlay">
+              <div class="card__header">
+                <img class="card__thumb" src="images/picture.png" alt="" />
+                <div class="card__header-text">
+                  <h3 class="card__title">
+                    CYBER SECURITY AND ETHICAL HACKING
+                  </h3>
+                  <!-- <span class="card__status">1 hour ago</span> -->
+                </div>
+              </div>
+              <p class="card__description">
+                Ethical hacking is a process of detecting vulnerabilities in an
+                application, system, or organization's infrastructure that an
+                attacker can use to exploit an individual or organization.
+                <br />
+
+                <a href="/sitp-ethical-hacking">
+                  <b style="color: orangered; font-weight: 400">
+                    Know more ▶
+                  </b>
+                </a>
+              </p>
+            </div>
+          </div>
+        </li>
+        <li>
+          <div class="card">
+            <img
+              src="./assets/img/workshops/automobile.jpg"
+              class="card__image"
+              alt=""
+            />
+            <div class="card__overlay">
+              <div class="card__header">
+                <img class="card__thumb" src="images/picture.png" alt="" />
+
+                <div class="card__header-text">
+                  <h3 class="card__title">AUTOMOBILES AND ELECTRIC VEHICLES</h3>
+                  <!-- <span class="card__tagline"
+                      >Lorem ipsum dolor sit amet consectetur</span
+                    > -->
+                </div>
+              </div>
+              <p class="card__description">
+                Automobile engineering is the one of the stream of mechanical
+                engineering. It deals with the various types of automobiles,
+                their mechanism of transmission systems.
+                <br />
+
+                <a href="/sitp-automobile">
+                  <b style="color: orangered; font-weight: 400">
+                    Know more ▶
+                  </b>
+                </a>
+              </p>
+            </div>
+          </div>
+        </li>
+      </ul>
+    </div>
+
+    <div class="cur" id="circle">
+      <div class="main-cur"></div>
+      <img class="satelite" src="./Satellite.svg" alt="" />
+    </div>
+
+    <script src="./js/js1.js"></script>
+    <script src="./js/js2.js"></script>
+    <script src="./js/js3.js"></script>
+    <script src="./js/js4.js"></script>
+    <script src="./js/js5.js"></script>
+    <script src="./js/js6.js"></script>
+    <script>
+      let links = document.querySelector(".main-content a");
+      const cursors = document.querySelector(".cur");
+      document.addEventListener("mousemove", (e) => {
+        let x = e.pageX;
+        let y = e.pageY;
+        cursors.setAttribute(
+          "style",
+          "top: " + (e.pageY - 10) + "px; left: " + (e.pageX - 10) + "px;"
+        );
+      });
+
+      document.addEventListener("click", () => {
+        cursors.classList.add("expand");
+        setTimeout(() => {
+          cursors.classList.remove("expand");
+        }, 500);
+      });
+    </script>
+
+    <!-- preloader -->
+    <div id="preloader"></div>
+    <script src="assets/js/main.js"></script>
+  </body>
+</html>
+
+<!-- android - https://rzp.io/l/bP3I0zBt
+blockchain - https://rzp.io/l/CIwX2nniBV
+ml - https://rzp.io/l/kORLEGs
+fullstack - https://rzp.io/l/Iu13x4PWbI
+ethical hacking - https://rzp.io/l/JcNKEYx
+automobile - https://rzp.io/l/vZ5NqvZ4sO -->
+
+<!-- EDU-Vitae: 
+1. Cybersecurity and ethical hacking
+2. Full stack web development
+ EI Systems :
+1. Android app development
+2. Machine learning
+3. Automobiles and electric vehicles
+ Ditto Security :
+1. Blockchain -->

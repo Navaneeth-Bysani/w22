@@ -3,6 +3,7 @@ const userController = require("../controller/userController");
 const renderController = require("../controller/renderController");
 const paymentController = require("../controller/paymentController");
 const wsController = require("../controller/wsController");
+const sitpController = require("../controller/sitpController");
 const competitionController = require("./../controller/competitionsController");
 
 const app = require("../app");
@@ -21,6 +22,7 @@ router.get("/profile", ensureAuthenticated, renderController.renderProfile);
 router.get("/about", renderController.renderAbout);
 router.get("/competitions", renderController.renderCompetitions);
 router.get("/workshops", renderController.renderWorkshops);
+router.get("/sitp", renderController.renderSitpCourses);
 router.get("/guest-lectures", renderController.renderGuestLectures);
 router.get("/exhibits", renderController.renderExhibits);
 router.get("/initiatives", renderController.renderInitiatives);
@@ -40,6 +42,14 @@ router.get("/workshop-ml", wsController.ml);
 router.get("/workshop-ethicalhacking", wsController.ethicalHacking);
 router.get("/workshop-automobile", wsController.automobile);
 //posting a query in contact
+
+//individual sitp routes
+router.get("/sitp-python", sitpController.python);
+router.get("/sitp-android", sitpController.android);
+router.get("/sitp-fullstack", sitpController.fullstack);
+router.get("/sitp-ml", sitpController.ml);
+router.get("/sitp-ethical-hacking", sitpController.ethicalHacking);
+router.get("/sitp-automobile", sitpController.automobile);
 
 
 //individual competition routes

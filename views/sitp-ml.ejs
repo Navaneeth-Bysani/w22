@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Data Analytics & Machine Learning - SITP| Wissenaire'23</title>
+    <link rel="icon" type="image/x-icon" href="./assets/img/blue_favicon.ico" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Exo+2:600,700,800,900"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <link rel="stylesheet" href="./stylesheets/heading.css" />
+    <!--ajax-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"
+      integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg=="
+      crossorigin="anonymous"
+    ></script>
+    <!-- preloader -->
+    <link href="assets/css/style.css" rel="stylesheet" />
+    <style>
+      body {
+        margin: 0;
+        background-color: #121212;
+        cursor: none !important;
+      }
+      .top-layer {
+        position: absolute;
+        width: 100%;
+        z-index: 1;
+        top: 12vh;
+        left: 0;
+      }
+
+      body {
+        cursor: none !important;
+      }
+
+      .cur {
+        height: 31px;
+        width: 31px;
+        z-index: 99999999;
+        pointer-events: none;
+        border-radius: 50%;
+        position: absolute;
+        animation: rotate 4s infinite linear;
+        transition: all 0.3s ease;
+        transition-property: background, transform;
+        transform-origin: 100%, 100%;
+      }
+
+      .main-cur {
+        animation: none;
+        margin: 0px;
+        content: "";
+        width: 0.1px;
+        height: 0.1px;
+        border: 10.5px solid #1a28cf;
+        position: absolute;
+        border-radius: 50%;
+        /* opacity: .5; */
+        top: 4.5px;
+        left: 4.5px;
+        /* transform: translate(-50%, -50%); */
+        animation: cursorAnim 0.5s infinite alternate;
+      }
+
+      .satelite {
+        height: 30px;
+        margin: 30px;
+        transform: rotate(-1deg);
+      }
+
+      @keyframes rotate {
+        from {
+          transform: rotate(0deg);
+        }
+        to {
+          transform: rotate(359deg);
+        }
+      }
+
+      @keyframes cursorAnim {
+        from {
+          transform: scale(1);
+        }
+        to {
+          transform: scale(0.7);
+        }
+      }
+
+      @keyframes cursorClick {
+        0% {
+          transform: scale(1);
+        }
+        50% {
+          transform: scale(2);
+        }
+        100% {
+          transform: scale(1);
+          opacity: 0;
+        }
+      }
+
+      .expand {
+        animation: cursorClick 0.5s forwards;
+        border: 1px solid blue;
+      }
+
+      .link-grow {
+        transform: scale(2);
+        background: #1a28cf;
+      }
+    </style>
+
+    <!-- <link rel="stylesheet" href="./css/css1.css"> -->
+    <link rel="stylesheet" href="./css/css2.css" />
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.0.6/css/all.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css?family=Abril+Fatface"
+    />
+    <link rel="stylesheet" href="./css/hover-min.css" />
+    <!-- <link rel="stylesheet" href="./css/workshop.css" /> -->
+
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+      integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+      integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://kit.fontawesome.com/a48cc7111e.js"
+      crossorigin="anonymous"
+    ></script>
+
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+      integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+      crossorigin="anonymous"
+    />
+
+    <!-- razorpay -->
+    <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+  </head>
+
+  <body style="background-color: #121212; color: white">
+    <%- include('partials/navbar')%>
+    <div class="container" id="intro">
+      <p style="font-weight: 800; font-size: 40px; text-align: center">
+        Data Analytics & Machine Learning WORKSHOP
+      </p>
+      <div class="row" style="margin-top: 5vh">
+        <div class="col-12 col-md-6" style="height: 0px"></div>
+        <div class="col-12 col-md-6" style="margin-bottom: 2.5%">
+          <div class="row">
+            <%if(!participant) {%>
+            <button
+              type="button"
+              class="btn btn-success"
+              style="width: 40%; margin: auto"
+              onclick="redirectToLogin()"
+            >
+              Register
+              <i
+                class="fa fa-long-arrow-alt-right"
+                id="sl"
+                style="margin-left: 10px"
+              ></i>
+            </button>
+            <%} else if(!participant.phoneNumber){%>
+            <button
+              type="button"
+              class="btn btn-success"
+              style="width: 40%; margin: auto"
+              onclick="redirectToProfile()"
+            >
+              Register
+              <i
+                class="fa fa-long-arrow-alt-right"
+                id="sl"
+                style="margin-left: 10px"
+              ></i>
+            </button>
+            <%} else {%>
+              <form  style="width: 60%; margin: 10px -100px">
+                <script
+                  src="https://checkout.razorpay.com/v1/payment-button.js"
+                  data-payment_button_id="pl_JbWVginvNDsTgX"
+                  async
+                ></script>
+              </form>
+            <%}%>
+
+            <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+            <script>
+              function redirectToLogin() {
+                swal({
+                  title: "Authentication Required",
+                  text: "You haven't logged into your profile. Kindly login and fill your profile before registration",
+                  icon: "warning",
+                  button: "Continue to Login",
+                  dangerMode: true,
+                }).then((button) => {
+                  if (button) {
+                    window.location.href = "/auth/google";
+                  } else {
+                  }
+                });
+              }
+
+              function redirectToProfile() {
+                swal({
+                  title: "Profile details required",
+                  text: "Kindly fill your profile details before registration",
+                  icon: "warning",
+                  button: "Continue to Profile",
+                  dangerMode: true,
+                }).then((button) => {
+                  if (button) {
+                    window.location.href = "/profile";
+                  } else {
+                  }
+                });
+              }
+
+              function continueToBooking() {
+                swal({
+                  title: "Ready to book your slot",
+                  text: `Enter the same email address (${"<%=participant.email%>"}) while filling the payment form. Click continue to continue your booking.`,
+                  icon: "success",
+                  button: "Continue to booking",
+                  dangerMode: true,
+                }).then((button) => {
+                  if (button) {
+                    window.location.href = `https://rzp.io/l/kORLEGs`;
+                  }
+                });
+              }
+            </script>
+          </div>
+        </div>
+        <div class="col-12 col-md-6">
+          <p style="font-weight: 650; font-size: 28px">Description</p>
+          <p>
+            Machine learning (ML) is a type of artificial intelligence (AI) that
+            allows software applications to become more accurate at predicting
+            outcomes without being explicitly programmed to do so. Machine
+            learning algorithms use historical data as input to predict new
+            output values.
+          </p>
+          <br />
+          <p style="font-weight: 650; font-size: 28px">What you will learn?</p>
+          <p>
+            Technex Internships in Machine Learning is a 4 Weeks internship
+            program based on various topics related to engineering and science
+            starting from March to August of every year in Delhi NCR, Varanasi,
+            Lucknow, Bengaluru, Bhopal, Bhubaneswar, Bareilly & Gorakhpur.
+            <br />
+            The idea behind the training is to develop an interest among
+            upcoming engineers by giving them knowledge of various technologies
+            with the basic building of concepts along with integration with
+            realtime problem solutions. Apart from all these our trainers will
+            also share the experiences of various projects which they had done
+            in past and some of their current projects.
+          </p>
+        </div>
+        <div class="col-12 col-md-6">
+          <p style="font-weight: 650; font-size: 28px">
+            Syllabus of all Sections
+          </p>
+          <p>Session-01: Introduction to Machine Learning</p>
+          <p>Session-02: Introduction to Python Programming</p>
+          <p>Session-03: Function & Packages</p>
+          <p>
+            Session-04: Working on Various Python Libraries (NumPy,
+            Matplotlib,Pandas,Scikit-Learn)
+          </p>
+          <p>Session-05: Data Analysis & Data Visualization</p>
+          <p>Session-06:Regression analysis</p>
+          <p>Session-07: Simple linear regression</p>
+          <p>Session-08: Multi linear regression</p>
+          <p>Session-09:Classification</p>
+          <p>Session-10:Binary class classification</p>
+          <p>Session-11:Multi class classification</p>
+          <p>Session-12:Support Vector Machine</p>
+          <p>Session-13:KNN algorithm</p>
+          <p>Session-14:Working on various Datasets</p>
+          <p>Session-15:Working on Project Report</p>
+        </div>
+
+        <div class="col-12 col-md-6">
+          <p style="font-weight: 650; font-size: 28px">Contact</p>
+          <p style="line-height: 2">
+            <i class="fa fa-user"></i>&ensp;Karthikeya<br />
+            <i class="fa fa-envelope"></i>&ensp;20CE01042@iitbbs.ac.in<br />
+            <i class="fa fa-phone"></i>&ensp;+91 7093867606
+          </p>
+          <br />
+          <p style="line-height: 2">
+            <i class="fa fa-user"></i>&ensp;Bhavya teja<br />
+            <i class="fa fa-envelope"></i>&ensp;20cs01022@iitbbs.ac.in<br />
+            <i class="fa fa-phone"></i>&ensp;+91 99495 93615
+            <br />
+          </p>
+
+          <br />
+        </div>
+        <div class="col-12 col-md-6">
+          <p style="font-weight: 650; font-size: 28px">Organising Partner</p>
+          <a href="http://www.eisystems.in/" target="blank_"
+            ><img
+              src="./assets/img/workshops/partners/eisystems.jfif"
+              style="width: 30%"
+          /></a>
+        </div>
+        <div class="col-12 col-md-6"></div>
+
+        <div class="col-12 col-md-6" style="margin-bottom: 2.5%">
+          <div class="row" style="margin-top: 20px">
+            <button
+              type="button"
+              class="btn"
+              style="width: 40%; margin: auto"
+              onclick="prevWorkshop()"
+            >
+              <i
+                class="fa fa-long-arrow-alt-left"
+                id="previous"
+                style="margin-right: 10px"
+              ></i>
+              Previous
+            </button>
+            <button
+              type="button"
+              class="btn"
+              style="width: 40%; margin: auto"
+              onclick="nextWorkshop()"
+            >
+              Next
+              <i
+                class="fa fa-long-arrow-alt-right"
+                id="next"
+                style="margin-left: 10px"
+              ></i>
+            </button>
+            <script>
+              function prevWorkshop() {
+                const prevWorkshopURL = "/sitp-python";
+                window.location.href = prevWorkshopURL;
+              }
+              function nextWorkshop() {
+                const nextWorkshopURL = "/sitp-android";
+                window.location.href = nextWorkshopURL;
+              }
+            </script>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="cur" id="circle">
+      <div class="main-cur"></div>
+      <img class="satelite" src="./Satellite.svg" alt="" />
+    </div>
+
+    <script src="./js/js1.js"></script>
+    <script src="./js/js2.js"></script>
+    <script src="./js/js3.js"></script>
+    <script src="./js/js4.js"></script>
+    <script src="./js/js5.js"></script>
+    <script src="./js/js6.js"></script>
+    <script>
+      let links = document.querySelector(".main-content a");
+      const cursors = document.querySelector(".cur");
+      document.addEventListener("mousemove", (e) => {
+        let x = e.pageX;
+        let y = e.pageY;
+        cursors.setAttribute(
+          "style",
+          "top: " + (e.pageY - 10) + "px; left: " + (e.pageX - 10) + "px;"
+        );
+      });
+
+      document.addEventListener("click", () => {
+        cursors.classList.add("expand");
+        setTimeout(() => {
+          cursors.classList.remove("expand");
+        }, 500);
+      });
+    </script>
+    <div id="preloader"></div>
+    <script src="assets/js/main.js"></script>
+  </body>
+</html>

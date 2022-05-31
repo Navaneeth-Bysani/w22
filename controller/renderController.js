@@ -37,6 +37,16 @@ exports.renderWorkshops = async (req, res) => {
   }
 };
 
+exports.renderSitpCourses = async (req, res) => {
+  //render Workshops
+  if(req.user) {
+    const user = await findUser(req.user.emails[0].value);
+      res.render("sitp", {participant:user});
+  } else {
+      res.render("sitp", {participant:false});
+  }
+};
+
 exports.renderGuestLectures = async (req, res) => {
   //render Guest Lectures
   if(req.user) {
