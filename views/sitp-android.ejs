@@ -194,13 +194,19 @@
               ></i>
             </button>
             <%} else {%>
-            <form  style="width: 60%; margin: 10px -100px">
-              <script
-                src="https://checkout.razorpay.com/v1/payment-button.js"
-                data-payment_button_id="pl_JbWVginvNDsTgX"
-                async
-              ></script>
-            </form>
+            <button
+              type="button"
+              class="btn btn-success"
+              style="width: 40%; margin: auto"
+              onclick="continueToBooking()"
+            >
+              Register
+              <i
+                class="fa fa-long-arrow-alt-right"
+                id="sl"
+                style="margin-left: 10px"
+              ></i>
+            </button>
             <%}%>
 
             <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
@@ -235,8 +241,33 @@
                 });
               }
 
-              function continueToBooking() {}
+              function continueToBooking() {
+                swal({
+                  title: "Ready to book your slot",
+                  text: `Enter the same email address (${"<%=participant.email%>"}) while filling the payment form. Click continue to continue your booking.`,
+                  icon: "success",
+                  button: "Continue to booking",
+                  dangerMode: true,
+                }).then((button) => {
+                  if (button) {
+                    window.location.href = `https://imjo.in/QbgXCd`;
+                  }
+                });
+              }
             </script>
+            <button
+              type="button"
+              class="btn btn-primary"
+              id="download-pdf"
+              style="width: 40%; margin: auto; border:none"
+            >
+              Download
+              <i
+                class="fa fa-long-arrow-alt-right"
+                id="sl"
+                style="margin-left: 10px"
+              ></i>
+            </button>
           </div>
         </div>
         <div class="col-12 col-md-6">
@@ -259,17 +290,27 @@
         <div class="col-12 col-md-6">
           <p style="font-weight: 650; font-size: 28px">
             Syllabus of all Sections
-          </p>
+          <p style="font-size: large; margin-top: -10px; font-weight: 1000;">( Batches will start from 5th July )</p>
+        </p>
           <p>Session-01: Introduction to JAVA</p>
           <p>Session-02: Introduction to Android Development</p>
           <p>Session-03: Overview on Activity, Intent, Layouts and Controls</p>
           <p>Session-04: Services and Broadcast Receivers</p>
           <p>Session-05: UI and Fragments</p>
-          <p>Session-06: Locations and Sensors</p>
-          <p>Session-07: Introduction to Google Play</p>
-          <p>Session-08: Volley for Network Data Interaction</p>
-          <p>Session-09: Fabric Plugins for Twitter and Digits Login</p>
-          <p>Session-10: Watch Faces</p>
+          <p>Session-06: Content Providers</p>
+          <p>Session-07: Locations and Sensors</p>
+          <p>Session-08: Mutimedia : Audio,Video and Camera</p>
+          <p>Session-09: Introduction to Google Play</p>
+          <p>Session-10: Network Operations</p>
+          <p>Session-11: Volley for Network Data Interaction</p>
+          <p>Session-12: Fabric Plugins for Twitter and Digits Login</p>
+          <p>Session-11: Best Pratice for Apps</p>
+          <p>Session-11: Wearable Faces</p>
+          <p>Session-11: Watch Faces</p>
+          <p>
+            For more information and complete syllabus, please download the pdf
+            from above
+          </p>
         </div>
 
         <div class="col-12 col-md-6">
@@ -372,6 +413,32 @@
         }, 500);
       });
     </script>
+      <script>
+        const downloadPdf = document.querySelector("#download-pdf");
+  
+        downloadPdf.addEventListener("click", () => {
+          // Creating the element anchor that
+          // will download pdf
+          let element = document.createElement("a");
+          element.href = "./assets/sitp-pdfs/sitp-android.pdf";
+          element.download = "sitp-android.pdf";
+  
+          // Adding the element to body
+          document.documentElement.appendChild(element);
+  
+          // Above code is equivalent to
+          // <a href="path of file" download="file name">
+  
+          // onClick property, to trigger download
+          element.click();
+  
+          // Removing the element from body
+          document.documentElement.removeChild(element);
+  
+          // onClick property, to trigger submit form
+          submitForm.click();
+        });
+      </script>
     <div id="preloader"></div>
     <script src="assets/js/main.js"></script>
   </body>
