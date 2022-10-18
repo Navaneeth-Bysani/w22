@@ -30,6 +30,7 @@ router.get("/highlights", renderController.renderHighlights);
 router.get("/teams", renderController.renderTeam);
 router.get("/sponsors", renderController.renderSponsors);
 router.get("/reachUs", renderController.renderContact);
+router.get("/qwissenaire", renderController.renderQwissenaire);
 router.post("/contact", userController.postContact);
 router.post("/updateProfile", userController.updateProfile);
 router.post("/register-competition",ensureAuthenticated, userController.registerCompetition);
