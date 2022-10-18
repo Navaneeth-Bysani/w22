@@ -128,6 +128,16 @@ exports.renderContact = async (req, res) => {
   }
 };
 
+exports.renderQwissenaire = async (req, res) => {
+  //render Qwissenaire
+  if (req.user) {
+    const user = await findUser(req.user.emails[0].value);
+    res.render("qwissenaire", {participant: user});
+  } else {
+    res.render("qwissenaire", {participant: false});
+  }
+};
+
 exports.renderProfile = async (req, res) => {
     if(req.user) {
         const user = await findUser(req.user.emails[0].value);
